@@ -1,10 +1,3 @@
-" Setup instructions:
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" Launch vim and run :PluginInstall 
-" Set the terminal emulator's colorscheme to use Solarized pallette.
-" Install ruby using sudo apt-get install ruby-full command.
-" Install js-beautify using "sudo npm install -g js-beautify" command, typescript-formatter using "sudo npm install -g typescript-formatter" and sass-convert using "sudo gem install sass --no-user-install".
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -25,6 +18,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
 
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 
