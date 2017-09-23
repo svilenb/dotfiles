@@ -11,11 +11,14 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'PreserveNoEOL'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
+
+Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
@@ -27,6 +30,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'godlygeek/tabular'
 
 Plugin 'leafgarland/typescript-vim'
 Plugin 'scrooloose/syntastic'
@@ -67,8 +71,6 @@ set hls is ic
 set number
 " Remove line breaking
 :set nowrap
-" Set tabsize
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " File search settings
 " Exclude files and directories from ctrp searches
@@ -81,6 +83,18 @@ let g:jsx_ext_required = 0
 " Map a specific key or shortcut to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_start_key='<F6>'
+
 noremap <F3> :Autoformat<CR>
 " Setup used libraries for having syntax support
 let g:used_javascript_libs = 'react'
+
+" Properties set using .editorconfig
+" Set tabsize
+" set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+" let g:PreserveNoEOL = 1
