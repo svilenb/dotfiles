@@ -14,9 +14,11 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'PreserveNoEOL'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
+Plugin 'ap/vim-css-color'
 
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -79,9 +81,12 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules)|(\.(git|hg|svn))$'
 
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0 
+" Setup used libraries for having syntax support
+let g:used_javascript_libs = 'react'
 
-" Map a specific key or shortcut to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+noremap <F3> :Autoformat<CR>
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
@@ -90,11 +95,21 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<F6>'
 
-noremap <F3> :Autoformat<CR>
-" Setup used libraries for having syntax support
-let g:used_javascript_libs = 'react'
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'typescript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
+  \ ]
+  \ }
 
 " Properties set using .editorconfig
 " Set tabsize
 " set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-" let g:PreserveNoEOL = 1
+let g:PreserveNoEOL = 1
