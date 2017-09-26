@@ -21,6 +21,7 @@ Plugin 'yggdroot/indentline'
 Plugin 'ap/vim-css-color'
 
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-surround'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
@@ -38,7 +39,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'quramy/tsuquyomi'
 Plugin 'valloric/youcompleteme'
-Plugin 'pangloss/vim-javascript'  
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
@@ -77,16 +78,48 @@ set number
 " File search settings
 " Exclude files and directories from ctrp searches
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\v[\/](node_modules)|(\.(git|hg|svn))$'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'link': 'some_bad_symbolic_links',
+    \ }
 
+" Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " Allow JSX in normal JS files
-let g:jsx_ext_required = 0 
+let g:jsx_ext_required = 0
 " Setup used libraries for having syntax support
 let g:used_javascript_libs = 'react'
+
+if !exists("g:ycm_semantic_triggers")
+	let g:ycm_semantic_triggers = {}
+endif
+
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+
+set ballooneval
+if has('gui_running')
+	autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+else
+	autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+endif
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 noremap <F3> :Autoformat<CR>
+
+" Syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
@@ -96,18 +129,18 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<F6>'
 
 let g:tagbar_type_typescript = {
-  \ 'ctagstype': 'typescript',
-  \ 'kinds': [
-    \ 'c:classes',
-    \ 'n:modules',
-    \ 'f:functions',
-    \ 'v:variables',
-    \ 'v:varlambdas',
-    \ 'm:members',
-    \ 'i:interfaces',
-    \ 'e:enums',
-  \ ]
-  \ }
+			\ 'ctagstype': 'typescript',
+			\ 'kinds': [
+			\ 'c:classes',
+			\ 'n:modules',
+			\ 'f:functions',
+			\ 'v:variables',
+			\ 'v:varlambdas',
+			\ 'm:members',
+			\ 'i:interfaces',
+			\ 'e:enums',
+			\ ]
+			\ }
 
 " Properties set using .editorconfig
 " Set tabsize
