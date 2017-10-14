@@ -1,11 +1,18 @@
 Setup instructions:
 
-1. Setup terminal
-1.1 Set the terminal emulator's colorscheme to use Solarized pallette.
+Install vim
+    sudo apt-get update
+    sudo apt-get install vim
 
-2. Vundle
-2.1 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-2.2 Launch vim and run :PluginInstall 
+Setup terminal
+    Set the terminal emulator's colorscheme to use Solarized pallette.
+
+Vundle
+    Run "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
+    Launch vim and run :PluginInstall 
+
+Python
+    Make sure pip is installed: "pip --version", "sudo apt-get install python-pip"
 
 3. Universal ctags
 3.1 git clone https://github.com/universal-ctags/ctags.git
