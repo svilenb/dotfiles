@@ -1,8 +1,7 @@
 Setup instructions:
 
 Install vim
-    sudo apt-get update
-    sudo apt-get install vim
+    https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 
 Setup terminal
     Set the terminal emulator's colorscheme to use Solarized pallette.
