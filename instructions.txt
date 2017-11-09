@@ -1,7 +1,9 @@
 Setup instructions:
 
 Install vim
+    https://vi.stackexchange.com/questions/10817/how-can-i-get-a-newer-version-of-vim-on-ubuntu
     https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+    http://www.vim.org/git.php
 
 Setup terminal
     Set the terminal emulator's colorscheme to use Solarized pallette.
