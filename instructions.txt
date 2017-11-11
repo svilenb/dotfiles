@@ -8,22 +8,28 @@ Install vim
 Setup terminal
     Set the terminal emulator's colorscheme to use Solarized pallette.
 
-Vundle
-    Run "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
-    Launch vim and run :PluginInstall 
-
+Spotify integration:
 Python
     Make sure pip is installed: "pip --version", "sudo apt-get install python-pip"
 
-3. Universal ctags
-3.1 git clone https://github.com/universal-ctags/ctags.git
-3.2  sudo apt-get install autoconf
-3.3 ./autogen.sh
-3.4 ./configure
-3.5 make
-3.6 sudo make install
-3.7 Follow the instructions from: https://github.com/jb55/typescript-ctags
-
-Install ruby using sudo apt-get install ruby-full command.
-Install js-beautify using "sudo npm install -g js-beautify" command, typescript-formatter using "sudo npm install -g typescript-formatter" and sass-convert using "sudo gem install sass --no-user-install".
-Install ack using "sudo apt-get install ack-grep" command
+Follow vimawesome instructions
+    Vundle
+    ack
+    youcompleteme
+    autoformat
+        ruby
+            sudo apt-get install ruby-full
+        js-beautify
+            sudo npm install -g js-beautify 
+        typescript-formatter
+            sudo npm install -g typescript-formatter
+        sass-convert
+            sudo gem install sass --no-user-install
+    universal ctags:
+        git clone https://github.com/universal-ctags/ctags.git
+        sudo apt-get install autoconf
+        ./autogen.sh
+        ./configure
+        make
+        sudo make install
+        Follow the instructions from: https://github.com/jb55/typescript-ctags
