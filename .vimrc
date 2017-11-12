@@ -11,8 +11,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'PreserveNoEOL'
+" Plugin 'PreserveNoEOL'
 
+" Plugin 'takac/vim-spotifysearch'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
@@ -79,10 +80,10 @@ set number
 " Exclude files and directories from ctrp searches
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll)$',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
 
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -92,7 +93,7 @@ let g:jsx_ext_required = 0
 let g:used_javascript_libs = 'react'
 
 if !exists("g:ycm_semantic_triggers")
-	let g:ycm_semantic_triggers = {}
+    let g:ycm_semantic_triggers = {}
 endif
 
 let g:ycm_semantic_triggers['typescript'] = ['.']
@@ -102,9 +103,9 @@ let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' ch
 
 set ballooneval
 if has('gui_running')
-	autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+    autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
 else
-	autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+    autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 endif
 
 map <C-n> :NERDTreeToggle<CR>
@@ -129,20 +130,29 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<F6>'
 
 let g:tagbar_type_typescript = {
-			\ 'ctagstype': 'typescript',
-			\ 'kinds': [
-			\ 'c:classes',
-			\ 'n:modules',
-			\ 'f:functions',
-			\ 'v:variables',
-			\ 'v:varlambdas',
-			\ 'm:members',
-			\ 'i:interfaces',
-			\ 'e:enums',
-			\ ]
-			\ }
+            \ 'ctagstype': 'typescript',
+            \ 'kinds': [
+            \ 'c:classes',
+            \ 'n:modules',
+            \ 'f:functions',
+            \ 'v:variables',
+            \ 'v:varlambdas',
+            \ 'm:members',
+            \ 'i:interfaces',
+            \ 'e:enums',
+            \ ]
+            \ }
 
 " Properties set using .editorconfig
 " Set tabsize
-" set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-let g:PreserveNoEOL = 1
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+" let g:PreserveNoEOL = 1
+
+" To filter spotify results appropriate to your region add the line below to your .vimrc with the correct country code.
+let g:spotify_country_code = 'BG'
+
+" For linux operating systems with dbus, you can map specific keys to play/pause, next and previous.
+" These mappings will only work inside the spotify list buffer.
+let g:spotify_prev_key = "<F9>"
+let g:spotify_playpause_key = "<F10>"
+let g:spotify_next_key = "<F11>"
