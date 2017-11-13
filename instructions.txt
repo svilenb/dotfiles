@@ -33,3 +33,5 @@ Follow vimawesome instructions
         make
         sudo make install
         Follow the instructions from: https://github.com/jb55/typescript-ctags
+    syntastic
+        Install sass lint checker: npm install -g sass-lint
