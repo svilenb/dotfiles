@@ -19,6 +19,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
+Plugin 'myusuf3/numbers.vim'
 Plugin 'ap/vim-css-color'
 
 Plugin 'terryma/vim-multiple-cursors'
@@ -75,6 +76,13 @@ set hls is ic
 set number
 " Remove line breaking
 :set nowrap
+
+" highlight current line in the current window,
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 " File search settings
 " Exclude files and directories from ctrp searches
@@ -159,3 +167,6 @@ let g:spotify_country_code = 'BG'
 let g:spotify_prev_key = "<F9>"
 let g:spotify_playpause_key = "<F10>"
 let g:spotify_next_key = "<F11>"
+
+" On some machines Vim is preconfigured with the backupcopy option set to auto. This could potentially cause problems with the system’s file watching mechanism. Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
+set backupcopy=yes
