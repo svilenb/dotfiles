@@ -11,15 +11,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
 Plugin 'editorconfig/editorconfig-vim'
-" Plugin 'PreserveNoEOL'
-
-" Plugin 'takac/vim-spotifysearch'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
-Plugin 'myusuf3/numbers.vim'
 Plugin 'ap/vim-css-color'
 
 Plugin 'terryma/vim-multiple-cursors'
@@ -72,8 +68,10 @@ let g:airline_solarized_bg='dark'
 " 'is' 'incsearch'        show partial matches for a search phrase
 " 'hls' 'hlsearch'        highlight all matching phrases
 set hls is ic
+
 " Showing the line numbers by default
-set number
+:set number relativenumber
+
 " Remove line breaking
 :set nowrap
 
