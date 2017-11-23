@@ -61,6 +61,8 @@ colorscheme solarized
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 
+:set hidden
+
 " 'ic' 'ignorecase'       ignore upper/lower case when searching
 " 'is' 'incsearch'        show partial matches for a search phrase
 " 'hls' 'hlsearch'        highlight all matching phrases
@@ -70,7 +72,7 @@ set hls is ic
 :set number relativenumber
 
 " redraw only when we need to.
-set lazyredraw          
+set lazyredraw
 
 " Remove line breaking
 :set nowrap
@@ -109,9 +111,9 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 if has('gui_running')
     set ballooneval
     autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
-else
-    autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 endif
+
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -137,3 +139,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " On some machines Vim is preconfigured with the backupcopy option set to auto. This could potentially cause problems with the system’s file watching mechanism. Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
 set backupcopy=yes
+
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
