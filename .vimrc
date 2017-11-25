@@ -32,7 +32,6 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'godlygeek/tabular'
 
 Plugin 'leafgarland/typescript-vim'
-Plugin 'quramy/tsuquyomi'
 Plugin 'valloric/youcompleteme'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -84,6 +83,17 @@ augroup CursorLine
     au WinLeave * setlocal nocursorline
 augroup END
 
+" Properties set using .editorconfig
+" Set tabsize
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" On some machines Vim is preconfigured with the backupcopy option set to auto. This could potentially cause problems with the system’s file watching mechanism. Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
+set backupcopy=yes
+
+":set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+
 " File search settings
 " Exclude files and directories from ctrp searches
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -107,15 +117,14 @@ if !exists("g:ycm_semantic_triggers")
 endif
 
 let g:ycm_semantic_triggers['typescript'] = ['.']
-
-if has('gui_running')
-    set ballooneval
-    autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
-endif
-
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+let g:ycm_always_populate_location_list = 1
 
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <F12> :YcmCompleter GoToDefinition<CR>
+nnoremap <S-F12> :YcmCompleter GoToReferences<CR>
+nnoremap <F2> :YcmCompleter GetType<CR>
+nnoremap <S-F2> :YcmCompleter GetDoc<CR>
 nmap <F8> :TagbarToggle<CR>
 noremap <F3> :Autoformat<CR>
 
@@ -132,14 +141,3 @@ let g:tagbar_type_typescript = {
             \ 'e:enums',
             \ ]
             \ }
-
-" Properties set using .editorconfig
-" Set tabsize
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-
-" On some machines Vim is preconfigured with the backupcopy option set to auto. This could potentially cause problems with the system’s file watching mechanism. Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
-set backupcopy=yes
-
-:set guioptions-=m  "remove menu bar
-:set guioptions-=T  "remove toolbar
-:set guioptions-=r  "remove right-hand scroll bar
