@@ -20,6 +20,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'tpope/vim-surround'
+Plugin 'honza/vim-snippets'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
@@ -54,11 +55,14 @@ filetype plugin indent on    " required
 
 " Setting up the color scheme
 syntax enable
-set background=dark
-colorscheme solarized
-" Set airline theme
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+    let g:airline_theme='solarized'
+    let g:airline_solarized_bg='dark'
+    set guifont=Monospace\ 12
+endif
 
 :set hidden
 
@@ -112,11 +116,6 @@ let g:jsx_ext_required = 0
 " Setup used libraries for having syntax support
 let g:used_javascript_libs = 'react'
 
-if !exists("g:ycm_semantic_triggers")
-    let g:ycm_semantic_triggers = {}
-endif
-
-let g:ycm_semantic_triggers['typescript'] = ['.']
 let g:ycm_always_populate_location_list = 1
 
 map <C-n> :NERDTreeToggle<CR>
