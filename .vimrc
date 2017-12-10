@@ -21,6 +21,7 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'tpope/vim-surround'
 Plugin 'honza/vim-snippets'
+Plugin 'easymotion/vim-easymotion'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
@@ -64,6 +65,10 @@ if has('gui_running')
     set guifont=Monospace\ 12
 endif
 
+":set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+
 :set hidden
 
 " 'ic' 'ignorecase'       ignore upper/lower case when searching
@@ -94,10 +99,6 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 " On some machines Vim is preconfigured with the backupcopy option set to auto. This could potentially cause problems with the system’s file watching mechanism. Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
 set backupcopy=yes
 
-":set guioptions-=m  "remove menu bar
-:set guioptions-=T  "remove toolbar
-:set guioptions-=r  "remove right-hand scroll bar
-
 " File search settings
 " Exclude files and directories from ctrp searches
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -126,6 +127,24 @@ nnoremap <F2> :YcmCompleter GetType<CR>
 nnoremap <S-F2> :YcmCompleter GetDoc<CR>
 nmap <F8> :TagbarToggle<CR>
 noremap <F3> :Autoformat<CR>
+
+map <Leader> <Plug>(easymotion-prefix)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+let g:EasyMotion_smartcase = 1
 
 let g:tagbar_type_typescript = {
             \ 'ctagstype': 'typescript',
