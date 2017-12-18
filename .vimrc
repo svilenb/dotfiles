@@ -9,6 +9,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'johngrib/vim-game-code-break'
+
 Plugin 'tpope/vim-sensible'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/nerdtree'
@@ -19,6 +21,8 @@ Plugin 'yggdroot/indentline'
 Plugin 'ap/vim-css-color'
 Plugin 'altercation/vim-colors-solarized'
 
+Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'honza/vim-snippets'
 Plugin 'easymotion/vim-easymotion'
@@ -68,6 +72,7 @@ endif
 ":set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L "remove left-hand scroll bar
 
 :set hidden
 
@@ -119,6 +124,14 @@ let g:used_javascript_libs = 'react'
 
 let g:ycm_always_populate_location_list = 1
 
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <F12> :YcmCompleter GoToDefinition<CR>
@@ -129,21 +142,7 @@ nmap <F8> :TagbarToggle<CR>
 noremap <F3> :Autoformat<CR>
 
 map <Leader> <Plug>(easymotion-prefix)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
 
-" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
-" Without these mappings, `n` & `N` works fine. (These mappings just provide
-" different highlight method and have some other features )
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 let g:EasyMotion_smartcase = 1
 
 let g:tagbar_type_typescript = {
