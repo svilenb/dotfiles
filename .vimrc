@@ -24,7 +24,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
-Plugin 'honza/vim-snippets'
 Plugin 'easymotion/vim-easymotion'
 
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -82,20 +81,13 @@ endif
 set hls is ic
 
 " Showing the line numbers by default
-:set number relativenumber
+:set number
 
 " redraw only when we need to.
 set lazyredraw
 
 " Remove line breaking
 :set nowrap
-
-" highlight current line in the current window,
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
 
 " Properties set using .editorconfig
 " Set tabsize
@@ -124,9 +116,6 @@ let g:used_javascript_libs = 'react'
 
 let g:ycm_always_populate_location_list = 1
 
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
-
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
@@ -143,7 +132,12 @@ noremap <F3> :Autoformat<CR>
 
 map <Leader> <Plug>(easymotion-prefix)
 
-let g:EasyMotion_smartcase = 1
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+  
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 let g:tagbar_type_typescript = {
             \ 'ctagstype': 'typescript',
