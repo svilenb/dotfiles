@@ -40,6 +40,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'ianks/vim-tsx'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
 " All of your Plugins must be added before the following line
