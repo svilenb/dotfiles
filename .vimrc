@@ -14,7 +14,6 @@ Plugin 'johngrib/vim-game-code-break'
 Plugin 'tpope/vim-sensible'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
@@ -58,7 +57,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Setting up the color scheme
 syntax enable
 
 if has('gui_running')
@@ -94,7 +92,9 @@ set lazyredraw
 " Set tabsize
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-" On some machines Vim is preconfigured with the backupcopy option set to auto. This could potentially cause problems with the system’s file watching mechanism. Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
+" On some machines Vim is preconfigured with the backupcopy option set to auto. 
+" This could potentially cause problems with the system’s file watching mechanism. 
+" Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
 set backupcopy=yes
 
 " File search settings
@@ -128,7 +128,6 @@ nnoremap <F12> :YcmCompleter GoToDefinition<CR>
 nnoremap <S-F12> :YcmCompleter GoToReferences<CR>
 nnoremap <F2> :YcmCompleter GetType<CR>
 nnoremap <S-F2> :YcmCompleter GetDoc<CR>
-nmap <F8> :TagbarToggle<CR>
 noremap <F3> :Autoformat<CR>
 
 map <Leader> <Plug>(easymotion-prefix)
@@ -137,17 +136,3 @@ map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
-
-let g:tagbar_type_typescript = {
-            \ 'ctagstype': 'typescript',
-            \ 'kinds': [
-            \ 'c:classes',
-            \ 'n:modules',
-            \ 'f:functions',
-            \ 'v:variables',
-            \ 'v:varlambdas',
-            \ 'm:members',
-            \ 'i:interfaces',
-            \ 'e:enums',
-            \ ]
-            \ }
