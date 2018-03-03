@@ -9,10 +9,10 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'johngrib/vim-game-code-break'
-
 Plugin 'tpope/vim-sensible'
 Plugin 'editorconfig/editorconfig-vim'
+
+Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -38,6 +38,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-haml'
 Plugin 'mxw/vim-jsx'
 Plugin 'ianks/vim-tsx'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -67,7 +69,6 @@ if has('gui_running')
     set guifont=Monospace\ 12
 endif
 
-":set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
 :set guioptions-=L "remove left-hand scroll bar
@@ -136,3 +137,4 @@ map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
+
