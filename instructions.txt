@@ -18,3 +18,11 @@ Follow vimawesome instructions
             sudo npm install -g typescript-formatter
         sass-convert
             sudo gem install sass --no-user-install
+            
+Create a global gitignore for the temporary and swap files
+*~
+*.swp
+*.swo
+
+$ touch ~/.gitignore
+$ git config --global core.excludesFile ~/.gitignore
