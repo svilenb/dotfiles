@@ -5,13 +5,6 @@ Install vim
     https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
     http://www.vim.org/git.php
 
-Setup terminal
-    Set the terminal emulator's colorscheme to use Solarized pallette.
-
-Spotify integration:
-Python
-    Make sure pip is installed: "pip --version", "sudo apt-get install python-pip"
-
 Follow vimawesome instructions
     Vundle
     ack
@@ -25,13 +18,3 @@ Follow vimawesome instructions
             sudo npm install -g typescript-formatter
         sass-convert
             sudo gem install sass --no-user-install
-    universal ctags:
-        git clone https://github.com/universal-ctags/ctags.git
-        sudo apt-get install autoconf
-        ./autogen.sh
-        ./configure
-        make
-        sudo make install
-        Follow the instructions from: https://github.com/jb55/typescript-ctags
-    syntastic
-        Install sass lint checker: npm install -g sass-lint
