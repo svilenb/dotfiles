@@ -17,8 +17,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
+Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ap/vim-css-color'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
@@ -37,6 +39,7 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'leafgarland/typescript-vim'
 Plugin 'valloric/youcompleteme'
+Plugin 'w0rp/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-haml'
@@ -66,8 +69,9 @@ if has('gui_running')
     colorscheme solarized
     let g:airline_theme='solarized'
     let g:airline_solarized_bg='dark'
-    set guifont=Monospace\ 12
 endif
+
+set guifont=Monospace\ 12
 
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
@@ -93,8 +97,8 @@ set lazyredraw
 " Set tabsize
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-" On some machines Vim is preconfigured with the backupcopy option set to auto. 
-" This could potentially cause problems with the system’s file watching mechanism. 
+" On some machines Vim is preconfigured with the backupcopy option set to auto.
+" This could potentially cause problems with the system’s file watching mechanism.
 " Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
 set backupcopy=yes
 
@@ -107,6 +111,12 @@ let g:ctrlp_custom_ignore = {
             \ 'link': 'some_bad_symbolic_links',
             \ }
 
+let g:ale_linters = {
+            \   'typescript': ['tsserver'],
+            \   'scss' : [],
+            \   'javascript': [],
+            \}
+
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
@@ -116,15 +126,14 @@ let g:jsx_ext_required = 0
 " Setup used libraries for having syntax support
 let g:used_javascript_libs = 'react'
 
-let g:ycm_always_populate_location_list = 1
-
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 
+let g:ycm_show_diagnostics_ui = 0
+
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <F12> :YcmCompleter GoToDefinition<CR>
 nnoremap <S-F12> :YcmCompleter GoToReferences<CR>
 nnoremap <F2> :YcmCompleter GetType<CR>
@@ -138,3 +147,5 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
