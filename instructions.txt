@@ -9,6 +9,7 @@ Follow vimawesome instructions
     Vundle
     ack
     youcompleteme
+    editorconfig-vim
     autoformat
         ruby
             sudo apt-get install ruby-full
