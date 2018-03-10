@@ -14,26 +14,21 @@ Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
+Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
-Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ap/vim-css-color'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'lifepillar/vim-solarized8'
 
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
-
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'xuyuanp/nerdtree-git-plugin'
-
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'godlygeek/tabular'
 
@@ -62,16 +57,15 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-syntax enable
-
-if has('gui_running')
-    set background=dark
-    colorscheme solarized
+if has('termguicolors')
+    set termguicolors
+    set background=light
+    colorscheme solarized8_flat
     let g:airline_theme='solarized'
-    let g:airline_solarized_bg='dark'
+    let g:airline_solarized_bg='light'
 endif
 
-set guifont=Monospace\ 12
+set guifont=Monospace\ 13
 
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
@@ -79,16 +73,13 @@ set guifont=Monospace\ 12
 
 :set hidden
 
-" 'ic' 'ignorecase'       ignore upper/lower case when searching
-" 'is' 'incsearch'        show partial matches for a search phrase
-" 'hls' 'hlsearch'        highlight all matching phrases
+" 'ic' 'ignorecase' ignore upper/lower case when searching
+" 'is' 'incsearch'  show partial matches for a search phrase
+" 'hls' 'hlsearch'  highlight all matching phrases
 set hls is ic
 
 " Showing the line numbers by default
 :set number
-
-" redraw only when we need to.
-set lazyredraw
 
 " Remove line breaking
 :set nowrap
@@ -126,26 +117,19 @@ let g:jsx_ext_required = 0
 " Setup used libraries for having syntax support
 let g:used_javascript_libs = 'react'
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
+" Disable diagnostics for YCM since ALE is used
 let g:ycm_show_diagnostics_ui = 0
 
 map <C-n> :NERDTreeToggle<CR>
+noremap <F3> :Autoformat<CR>
+nnoremap <F5> :ALELint<CR>
 nnoremap <F12> :YcmCompleter GoToDefinition<CR>
 nnoremap <S-F12> :YcmCompleter GoToReferences<CR>
 nnoremap <F2> :YcmCompleter GetType<CR>
 nnoremap <S-F2> :YcmCompleter GetDoc<CR>
-noremap <F3> :Autoformat<CR>
 
 map <Leader> <Plug>(easymotion-prefix)
-
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
-
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
