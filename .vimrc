@@ -40,7 +40,6 @@ Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'mxw/vim-jsx'
 Plugin 'ianks/vim-tsx'
-Plugin 'othree/javascript-libraries-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,7 +59,7 @@ filetype plugin indent on    " required
 if has('termguicolors')
     set termguicolors
     set background=light
-    colorscheme solarized8_flat
+    colorscheme solarized8
     let g:airline_theme='solarized'
     let g:airline_solarized_bg='light'
 endif
@@ -113,9 +112,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
-
-" Setup used libraries for having syntax support
-let g:used_javascript_libs = 'react'
 
 " Disable diagnostics for YCM since ALE is used
 let g:ycm_show_diagnostics_ui = 0
