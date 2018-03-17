@@ -32,8 +32,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'godlygeek/tabular'
 
+Plugin 'shougo/deoplete.nvim'
+Plugin 'mhartington/nvim-typescript'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'valloric/youcompleteme'
 Plugin 'w0rp/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
@@ -57,11 +58,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 if has('termguicolors')
-    set termguicolors
-    set background=light
-    colorscheme solarized8
-    let g:airline_theme='solarized'
-    let g:airline_solarized_bg='light'
+	set termguicolors
+	set background=light
+	colorscheme solarized8
+	let g:airline_theme='solarized'
+	let g:airline_solarized_bg='light'
 endif
 
 set guifont=Monospace\ 13
@@ -83,10 +84,6 @@ set hls is ic
 " Remove line breaking
 :set nowrap
 
-" Properties set using .editorconfig
-" Set tabsize
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-
 " On some machines Vim is preconfigured with the backupcopy option set to auto.
 " This could potentially cause problems with the system’s file watching mechanism.
 " Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
@@ -95,17 +92,9 @@ set backupcopy=yes
 " File search settings
 " Exclude files and directories from ctrp searches
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll)$',
-            \ 'link': 'some_bad_symbolic_links',
-            \ }
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$', 'link': 'some_bad_symbolic_links' }
 
-let g:ale_linters = {
-            \   'typescript': ['tsserver'],
-            \   'scss' : [],
-            \   'javascript': [],
-            \}
+let g:ale_linters = { 'typescript': ['tsserver'], 'scss' : [], 'javascript': [] }
 
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -113,16 +102,12 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
 
-" Disable diagnostics for YCM since ALE is used
-let g:ycm_show_diagnostics_ui = 0
+let g:deoplete#enable_at_startup = 1
+let g:nvim_typescript#default_mappings = 1
 
 map <C-n> :NERDTreeToggle<CR>
 noremap <F3> :Autoformat<CR>
 nnoremap <F5> :ALELint<CR>
-nnoremap <F12> :YcmCompleter GoToDefinition<CR>
-nnoremap <S-F12> :YcmCompleter GoToReferences<CR>
-nnoremap <F2> :YcmCompleter GetType<CR>
-nnoremap <S-F2> :YcmCompleter GetDoc<CR>
 
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>l <Plug>(easymotion-lineforward)
