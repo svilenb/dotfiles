@@ -95,6 +95,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$', 'link': 'some_bad_symbolic_links' }
 
 let g:ale_linters = { 'typescript': ['tsserver'], 'scss' : [], 'javascript': [] }
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -104,6 +106,7 @@ let g:jsx_ext_required = 0
 
 let g:deoplete#enable_at_startup = 1
 let g:nvim_typescript#default_mappings = 1
+let g:nvim_typescript#loc_list_item_truncate_after = -1
 
 map <C-n> :NERDTreeToggle<CR>
 noremap <F3> :Autoformat<CR>
