@@ -4,11 +4,11 @@ Install vim
     https://vi.stackexchange.com/questions/10817/how-can-i-get-a-newer-version-of-vim-on-ubuntu
     https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
     http://www.vim.org/git.php
-
+    
+Install vim-plug
 Follow vimawesome instructions
-    Vundle
     ack
-    youcompleteme
+    deoplete
     editorconfig-vim
     autoformat
         ruby
