@@ -43,24 +43,10 @@ if has('termguicolors')
 	let g:airline_solarized_bg='dark'
 endif
 
-set guifont=Monospace\ 13
-
-:set guioptions-=T  "remove toolbar
-:set guioptions-=r  "remove right-hand scroll bar
-:set guioptions-=L "remove left-hand scroll bar
-
-:set hidden
-
-" 'ic' 'ignorecase' ignore upper/lower case when searching
-" 'is' 'incsearch'  show partial matches for a search phrase
-" 'hls' 'hlsearch'  highlight all matching phrases
-set hls is ic
-
-" Showing the line numbers by default
-:set number
-
-" Remove line breaking
-:set nowrap
+set hidden
+set hlsearch incsearch ignorecase
+set number
+set nowrap
 
 " On some machines Vim is preconfigured with the backupcopy option set to auto.
 " This could potentially cause problems with the system’s file watching mechanism.
