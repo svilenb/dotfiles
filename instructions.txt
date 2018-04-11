@@ -8,7 +8,6 @@ Install vim
 Install vim-plug
 Follow vimawesome instructions
     ack
-    deoplete
     editorconfig-vim
     autoformat
         ruby
