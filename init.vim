@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 
@@ -14,6 +15,7 @@ Plug 'ap/vim-css-color'
 Plug 'lifepillar/vim-solarized8'
 
 Plug 'tpope/vim-fugitive'
+Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer' }
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
@@ -23,8 +25,7 @@ Plug 'mileszs/ack.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'godlygeek/tabular'
 
-Plug 'shougo/deoplete.nvim'
-Plug 'mhartington/nvim-typescript'
+Plug 'quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript'
@@ -59,18 +60,13 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$', 'link': 'some_bad_symbolic_links' }
 
 let g:ale_linters = { 'typescript': ['tsserver'], 'scss' : [], 'javascript': [] }
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ycm_show_diagnostics_ui = 0
 
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
-
-let g:deoplete#enable_at_startup = 1
-let g:nvim_typescript#default_mappings = 1
-let g:nvim_typescript#loc_list_item_truncate_after = -1
 
 map <C-n> :NERDTreeToggle<CR>
 noremap <F3> :Autoformat<CR>
