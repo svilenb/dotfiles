@@ -1,6 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 
@@ -25,7 +24,6 @@ Plug 'mileszs/ack.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'godlygeek/tabular'
 
-Plug 'quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript'
@@ -71,6 +69,9 @@ let g:jsx_ext_required = 0
 map <C-n> :NERDTreeToggle<CR>
 noremap <F3> :Autoformat<CR>
 nnoremap <F5> :ALELint<CR>
+nnoremap <F12> :YcmCompleter GoToDefinition<CR>
+nnoremap <F6> :YcmCompleter GoToReferences<CR>
+nnoremap <F2> :YcmCompleter GetType<CR>
 
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>l <Plug>(easymotion-lineforward)
