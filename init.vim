@@ -15,6 +15,8 @@ Plug 'lifepillar/vim-solarized8'
 
 Plug 'tpope/vim-fugitive'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer' }
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
@@ -59,6 +61,8 @@ let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe
 
 let g:ale_linters = { 'typescript': ['tsserver'], 'scss' : [], 'javascript': [] }
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_key_list_select_completion = []
+let g:ycm_key_list_previous_completion = []
 
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
