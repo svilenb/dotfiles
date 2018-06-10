@@ -37,11 +37,11 @@ Plug 'ianks/vim-tsx'
 call plug#end()
 
 if has('termguicolors')
-	set termguicolors
-	set background=dark
-	colorscheme solarized8
-	let g:airline_theme='solarized'
-	let g:airline_solarized_bg='dark'
+    set termguicolors
+    set background=dark
+    colorscheme solarized8
+    let g:airline_theme='solarized'
+    let g:airline_solarized_bg='dark'
 endif
 
 set hidden
@@ -69,6 +69,10 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
+
+let mapleader = ","
+
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 
 map <C-n> :NERDTreeToggle<CR>
 noremap <F3> :Autoformat<CR>
