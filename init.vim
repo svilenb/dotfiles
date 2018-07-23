@@ -11,7 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yggdroot/indentline'
 Plug 'ap/vim-css-color'
-Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-fugitive'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
@@ -57,9 +57,12 @@ if (empty($TMUX))
 endif
 
 syntax on
-colorscheme onedark
+colorscheme gruvbox
+set background=dark
 
-let g:airline_theme='onedark'
+let g:gruvbox_contrast_dark='soft'
+
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
