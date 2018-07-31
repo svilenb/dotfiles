@@ -4,8 +4,7 @@ Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'mhinz/vim-startify'
-Plug 'scrooloose/nerdtree'
-Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -144,7 +143,6 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
-map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <F2> :YcmCompleter GetType<CR>
 noremap <F3> :Autoformat<CR>
