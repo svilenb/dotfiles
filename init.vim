@@ -23,12 +23,10 @@ Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
@@ -39,6 +37,8 @@ Plug 'mxw/vim-jsx'
 Plug 'ianks/vim-tsx'
 
 Plug 'ryanoasis/vim-devicons'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 
 call plug#end()
 
@@ -63,8 +63,10 @@ colorscheme gruvbox
 set background=dark
 
 let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_light='soft'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_warnings=1
+let g:gruvbox_guisp_fallback='bg'
 
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
@@ -106,8 +108,8 @@ else
 endif
 
 set hidden
-set hlsearch incsearch ignorecase
-set number
+set incsearch ignorecase smartcase
+set number relativenumber
 set nowrap
 
 " On some machines Vim is preconfigured with the backupcopy option set to auto.
@@ -137,12 +139,13 @@ let g:ycm_key_list_previous_completion = []
 let g:jsx_ext_required = 0
 
 let mapleader = ","
-imap jk <Esc>
+imap jj <Esc>
 
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+map <C-n> :Explore<CR>
 
 nnoremap <F2> :YcmCompleter GetType<CR>
 noremap <F3> :Autoformat<CR>
@@ -150,10 +153,4 @@ nnoremap <F5> :ALELint<CR>
 nnoremap <F6> :YcmCompleter GoToReferences<CR>
 nnoremap <F7> :GundoToggle<CR>
 nnoremap <F12> :YcmCompleter GoToDefinition<CR>
-
-map <Leader> <Plug>(easymotion-prefix)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
 
