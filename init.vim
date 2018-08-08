@@ -26,7 +26,6 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'Chiel92/vim-autoformat'
-Plug 'godlygeek/tabular'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
