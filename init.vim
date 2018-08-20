@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
@@ -16,6 +15,7 @@ Plug 'junegunn/gv.vim'
 Plug 'sjl/gundo.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
 Plug 'rdnetto/ycm-generator', { 'branch': 'stable'}
+Plug 'w0rp/ale'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-repeat'
@@ -27,7 +27,6 @@ Plug 'mileszs/ack.vim'
 Plug 'chiel92/vim-autoformat'
 
 Plug 'leafgarland/typescript-vim'
-Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-haml'
@@ -66,7 +65,6 @@ endif
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
-" powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -114,7 +112,6 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>v :VimuxRunCommand<Space>
-map <C-n> :Explore<CR>
 
 nnoremap <F2> :YcmCompleter GetType<CR>
 noremap <F3> :Autoformat<CR>
