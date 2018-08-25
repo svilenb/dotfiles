@@ -78,15 +78,15 @@ let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = 'full'
 let g:tmuxline_theme = {
-            \'a'    : [ 236, 142 ],
-            \'b'    : [ 142, 236 ],
-            \'bg'   : [ 236, 236 ],
-            \'c'    : [ 223, 236 ],
-            \'win'  : [ 142, 236 ],
-            \'cwin' : [ 236, 142 ],
-            \'x'    : [ 223, 236 ],
-            \'y'    : [ 142, 236 ],
-            \'z'    : [ 236, 142 ]
+            \'a'    : [ 237, 250 ],
+            \'b'    : [ 250, 237 ],
+            \'bg'   : [ 237, 237 ],
+            \'c'    : [ 250, 237 ],
+            \'win'  : [ 108, 237 ],
+            \'cwin' : [ 237, 108 ],
+            \'x'    : [ 250, 237 ],
+            \'y'    : [ 250, 237 ],
+            \'z'    : [ 237, 250 ]
             \ }
 
 set hidden
