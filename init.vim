@@ -37,6 +37,7 @@ Plug 'ianks/vim-tsx'
 Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
@@ -72,6 +73,21 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = 'full'
+let g:tmuxline_theme = {
+            \'a'    : [ 236, 142 ],
+            \'b'    : [ 142, 236 ],
+            \'bg'   : [ 236, 236 ],
+            \'c'    : [ 223, 236 ],
+            \'win'  : [ 142, 236 ],
+            \'cwin' : [ 236, 142 ],
+            \'x'    : [ 223, 236 ],
+            \'y'    : [ 142, 236 ],
+            \'z'    : [ 236, 142 ]
+            \ }
 
 set hidden
 set incsearch ignorecase smartcase
