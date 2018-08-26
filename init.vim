@@ -25,6 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'chiel92/vim-autoformat'
+Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
@@ -59,34 +60,19 @@ let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
 let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = 'full'
 let g:tmuxline_theme = {
-            \'a'    : [ 237, 250 ],
-            \'b'    : [ 250, 237 ],
+            \'a'    : [ 237, 142 ],
+            \'b'    : [ 142, 237 ],
             \'bg'   : [ 237, 237 ],
-            \'c'    : [ 250, 237 ],
-            \'win'  : [ 108, 237 ],
-            \'cwin' : [ 237, 108 ],
-            \'x'    : [ 250, 237 ],
-            \'y'    : [ 250, 237 ],
-            \'z'    : [ 237, 250 ]
+            \'c'    : [ 142, 237 ],
+            \'win'  : [ 142, 237 ],
+            \'cwin' : [ 237, 142 ],
+            \'x'    : [ 142, 237 ],
+            \'y'    : [ 142, 237 ],
+            \'z'    : [ 237, 142 ]
             \ }
 
 set hidden
