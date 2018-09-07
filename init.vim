@@ -27,13 +27,12 @@ Plug 'mileszs/ack.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'ntpeters/vim-better-whitespace'
 
-Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-haml'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
-Plug 'ianks/vim-tsx'
+Plug 'herringtondarkholme/yats.vim'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'
@@ -114,11 +113,12 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>v :VimuxRunCommand<Space>
+nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
 
-nnoremap <F2> :YcmCompleter GetType<CR>
 noremap <F3> :Autoformat<CR>
 nnoremap <F5> :ALELint<CR>
-nnoremap <F6> :YcmCompleter GoToReferences<CR>
 nnoremap <F7> :GundoToggle<CR>
-nnoremap <F12> :YcmCompleter GoToDefinition<CR>
 
+autocmd FileType typescript nnoremap <buffer> K :YcmCompleter GetType<CR>
+autocmd FileType typescript nnoremap <buffer> <C-^> :YcmCompleter GoToReferences<CR>
+autocmd FileType typescript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
