@@ -114,11 +114,12 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>v :VimuxRunCommand<Space>
 nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
+nnoremap <Leader>gs :Gstatus<CR>
 
 noremap <F3> :Autoformat<CR>
 nnoremap <F5> :ALELint<CR>
 nnoremap <F7> :GundoToggle<CR>
 
-autocmd FileType typescript nnoremap <buffer> K :YcmCompleter GetType<CR>
-autocmd FileType typescript nnoremap <buffer> <C-^> :YcmCompleter GoToReferences<CR>
-autocmd FileType typescript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType typescript,typescript.tsx nnoremap <buffer> K :YcmCompleter GetType<CR>
+autocmd FileType typescript,typescript.tsx nnoremap <buffer> <C-^> :YcmCompleter GoToReferences<CR>
+autocmd FileType typescript,typescript.tsx nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
