@@ -8,7 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
@@ -41,38 +41,16 @@ Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
-syntax on
-
-if (has("termguicolors"))
-    set termguicolors
-endif
-
-colorscheme gruvbox
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_contrast_light='soft'
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_guisp_fallback='bg'
-
+syntax enable
 set background=dark
+colorscheme solarized
 
-let g:airline_theme='gruvbox'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
-let g:airline#extensions#tmuxline#enabled = 0
-let g:tmuxline_powerline_separators = 0
-let g:tmuxline_preset = 'full'
-let g:tmuxline_theme = {
-            \'a'    : [ 237, 142 ],
-            \'b'    : [ 142, 237 ],
-            \'bg'   : [ 237, 237 ],
-            \'c'    : [ 142, 237 ],
-            \'win'  : [ 142, 237 ],
-            \'cwin' : [ 237, 142 ],
-            \'x'    : [ 142, 237 ],
-            \'y'    : [ 142, 237 ],
-            \'z'    : [ 237, 142 ]
-            \ }
 
 set hidden
 set incsearch ignorecase smartcase
