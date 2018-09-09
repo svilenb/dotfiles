@@ -15,7 +15,6 @@ Plug 'junegunn/gv.vim'
 Plug 'sjl/gundo.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
 Plug 'rdnetto/ycm-generator', { 'branch': 'stable'}
-Plug 'w0rp/ale'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-repeat'
@@ -75,8 +74,7 @@ endif
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
-let g:ale_linters = { 'typescript': ['tsserver'], 'scss' : [], 'javascript': [] }
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 
@@ -92,12 +90,11 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>v :VimuxRunCommand<Space>
 nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
 noremap <F3> :Autoformat<CR>
-nnoremap <F5> :ALELint<CR>
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <F7> :GundoToggle<CR>
-
-autocmd FileType typescript,typescript.tsx nnoremap <buffer> K :YcmCompleter GetType<CR>
-autocmd FileType typescript,typescript.tsx nnoremap <buffer> <C-^> :YcmCompleter GoToReferences<CR>
-autocmd FileType typescript,typescript.tsx nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
