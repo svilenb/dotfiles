@@ -67,6 +67,8 @@ if executable('ag')
     let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+
 let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
