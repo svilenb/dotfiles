@@ -4,6 +4,8 @@ Intsall tmux
 
 Install vim-plug
 Follow vimawesome instructions
+    fzf
+        install fd
     ack
         install silver searcher
     editorconfig-vim
@@ -11,7 +13,7 @@ Follow vimawesome instructions
         ruby
             sudo apt-get install ruby-full
         js-beautify
-            sudo npm install -g js-beautify 
+            sudo npm install -g js-beautify
         typescript-formatter
             sudo npm install -g typescript-formatter
         sass-convert
@@ -19,7 +21,7 @@ Follow vimawesome instructions
     airline
         sudo apt-get install fonts-powerline
     vim-devicons
-            
+
 Create a global gitignore for the temporary and swap files
 *~
 *.swp

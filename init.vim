@@ -14,7 +14,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'junegunn/gv.vim'
-Plug 'sjl/gundo.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
 Plug 'rdnetto/ycm-generator', { 'branch': 'stable'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -64,7 +63,7 @@ set backupcopy=yes
 
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
-    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+    let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 endif
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
@@ -92,4 +91,3 @@ nnoremap <silent> <leader>e :FZF -m<CR>
 
 noremap <F3> :Autoformat<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-nnoremap <F7> :GundoToggle<CR>
