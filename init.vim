@@ -87,7 +87,7 @@ nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
 nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
+nnoremap <silent> <leader>f :FZF -m<CR>
 
 noremap <F3> :Autoformat<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
