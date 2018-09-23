@@ -7,9 +7,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -37,17 +36,24 @@ Plug 'herringtondarkholme/yats.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
-Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
 syntax enable
+
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_light='soft'
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_guisp_fallback='bg'
+
 set background=dark
-colorscheme solarized
 
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
-
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
