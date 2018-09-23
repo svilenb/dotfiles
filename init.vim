@@ -14,7 +14,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'junegunn/gv.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
-Plug 'rdnetto/ycm-generator', { 'branch': 'stable'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sirver/ultisnips'
