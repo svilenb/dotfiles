@@ -13,15 +13,8 @@ Follow vimawesome instructions
     ack
         install silver searcher
     editorconfig-vim
-    autoformat
-        ruby
-            sudo apt-get install ruby-full
-        js-beautify
-            sudo npm install -g js-beautify
-        typescript-formatter
-            sudo npm install -g typescript-formatter
-        sass-convert
-            sudo gem install sass --no-user-install
+    ale
+        install prettier
 
 Create a global gitignore for the temporary and swap files
 *~

@@ -17,6 +17,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-repeat'
@@ -24,7 +25,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
-Plug 'chiel92/vim-autoformat'
 Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'pangloss/vim-javascript'
@@ -75,6 +75,19 @@ let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 
+let g:ale_lint_on_text_changed = '0'
+let g:ale_lint_on_insert_leave = '0'
+let g:ale_lint_on_enter = '0'
+let g:ale_lint_on_save = '0'
+let g:ale_lint_on_filetype_changed = '0'
+
+let g:ale_fixers = {
+            \   'typescript': ['prettier'],
+            \   'javascript': ['prettier'],
+            \   'css': ['prettier'],
+            \   'scss': ['prettier']
+            \}
+
 let mapleader = ","
 imap jj <Esc>
 
@@ -87,9 +100,10 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gp :Gpush<CR>
 
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>f :FZF -m<CR>
 
-noremap <F3> :Autoformat<CR>
+noremap <F3> :YcmCompleter Format<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
