@@ -33,7 +33,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'herringtondarkholme/yats.vim'
 
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 
 call plug#end()

@@ -23,9 +23,6 @@ Follow vimawesome instructions
             sudo npm install -g typescript-formatter
         sass-convert
             sudo gem install sass --no-user-install
-    airline
-        sudo apt-get install fonts-powerline
-    vim-devicons
 
 Create a global gitignore for the temporary and swap files
 *~
