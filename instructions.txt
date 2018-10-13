@@ -5,7 +5,6 @@ Intsall tmux
 Setup terminal
     https://github.com/morhetz/gruvbox-contrib
     https://github.com/belluzj/fantasque-sans
-    https://github.com/ryanoasis/nerd-fonts
 
 Install vim-plug
 Follow vimawesome instructions

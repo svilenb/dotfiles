@@ -13,6 +13,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-dispatch'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -32,8 +33,6 @@ Plug 'tpope/vim-haml'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'herringtondarkholme/yats.vim'
-
-Plug 'benmills/vimux'
 
 call plug#end()
 
@@ -83,7 +82,6 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
-nnoremap <Leader>v :VimuxRunCommand<Space>
 nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
