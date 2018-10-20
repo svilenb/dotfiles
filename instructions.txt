@@ -1,5 +1,5 @@
 Install neovim
-Intsall tmux
+Install tmux
     http://sunaku.github.io/tmux-24bit-color.html#usage
 
 Setup terminal
@@ -7,7 +7,8 @@ Setup terminal
     https://github.com/belluzj/fantasque-sans
 
 Install vim-plug
-Follow vimawesome instructions
+
+Follow vim plugin installation instructions
     fzf
         install fd
     ack
@@ -15,6 +16,9 @@ Follow vimawesome instructions
     editorconfig-vim
     ale
         install prettier
+
+Follow tmux plugin installation instructions
+    tmux-yank
 
 Create a global gitignore for the temporary and swap files
 *~

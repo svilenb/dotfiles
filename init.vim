@@ -89,6 +89,9 @@ imap jj <Esc>
 
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 
+nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
+nnoremap <Leader>n :match none<CR>
+
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
