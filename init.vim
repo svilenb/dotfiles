@@ -15,6 +15,7 @@ Plug 'tpope/vim-git'
 Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
+Plug 'valloric/listtoggle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
@@ -59,11 +60,6 @@ set incsearch ignorecase smartcase
 set number relativenumber
 set nowrap
 
-" On some machines Vim is preconfigured with the backupcopy option set to auto.
-" This could potentially cause problems with the system’s file watching mechanism.
-" Switching this option to yes will make sure a copy of the file is made and the original one overwritten on save.
-set backupcopy=yes
-
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
     let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
@@ -100,7 +96,6 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gp :Gpush<CR>
 
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>f :FZF -m<CR>
