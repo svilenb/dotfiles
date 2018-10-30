@@ -95,14 +95,17 @@ nnoremap <Leader>n :match none<CR>
 
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
 nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+
 nnoremap <Leader>gs :Gstatus<CR>
 
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>f :FZF -m<CR>
+nnoremap <silent> <C-n> :Buffers<CR>
+nnoremap <silent> <C-p> :FZF -m<CR>
 
-noremap <F3> :YcmCompleter Format<CR>
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <Leader>f :YcmCompleter Format<CR>
+nnoremap <Leader>b :ALEFix<CR>
