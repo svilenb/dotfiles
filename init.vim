@@ -85,7 +85,10 @@ let g:ale_fixers = {
             \   'scss': ['prettier']
             \}
 
+let g:netrw_banner = 1
+
 let mapleader = ","
+
 imap jj <Esc>
 
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4
