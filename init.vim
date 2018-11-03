@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 Plug 'airblade/vim-gitgutter'
@@ -34,7 +35,7 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-git'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
-Plug 'herringtondarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
