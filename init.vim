@@ -82,6 +82,7 @@ let g:ale_lint_on_filetype_changed = '0'
 let g:ale_fixers = {
             \   'typescript': ['prettier'],
             \   'javascript': ['prettier'],
+            \   'json': ['prettier'],
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
