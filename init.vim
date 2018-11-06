@@ -19,6 +19,7 @@ Plug 'valloric/listtoggle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
+Plug 'chiel92/vim-autoformat'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-repeat'
@@ -111,5 +112,6 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <silent> <C-n> :Buffers<CR>
 nnoremap <silent> <C-p> :FZF -m<CR>
 
-nnoremap <Leader>f :YcmCompleter Format<CR>
-nnoremap <Leader>b :ALEFix<CR>
+nnoremap <Leader>b :Autoformat<CR>
+nnoremap <Leader>f :ALEFix<CR>
+nnoremap <Leader>x :ALELint<CR>
