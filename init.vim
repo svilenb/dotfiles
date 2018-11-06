@@ -87,6 +87,12 @@ let g:ale_fixers = {
             \   'scss': ['prettier']
             \}
 
+let g:ale_linters = {
+            \   'javascript': ['eslint']
+            \}
+
+let g:ale_linters_explicit = 1
+
 let g:netrw_banner = 1
 
 let mapleader = ","
