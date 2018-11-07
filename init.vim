@@ -18,6 +18,7 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-comp
 Plug 'valloric/listtoggle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'chiel92/vim-autoformat'
 Plug 'sirver/ultisnips'
@@ -118,6 +119,8 @@ nnoremap <Leader>gs :Gstatus<CR>
 
 nnoremap <silent> <C-n> :Buffers<CR>
 nnoremap <silent> <C-p> :FZF -m<CR>
+
+nmap <F8> :TagbarToggle<CR>
 
 nnoremap <Leader>b :Autoformat<CR>
 nnoremap <Leader>f :ALEFix<CR>
