@@ -29,7 +29,6 @@ Plug 'chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ap/vim-css-color'
-Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -63,15 +62,10 @@ endif
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 
-let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
-
-let g:ale_lint_on_text_changed = '0'
-let g:ale_lint_on_insert_leave = '0'
-let g:ale_lint_on_enter = '0'
-let g:ale_lint_on_save = '0'
-let g:ale_lint_on_filetype_changed = '0'
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_key_detailed_diagnostics = ''
 
 let g:ale_fixers = {
             \   'typescript': ['prettier'],
@@ -82,7 +76,8 @@ let g:ale_fixers = {
             \}
 
 let g:ale_linters = {
-            \   'javascript': ['eslint']
+            \   'javascript': ['eslint'],
+            \   'typescript': ['tsserver']
             \}
 
 let g:ale_linters_explicit = 1
@@ -105,7 +100,6 @@ nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 
 nnoremap <Leader>gs :Gstatus<CR>
 
@@ -114,6 +108,7 @@ nnoremap <silent> <C-p> :FZF -m<CR>
 
 nmap <F8> :TagbarToggle<CR>
 
+nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>b :Autoformat<CR>
 nnoremap <Leader>f :ALEFix<CR>
-nnoremap <Leader>x :ALELint<CR>
+nnoremap <Leader>d :ALEDetail<CR>
