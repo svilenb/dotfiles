@@ -14,7 +14,7 @@ Plug 'tpope/vim-git'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'valloric/youcompleteme', { 'do': './install.py --js-completer --clang-completer' }
+Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'valloric/listtoggle'
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
