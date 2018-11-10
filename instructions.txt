@@ -27,7 +27,6 @@ Follow vim plugin installation instructions
             sudo gem install sass --no-user-install
     tagbar
         install universal-ctags
-        "sudo apt-get install autoconf" ????
 
 Follow tmux plugin installation instructions
     tmux-yank

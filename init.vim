@@ -39,8 +39,6 @@ if (has("termguicolors"))
 endif
 
 colorscheme gruvbox
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_contrast_light='soft'
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
