@@ -15,7 +15,6 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
-Plug 'valloric/listtoggle'
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
@@ -52,6 +51,7 @@ set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
 set nowrap
+set backupcopy=yes
 
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -68,6 +68,7 @@ let g:ycm_key_detailed_diagnostics = ''
 let g:ale_fixers = {
             \   'typescript': ['prettier'],
             \   'javascript': ['prettier'],
+            \   'jsx': ['prettier'],
             \   'json': ['prettier'],
             \   'css': ['prettier'],
             \   'scss': ['prettier']
@@ -75,6 +76,7 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
             \   'javascript': ['eslint'],
+            \   'jsx': ['eslint'],
             \   'typescript': ['tsserver']
             \}
 
