@@ -42,23 +42,22 @@ let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
 set background=dark
-
-let g:airline_theme='gruvbox'
-let g:airline_powerline_fonts = 1
-let g:airline_skip_empty_sections = 1
-
 set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
 set nowrap
 set backupcopy=yes
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+set completeopt=longest,menuone
+
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
 
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
     let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 endif
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
