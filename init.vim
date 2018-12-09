@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -14,6 +13,7 @@ Plug 'tpope/vim-git'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-dirvish'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
@@ -81,7 +81,10 @@ let g:ale_linters = {
 
 let g:ale_linters_explicit = 1
 
-let g:netrw_banner = 1
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+
+let g:dirvish_mode = ':sort ,^.*[\/],'
 
 let mapleader = ","
 
