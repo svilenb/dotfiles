@@ -115,3 +115,9 @@ nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>b :Autoformat<CR>
 nnoremap <Leader>f :ALEFix<CR>
 nnoremap <Leader>d :ALEDetail<CR>
+
+augroup dirvish_config
+    autocmd!
+    autocmd FileType dirvish silent! unmap <buffer> <C-p>
+    autocmd FileType dirvish silent! unmap <buffer> <C-n>
+augroup END
