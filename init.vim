@@ -121,3 +121,7 @@ augroup dirvish_config
     autocmd FileType dirvish silent! unmap <buffer> <C-p>
     autocmd FileType dirvish silent! unmap <buffer> <C-n>
 augroup END
+
+command! -nargs=? -complete=dir Explore Dirvish <args>
+command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
