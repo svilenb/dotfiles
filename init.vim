@@ -14,6 +14,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
+Plug 'justinmk/vim-sneak'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
@@ -86,8 +87,9 @@ let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
 let g:dirvish_mode = ':sort ,^.*[\/],'
+let g:sneak#label = 1
 
-let mapleader = ","
+let mapleader = " "
 
 imap jj <Esc>
 
@@ -103,8 +105,6 @@ nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
-
-nnoremap <Leader>gs :Gstatus<CR>
 
 nnoremap <silent> <C-n> :Buffers<CR>
 nnoremap <silent> <C-p> :FZF -m<CR>
