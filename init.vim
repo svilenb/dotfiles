@@ -55,6 +55,8 @@ set completeopt=longest,menuone
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
+let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
 
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
