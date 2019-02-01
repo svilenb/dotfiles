@@ -3,6 +3,7 @@ Install tmux
     http://sunaku.github.io/tmux-24bit-color.html#usage
 
 Setup terminal
+    https://github.com/Mayccoll/Gogh
     https://github.com/morhetz/gruvbox-contrib
     https://github.com/belluzj/fantasque-sans
 
