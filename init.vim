@@ -29,6 +29,7 @@ Plug 'morhetz/gruvbox'
 Plug 'chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'yggdroot/indentline'
 Plug 'ap/vim-css-color'
 
 call plug#end()
