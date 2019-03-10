@@ -19,6 +19,7 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
