@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -13,7 +14,6 @@ Plug 'tpope/vim-git'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'mileszs/ack.vim'
@@ -86,11 +86,8 @@ let g:ale_linters = {
 
 let g:ale_linters_explicit = 1
 
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
-
-let g:dirvish_mode = ':sort ,^.*[\/],'
 let g:sneak#label = 1
+let g:netrw_banner = 1
 
 let mapleader = " "
 
@@ -118,13 +115,3 @@ nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>b :Autoformat<CR>
 nnoremap <Leader>f :ALEFix<CR>
 nnoremap <Leader>d :ALEDetail<CR>
-
-augroup dirvish_config
-    autocmd!
-    autocmd FileType dirvish silent! unmap <buffer> <C-p>
-    autocmd FileType dirvish silent! unmap <buffer> <C-n>
-augroup END
-
-command! -nargs=? -complete=dir Explore Dirvish <args>
-command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
-command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
