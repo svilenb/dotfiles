@@ -12,7 +12,6 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --ts-completer' }
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
