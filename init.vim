@@ -73,16 +73,13 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
-
 let g:ale_linters = {
             \   'javascript': ['eslint'],
             \   'jsx': ['eslint'],
             \   'typescript': ['tsserver']
             \}
-
 let g:ale_linters_explicit = 1
 
-let g:sneak#label = 1
 let g:netrw_banner = 1
 
 let mapleader = " "
