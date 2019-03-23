@@ -16,7 +16,6 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --ts-comp
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -24,6 +23,7 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
+Plug 'edkolev/tmuxline.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'ntpeters/vim-better-whitespace'
@@ -50,6 +50,7 @@ set nowrap
 set backupcopy=yes
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set completeopt=longest,menuone
+set mouse=a
 
 let g:airline_theme='gruvbox'
 let g:airline_skip_empty_sections = 1
@@ -64,6 +65,8 @@ let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_key_detailed_diagnostics = ''
+
+let mapleader = " "
 
 let g:ale_fixers = {
             \   'typescript': ['prettier'],
@@ -81,8 +84,8 @@ let g:ale_linters = {
 let g:ale_linters_explicit = 1
 
 let g:netrw_banner = 1
+let g:tmuxline_powerline_separators = 0
 
-let mapleader = " "
 
 imap jj <Esc>
 
