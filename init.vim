@@ -9,11 +9,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --ts-completer' }
-Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
@@ -27,12 +27,9 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'yggdroot/indentline'
 Plug 'ap/vim-css-color'
 
 call plug#end()
-
-syntax enable
 
 if (has("termguicolors"))
     set termguicolors
@@ -44,7 +41,6 @@ let g:gruvbox_guisp_fallback='bg'
 
 set background=dark
 set hidden
-set incsearch ignorecase smartcase
 set number relativenumber
 set nowrap
 set backupcopy=yes
@@ -57,7 +53,6 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
 
 if executable('ag')
-    let g:ackprg = 'ag --nogroup --nocolor --column'
     let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 endif
 
@@ -94,8 +89,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
 
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a :Ag<Space>
 
 nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
