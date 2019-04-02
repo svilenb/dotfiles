@@ -12,7 +12,6 @@ Install vim-plug
 Follow vim plugin installation instructions
     fzf
         install fd
-    ack
         install silver searcher
     editorconfig-vim
     ale

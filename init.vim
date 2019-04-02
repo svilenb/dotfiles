@@ -26,7 +26,6 @@ Plug 'morhetz/gruvbox'
 Plug 'edkolev/tmuxline.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'ap/vim-css-color'
 
 call plug#end()
@@ -41,11 +40,12 @@ let g:gruvbox_guisp_fallback='bg'
 
 set background=dark
 set hidden
+set incsearch ignorecase smartcase
 set number relativenumber
 set nowrap
 set backupcopy=yes
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-set completeopt=longest,menuone
+set completeopt-=preview
 set mouse=a
 
 let g:airline_theme='gruvbox'
@@ -81,10 +81,9 @@ let g:ale_linters_explicit = 1
 let g:netrw_banner = 1
 let g:tmuxline_powerline_separators = 0
 
-
 imap jj <Esc>
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
