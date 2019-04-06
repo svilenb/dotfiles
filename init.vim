@@ -31,6 +31,10 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
+if (has('nvim-0.4'))
+    set pumblend=5
+endif
+
 colorscheme gruvbox
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
