@@ -23,7 +23,6 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'edkolev/tmuxline.vim'
-Plug 'chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
 
 call plug#end()
@@ -92,11 +91,12 @@ nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <Leader>b :YcmCompleter Format<CR>
+nnoremap <Leader>o :YcmCompleter OrganizeImports<CR>
 
 nnoremap <silent> <C-n> :Buffers<CR>
 nnoremap <silent> <C-p> :FZF -m<CR>
 
 nnoremap <F5> :ALELint<CR>
-nnoremap <Leader>b :Autoformat<CR>
 nnoremap <Leader>f :ALEFix<CR>
 nnoremap <Leader>d :ALEDetail<CR>
