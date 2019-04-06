@@ -11,7 +11,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
-Plug 'junegunn/gv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --ts-completer' }
@@ -53,9 +52,25 @@ let g:airline_theme='gruvbox'
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
 
-if executable('ag')
+if executable('fd')
     let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 endif
+
+let g:fzf_colors = {
+            \ 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment']
+            \}
 
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
@@ -72,11 +87,13 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
+
 let g:ale_linters = {
             \   'javascript': ['eslint'],
             \   'jsx': ['eslint'],
             \   'typescript': ['tsserver']
             \}
+
 let g:ale_linters_explicit = 1
 
 let g:netrw_banner = 1
