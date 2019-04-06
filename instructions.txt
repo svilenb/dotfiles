@@ -25,8 +25,6 @@ Follow vim plugin installation instructions
             sudo npm install -g typescript-formatter
         sass-convert
             sudo gem install sass --no-user-install
-    tagbar
-        install universal-ctags
 
 Follow tmux plugin installation instructions
     tmux-yank
