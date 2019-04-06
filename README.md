@@ -3,8 +3,8 @@
 ## Terminal
 
 * Color scheme
- * [Gnome Terminal](https://github.com/Mayccoll/Gogh)
- * [Other](https://github.com/morhetz/gruvbox-contrib)
+  * [Gnome Terminal](https://github.com/Mayccoll/Gogh)
+  * [Other](https://github.com/morhetz/gruvbox-contrib)
 * [Font](https://github.com/belluzj/fantasque-sans)
 
 ## Neovim
@@ -14,11 +14,11 @@
 ### Plugins with installation instructions:
 
 * fzf
- * install fd
- * install silver searcher
+  * install fd
+  * install silver searcher
 * editorconfig-vim
 * ale
- * install prettier
+  * install prettier
 
 ## Tmux
 
