@@ -21,12 +21,12 @@
  * install prettier
 
 ## Tmux
-    
+
 ### Install Tmux Plugin Manager
 
 ### Plugins with installation instructions:
 
-* tmux-yank    
+* tmux-yank
 
 ### [Colors](http://sunaku.github.io/tmux-24bit-color.html#usage)
 
