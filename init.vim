@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
@@ -16,17 +17,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --ts-completer' }
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'majutsushi/tagbar'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
 Plug 'edkolev/tmuxline.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
-Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -97,8 +95,6 @@ nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 
 nnoremap <silent> <C-n> :Buffers<CR>
 nnoremap <silent> <C-p> :FZF -m<CR>
-
-nmap <F8> :TagbarToggle<CR>
 
 nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>b :Autoformat<CR>
