@@ -38,6 +38,6 @@
 * ```ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim```
 * ```ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global```
 
-### Setup global .gitignore 
+### Setup global .gitignore
 
 ```$ git config --global core.excludesFile ~/.gitignore_global```
