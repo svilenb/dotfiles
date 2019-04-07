@@ -30,10 +30,6 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-if (has('nvim-0.4'))
-    set pumblend=5
-endif
-
 colorscheme gruvbox
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
@@ -87,14 +83,6 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
-
-let g:ale_linters = {
-            \   'javascript': ['eslint'],
-            \   'jsx': ['eslint'],
-            \   'typescript': ['tsserver']
-            \}
-
-let g:ale_linters_explicit = 1
 
 let g:netrw_banner = 1
 let g:tmuxline_powerline_separators = 0
