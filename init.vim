@@ -15,14 +15,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --ts-completer' }
 Plug 'w0rp/ale'
-Plug 'vim-airline/vim-airline'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'morhetz/gruvbox'
+Plug 'wellle/targets.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -43,6 +43,7 @@ set backupcopy=yes
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set completeopt-=preview
 set mouse=a
+set inccommand=split
 
 let g:airline_theme='gruvbox'
 let g:airline_skip_empty_sections = 1
