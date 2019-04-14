@@ -26,9 +26,7 @@ Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-if (has("termguicolors"))
-    set termguicolors
-endif
+set termguicolors
 
 colorscheme gruvbox
 let g:gruvbox_improved_warnings=1
@@ -48,9 +46,7 @@ set inccommand=split
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 
-if executable('fd')
-    let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
-endif
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
@@ -96,15 +92,15 @@ nnoremap <Leader>n :match none<CR>
 
 nnoremap <Leader>a :Ag<Space>
 
-nnoremap <Leader>e :YcmCompleter RefactorRename<Space>
+nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
-nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>b :YcmCompleter Format<CR>
-nnoremap <Leader>o :YcmCompleter OrganizeImports<CR>
+nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
 
-nnoremap <silent> <C-n> :Buffers<CR>
-nnoremap <silent> <C-p> :FZF -m<CR>
+nnoremap <Leader>p :FZF -m<CR>
+nnoremap <Leader>t :Buffers<CR>
 
 nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>f :ALEFix<CR>
