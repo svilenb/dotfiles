@@ -46,7 +46,6 @@ set mouse=a
 set inccommand=split
 
 let g:airline_theme='gruvbox'
-let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
 
 if executable('fd')
