@@ -47,6 +47,11 @@ set completeopt-=preview
 set mouse=a
 set inccommand=split
 
+if (has('nvim-0.4'))
+    set wildoptions=pum
+    set pumblend=10
+endif
+
 let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
