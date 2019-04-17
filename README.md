@@ -2,9 +2,7 @@
 
 ## Terminal
 
-* Color scheme
-  * [Gnome Terminal](https://github.com/Mayccoll/Gogh)
-  * [Other](https://github.com/morhetz/gruvbox-contrib)
+* Setup nord color scheme
 * [Font](https://github.com/belluzj/fantasque-sans)
 
 ## Neovim
@@ -19,6 +17,8 @@
 * editorconfig-vim
 * ale
   * install prettier
+* airline
+  * install powerline-fonts
 
 ## Tmux
 

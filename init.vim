@@ -19,20 +19,24 @@ Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'wellle/targets.vim'
-Plug 'edkolev/tmuxline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
-set termguicolors
+if (has("termguicolors"))
+    set termguicolors
+endif
 
-colorscheme gruvbox
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_guisp_fallback='bg'
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_uniform_diff_background = 1
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold_vertical_split_line = 1
+colorscheme nord
 
-set background=dark
 set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
@@ -43,8 +47,9 @@ set completeopt-=preview
 set mouse=a
 set inccommand=split
 
-let g:airline_theme='gruvbox'
+let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 
@@ -81,7 +86,6 @@ let g:ale_fixers = {
             \}
 
 let g:netrw_banner = 1
-let g:tmuxline_powerline_separators = 0
 
 imap jj <Esc>
 
