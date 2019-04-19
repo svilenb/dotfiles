@@ -41,15 +41,15 @@ set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
 set nowrap
-set backupcopy=yes
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
 set completeopt-=preview
 set mouse=a
 set inccommand=split
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 if (has('nvim-0.4'))
     set wildoptions=pum
-    set pumblend=10
 endif
 
 let g:airline_theme='nord'
@@ -99,8 +99,6 @@ let g:Hexokinase_ftAutoload = ['scss', 'css']
 let g:netrw_banner = 1
 
 imap jj <Esc>
-
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
