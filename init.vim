@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sensible'
@@ -22,6 +22,8 @@ Plug 'wellle/targets.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
+Plug 'ianks/vim-tsx'
+Plug 'rrethy/vim-hexokinase'
 
 call plug#end()
 
@@ -29,12 +31,10 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:nord_italic = 1
 let g:nord_underline = 1
-let g:nord_italic_comments = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
-let g:nord_bold_vertical_split_line = 1
+
 colorscheme nord
 
 set hidden
@@ -89,6 +89,12 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:Hexokinase_ftAutoload = ['scss', 'css']
 
 let g:netrw_banner = 1
 
