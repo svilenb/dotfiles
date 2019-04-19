@@ -3,7 +3,7 @@
 ## Terminal
 
 * Setup nord color scheme
-* [Font](https://github.com/belluzj/fantasque-sans)
+* Use the following [font](https://github.com/belluzj/fantasque-sans)
 
 ## Neovim
 
@@ -28,7 +28,7 @@
 
 * tmux-yank
 
-### [Colors](http://sunaku.github.io/tmux-24bit-color.html#usage)
+### Solve the issue with colors when vim is opened inside tmux using the following [link](http://sunaku.github.io/tmux-24bit-color.html#usage)
 
 ## Use repository configs
 
