@@ -54,7 +54,6 @@ endif
 
 let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 

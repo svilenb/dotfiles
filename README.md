@@ -17,8 +17,6 @@
 * editorconfig-vim
 * ale
   * install prettier
-* airline
-  * install powerline-fonts
 
 ## Tmux
 
@@ -32,12 +30,7 @@
 
 ## Use repository configs
 
-### Create symbolic links
-
 * ```ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf```
 * ```ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim```
 * ```ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global```
-
-### Setup global .gitignore
-
-```$ git config --global core.excludesFile ~/.gitignore_global```
+* ```$ git config --global core.excludesFile ~/.gitignore_global```
