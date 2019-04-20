@@ -7,6 +7,8 @@
 
 ## Neovim
 
+### Install neovim-remote
+
 ### Install vim-plug
 
 ### Plugins with installation instructions:

@@ -54,6 +54,25 @@ endif
 
 let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_mode_map = {
+            \ '__' : '-',
+            \ 'c'  : 'C',
+            \ 'i'  : 'I',
+            \ 'ic' : 'I',
+            \ 'ix' : 'I',
+            \ 'n'  : 'N',
+            \ 'ni' : 'N',
+            \ 'no' : 'N',
+            \ 'R'  : 'R',
+            \ 'Rv' : 'R',
+            \ 's'  : 'S',
+            \ 'S'  : 'S',
+            \ '' : 'S',
+            \ 't'  : 'T',
+            \ 'v'  : 'V',
+            \ 'V'  : 'V',
+            \ '' : 'V',
+            \ }
 
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 
