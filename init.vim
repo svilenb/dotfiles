@@ -20,7 +20,6 @@ Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'wellle/targets.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ianks/vim-tsx'
 Plug 'rrethy/vim-hexokinase'
@@ -40,6 +39,7 @@ colorscheme nord
 set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
+set list
 set nowrap
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
@@ -51,30 +51,6 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 if (has('nvim-0.4'))
     set wildoptions=pum
 endif
-
-let g:airline_theme='nord'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_mode_map = {
-            \ '__' : '-',
-            \ 'c'  : 'C',
-            \ 'i'  : 'I',
-            \ 'ic' : 'I',
-            \ 'ix' : 'I',
-            \ 'n'  : 'N',
-            \ 'ni' : 'N',
-            \ 'no' : 'N',
-            \ 'R'  : 'R',
-            \ 'Rv' : 'R',
-            \ 's'  : 'S',
-            \ 'S'  : 'S',
-            \ '' : 'S',
-            \ 't'  : 'T',
-            \ 'v'  : 'V',
-            \ 'V'  : 'V',
-            \ '' : 'V',
-            \ }
-
-let $FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
@@ -99,6 +75,10 @@ let g:ycm_key_detailed_diagnostics = ''
 
 let mapleader = " "
 
+let g:ale_open_list = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_fixers = {
             \   'typescript': ['prettier'],
             \   'javascript': ['prettier'],
@@ -108,9 +88,6 @@ let g:ale_fixers = {
             \   'scss': ['prettier']
             \}
 
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:Hexokinase_ftAutoload = ['scss', 'css']
 
