@@ -73,6 +73,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
