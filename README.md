@@ -18,6 +18,8 @@
   * install silver searcher
 * editorconfig-vim
 
+## Z-Shell
+
 ## Tmux
 
 ### Install Tmux Plugin Manager
@@ -30,6 +32,7 @@
 
 ## Use repository configs
 
+* ```ln -sf ~/dotfiles/.zshrc ~/.zshrc```
 * ```ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf```
 * ```ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim```
 * ```ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global```
