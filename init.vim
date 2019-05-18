@@ -20,9 +20,8 @@ Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'wellle/targets.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'arcticicestudio/nord-vim'
-Plug 'morhetz/gruvbox'
 Plug 'ianks/vim-tsx'
+Plug 'morhetz/gruvbox'
 Plug 'rrethy/vim-hexokinase'
 
 call plug#end()
@@ -31,17 +30,12 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:nord_underline = 1
-let g:nord_uniform_diff_background = 1
-let g:nord_cursor_line_number_background = 1
-
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
-let g:gruvbox_invert_selection=0
 
 colorscheme gruvbox
 
-set background=light
+set background=dark
 set hidden
 set incsearch ignorecase smartcase
 set number relativenumber

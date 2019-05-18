@@ -17,8 +17,6 @@
   * install fd
   * install silver searcher
 * editorconfig-vim
-* ale
-  * install prettier
 
 ## Tmux
 
