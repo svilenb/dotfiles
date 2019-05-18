@@ -84,7 +84,6 @@ let g:ale_fixers = {
             \   'scss': ['prettier']
             \}
 
-
 let g:Hexokinase_ftAutoload = ['scss', 'css']
 
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>

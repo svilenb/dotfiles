@@ -7,7 +7,7 @@
 
 ## Neovim
 
-### Install neovim-remote
+### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
 
 ### Install vim-plug
 
@@ -19,6 +19,8 @@
 * editorconfig-vim
 
 ## Z-Shell
+
+### Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ### Install [Powerline Fonts](https://github.com/powerline/fonts)
 
