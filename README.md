@@ -20,6 +20,8 @@
 
 ## Z-Shell
 
+### Install [Powerline Fonts](https://github.com/powerline/fonts)
+
 ## Tmux
 
 ### Install Tmux Plugin Manager

@@ -87,8 +87,6 @@ let g:ale_fixers = {
 
 let g:Hexokinase_ftAutoload = ['scss', 'css']
 
-imap jj <Esc>
-
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
 
