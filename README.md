@@ -9,7 +9,7 @@
 
 ### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
 
-### Install vim-plug
+### Install [vim-plug](https://github.com/junegunn/vim-plug)
 
 ### Plugins with installation instructions:
 
@@ -26,7 +26,7 @@
 
 ## Tmux
 
-### Install Tmux Plugin Manager
+### Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 ### Plugins with installation instructions:
 
