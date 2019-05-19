@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --ts-completer' }
 Plug 'w0rp/ale'
 Plug 'sirver/ultisnips'
@@ -64,6 +65,10 @@ let g:fzf_colors = {
             \ 'header':  ['fg', 'Comment']
             \}
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 let g:ycm_show_diagnostics_ui = 0
@@ -89,7 +94,7 @@ let g:Hexokinase_ftAutoload = ['scss', 'css']
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
 
-nnoremap <Leader>a :Ag<Space>
+nnoremap <Leader>a :Ack!<Space>
 
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>

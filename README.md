@@ -13,10 +13,12 @@
 
 ### Plugins with installation instructions:
 
-* fzf
-  * install fd
-  * install silver searcher
 * editorconfig-vim
+* [fzf.vim](https://github.com/junegunn/fzf.vim)
+  * install fd
+* [ACK.VIM](https://github.com/mileszs/ack.vim)
+  * install ack
+  * install silver searcher
 
 ## Z-Shell
 
