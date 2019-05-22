@@ -23,6 +23,7 @@ Plug 'wellle/targets.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ianks/vim-tsx'
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
 Plug 'rrethy/vim-hexokinase'
 
 call plug#end()
@@ -48,6 +49,8 @@ set completeopt-=preview
 set mouse=a
 set inccommand=split
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+let g:airline_theme='gruvbox'
 
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
@@ -76,7 +79,6 @@ let g:ycm_key_detailed_diagnostics = ''
 
 let mapleader = " "
 
-let g:ale_open_list = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
