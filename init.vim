@@ -24,7 +24,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ianks/vim-tsx'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'rrethy/vim-hexokinase'
 
 call plug#end()
 
@@ -90,8 +89,6 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
-
-let g:Hexokinase_ftAutoload = ['scss', 'css']
 
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
