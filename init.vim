@@ -24,6 +24,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ianks/vim-tsx'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'chiel92/vim-autoformat'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -99,7 +101,7 @@ nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <Leader>b :YcmCompleter Format<CR>
+nnoremap <Leader>b :Autoformat<CR>
 nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
 
 nnoremap <Leader>p :FZF -m<CR>
