@@ -19,15 +19,6 @@
 * [ACK.VIM](https://github.com/mileszs/ack.vim)
   * install ack
   * install silver searcher
-* vim-autoformat
-  * ruby	
-    * sudo apt-get install ruby-full	
-  * js-beautify	
-    * sudo npm install -g js-beautify	
-  * typescript-formatter	
-    * sudo npm install -g typescript-formatter	
-  * sass-convert	
-    * sudo gem install sass --no-user-install
 
 ## Z-Shell
 
