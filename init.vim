@@ -21,7 +21,6 @@ Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'wellle/targets.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'ianks/vim-tsx'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ap/vim-css-color'
@@ -95,9 +94,6 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
-
-nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
-nnoremap <Leader>n :match none<CR>
 
 nnoremap <Leader>a :Ack!<Space>
 
