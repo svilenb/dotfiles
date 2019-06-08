@@ -22,7 +22,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'wellle/targets.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ianks/vim-tsx'
-Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ap/vim-css-color'
 
@@ -32,10 +32,11 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_guisp_fallback='bg'
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold_vertical_split_line = 1
+let g:nord_uniform_diff_background = 1
 
-colorscheme gruvbox
+colorscheme nord
 
 set background=dark
 set hidden
@@ -50,7 +51,11 @@ set mouse=a
 set inccommand=split
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-let g:airline_theme='gruvbox'
+if (has('nvim-0.4'))
+    set wildoptions=pum
+endif
+
+let g:airline_theme='nord'
 
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
