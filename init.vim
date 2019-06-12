@@ -55,6 +55,7 @@ if (has('nvim-0.4'))
 endif
 
 let g:airline_theme='nord'
+let g:airline#extensions#tabline#enabled = 1
 
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
