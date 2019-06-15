@@ -19,6 +19,7 @@
 * [ACK.VIM](https://github.com/mileszs/ack.vim)
   * install ack
   * install silver searcher
+* [YouCompleteMe](https://github.com/valloric/youcompleteme)
 
 ## Z-Shell
 
