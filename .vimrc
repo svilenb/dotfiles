@@ -1,3 +1,5 @@
+set rtp+=~/.fzf
+
 if (has("termguicolors"))
     set termguicolors
 endif
