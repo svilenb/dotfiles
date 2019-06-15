@@ -7,9 +7,16 @@
 
 ## Neovim
 
+* ```ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim```
+* ```ln -sf ~/dotfiles/.gvimrc ~/.config/nvim/ginit.vim```
+
 ### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
 
-### Install [vim-plug](https://github.com/junegunn/vim-plug)
+## Vim
+
+* ```ln -sf ~/dotfiles/.vimrc ~/.vimrc```
+* ```ln -sf ~/dotfiles/.gvimrc ~/.gvimrc```
+* ```ln -s ~/dotfiles/.vim/pack ~/.vim/pack```
 
 ### Plugins with installation instructions:
 
@@ -43,7 +50,3 @@
 * ```ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf```
 * ```ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global```
 * ```git config --global core.excludesFile ~/.gitignore_global```
-* ```ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim```
-* ```ln -sf ~/dotfiles/.gvimrc ~/.config/nvim/ginit.vim```
-* ```ln -sf ~/dotfiles/.vimrc ~/.vimrc```
-* ```ln -sf ~/dotfiles/.gvimrc ~/.gvimrc```

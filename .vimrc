@@ -1,32 +1,3 @@
-call plug#begin('~/.local/share/nvim/plugged')
-
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug '~/.fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
-Plug 'valloric/youcompleteme'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'mileszs/ack.vim'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'airblade/vim-gitgutter'
-Plug 'wellle/targets.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'ap/vim-css-color'
-
-call plug#end()
-
 if (has("termguicolors"))
     set termguicolors
 endif
