@@ -7,21 +7,24 @@
 
 ## Neovim
 
-* ```ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim```
-* ```ln -sf ~/dotfiles/.gvimrc ~/.config/nvim/ginit.vim```
-* ```ln -s ~/dotfiles/.vim/pack ~/.local/share/nvim/site/pack```
+```
+ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/.gvimrc ~/.config/nvim/ginit.vim
+ln -s ~/dotfiles/.vim/pack ~/.local/share/nvim/site/pack
+```
 
 ### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
 
 ## Vim
 
-* ```ln -sf ~/dotfiles/.vimrc ~/.vimrc```
-* ```ln -sf ~/dotfiles/.gvimrc ~/.gvimrc```
-* ```ln -s ~/dotfiles/.vim/pack ~/.vim/pack```
+```
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.gvimrc ~/.gvimrc
+ln -s ~/dotfiles/.vim/pack ~/.vim/pack
+```
 
 ### Plugins with installation instructions:
 
-* editorconfig-vim
 * [fzf.vim](https://github.com/junegunn/fzf.vim)
   * install fd
 * [ACK.VIM](https://github.com/mileszs/ack.vim)
@@ -47,7 +50,9 @@
 
 ## Use repository configs
 
-* ```ln -sf ~/dotfiles/.zshrc ~/.zshrc```
-* ```ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf```
-* ```ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global```
-* ```git config --global core.excludesFile ~/.gitignore_global```
+```
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
+git config --global core.excludesFile ~/.gitignore_global
+```
