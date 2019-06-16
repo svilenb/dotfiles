@@ -4,11 +4,14 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_guisp_fallback='bg'
+
 let g:nord_cursor_line_number_background = 1
 let g:nord_bold_vertical_split_line = 1
 let g:nord_uniform_diff_background = 1
 
-colorscheme nord
+colorscheme gruvbox
 
 set background=dark
 set hidden
