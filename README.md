@@ -53,6 +53,6 @@ ln -s ~/dotfiles/.vim/pack ~/.vim/pack
 ```
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
-git config --global core.excludesFile ~/.gitignore_global
+ln -sf ~/dotfiles/.cvsignore ~/.cvsignore
+git config --global core.excludesFile ~/.cvsignore
 ```

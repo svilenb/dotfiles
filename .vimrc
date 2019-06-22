@@ -1,3 +1,6 @@
+syntax on
+filetype plugin indent on
+
 set nocompatible
 
 set rtp+=~/.fzf
