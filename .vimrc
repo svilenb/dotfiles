@@ -1,3 +1,5 @@
+set nocompatible
+
 set rtp+=~/.fzf
 
 if (has("termguicolors"))
@@ -24,6 +26,7 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
 set completeopt-=preview
 set mouse=a
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set backupcopy=yes
 
 if exists('&inccommand')
     set inccommand=split
