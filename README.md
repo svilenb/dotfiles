@@ -7,13 +7,13 @@
 
 ## Neovim
 
+### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
+
 ```
 ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.gvimrc ~/.config/nvim/ginit.vim
 ln -s ~/dotfiles/.vim/pack ~/.local/share/nvim/site/pack
 ```
-
-### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
 
 ## Vim
 

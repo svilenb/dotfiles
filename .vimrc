@@ -18,7 +18,6 @@ let g:nord_uniform_diff_background = 1
 
 colorscheme gruvbox
 
-set background=dark
 set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
