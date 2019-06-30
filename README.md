@@ -9,6 +9,8 @@
 
 ### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
 
+### Configure
+
 ```
 ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.gvimrc ~/.config/nvim/ginit.vim
@@ -16,6 +18,14 @@ ln -s ~/dotfiles/.vim/pack ~/.local/share/nvim/site/pack
 ```
 
 ## Vim
+
+### Installation tips
+
+* https://vi.stackexchange.com/questions/10817/how-can-i-get-a-newer-version-of-vim-on-ubuntu
+* https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+* http://www.vim.org/git.php
+
+### Configure
 
 ```
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
