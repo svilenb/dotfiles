@@ -40,6 +40,8 @@ endif
 
 let g:airline#extensions#tabline#enabled = 1
 
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
@@ -88,8 +90,9 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>b :YcmCompleter Format<CR>
 nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
 
-nnoremap <Leader>p :FZF -m<CR>
-nnoremap <Leader>t :Buffers<CR>
+nnoremap <Leader>p :FzfFiles<CR>
+nnoremap <Leader>t :FzfBuffers<CR>
+nnoremap <Leader>; :FzfCommands<CR>
 
 nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>f :ALEFix<CR>
