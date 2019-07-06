@@ -12,10 +12,6 @@ endif
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
-let g:nord_cursor_line_number_background = 1
-let g:nord_bold_vertical_split_line = 1
-let g:nord_uniform_diff_background = 1
-
 colorscheme gruvbox
 
 set hidden
@@ -32,10 +28,6 @@ set backupcopy=yes
 
 if exists('&inccommand')
     set inccommand=split
-endif
-
-if (has('nvim-0.4'))
-    set wildoptions=pum
 endif
 
 let g:airline#extensions#tabline#enabled = 1
