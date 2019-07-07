@@ -37,9 +37,6 @@
 [submodule ".vim/pack/bundle/start/editorconfig-vim"]
 	path = .vim/pack/bundle/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".vim/pack/bundle/start/ack.vim"]
-	path = .vim/pack/bundle/start/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
 [submodule ".vim/pack/bundle/start/ultisnips"]
 	path = .vim/pack/bundle/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git

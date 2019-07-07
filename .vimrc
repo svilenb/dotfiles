@@ -73,7 +73,7 @@ let g:ale_fixers = {
             \   'scss': ['prettier']
             \}
 
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a :Ggrep!<Space>
 
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
