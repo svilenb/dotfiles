@@ -50,9 +50,7 @@ let g:fzf_colors = {
             \ 'header':  ['fg', 'Comment']
             \}
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
@@ -82,8 +80,6 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>b :YcmCompleter Format<CR>
 nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
 
-nnoremap <Leader>p :FzfFiles<CR>
-nnoremap <Leader>t :FzfBuffers<CR>
 nnoremap <Leader>; :FzfCommands<CR>
 
 nnoremap <F5> :ALELint<CR>
