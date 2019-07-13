@@ -3,8 +3,6 @@ filetype plugin indent on
 
 set nocompatible
 
-set rtp+=~/.fzf
-
 if (has("termguicolors"))
     set termguicolors
 endif
@@ -31,24 +29,6 @@ if exists('&inccommand')
 endif
 
 let g:airline#extensions#tabline#enabled = 1
-
-let g:fzf_command_prefix = 'Fzf'
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-let g:fzf_colors = {
-            \ 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Comment'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Ignore'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment']
-            \}
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
@@ -79,8 +59,6 @@ nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>b :YcmCompleter Format<CR>
 nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
-
-nnoremap <Leader>; :FzfCommands<CR>
 
 nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>f :ALEFix<CR>
