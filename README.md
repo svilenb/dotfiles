@@ -1,9 +1,21 @@
 # Svilen's dotfiles
 
+Configure by copy and paste the following into your terminal/shell:
+
+```
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.gvimrc ~/.gvimrc
+ln -s ~/dotfiles/.vim/pack ~/.vim/pack
+ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.cvsignore ~/.cvsignore
+git config --global core.excludesFile ~/.cvsignore
+```
+
 ## Terminal
 
-* Setup nord color scheme
-* Use the following [font](https://github.com/belluzj/fantasque-sans)
+* Setup [Nord](https://www.nordtheme.com/) color scheme and install the following [font](https://github.com/belluzj/fantasque-sans)
 
 ## Vim
 
@@ -28,16 +40,3 @@ Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) and follow the setup instructions for the [tmux-yank](https://github.com/tmux-plugins/tmux-yank) plugin.
 
 Solve the issue with colors when vim is opened inside tmux using the following [link](http://sunaku.github.io/tmux-24bit-color.html#usage)
-
-Configure by copy and paste the following into your terminal/shell:
-
-```
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.gvimrc ~/.gvimrc
-ln -s ~/dotfiles/.vim/pack ~/.vim/pack
-ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/.cvsignore ~/.cvsignore
-git config --global core.excludesFile ~/.cvsignore
-```
