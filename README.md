@@ -5,18 +5,6 @@
 * Setup nord color scheme
 * Use the following [font](https://github.com/belluzj/fantasque-sans)
 
-## Neovim
-
-### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
-
-### Configure
-
-```
-ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim
-ln -sf ~/dotfiles/.gvimrc ~/.config/nvim/ginit.vim
-ln -s ~/dotfiles/.vim/pack ~/.local/share/nvim/site/pack
-```
-
 ## Vim
 
 ### Installation tips
@@ -31,6 +19,16 @@ ln -s ~/dotfiles/.vim/pack ~/.local/share/nvim/site/pack
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.gvimrc ~/.gvimrc
 ln -s ~/dotfiles/.vim/pack ~/.vim/pack
+```
+
+## Neovim
+
+### Install [neovim-remote](https://github.com/mhinz/neovim-remote)
+
+### Configure
+
+```
+ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 ```
 
 ### Plugins with installation instructions:
