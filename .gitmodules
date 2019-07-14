@@ -67,3 +67,6 @@
 [submodule ".vim/pack/bundle/start/vim-sleuth"]
 	path = .vim/pack/bundle/start/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule ".vim/pack/bundle/start/vim-projectionist"]
+	path = .vim/pack/bundle/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
