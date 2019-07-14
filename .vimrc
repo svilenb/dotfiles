@@ -28,14 +28,14 @@ if exists('&inccommand')
     set inccommand=split
 endif
 
+let mapleader = " "
+
 let g:airline#extensions#tabline#enabled = 1
 
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_key_detailed_diagnostics = ''
-
-let mapleader = " "
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
