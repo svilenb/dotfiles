@@ -19,7 +19,6 @@ set number relativenumber
 set nowrap
 set list
 set listchars+=eol:$
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set completeopt-=preview
 set mouse=a
 set backupcopy=yes
@@ -54,7 +53,6 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'scss': ['prettier']
             \}
-
 
 nnoremap <Leader>a :Ggrep!<Space>
 
