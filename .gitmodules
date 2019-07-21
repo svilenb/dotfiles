@@ -49,9 +49,6 @@
 [submodule ".vim/pack/bundle/start/vim-polyglot"]
 	path = .vim/pack/bundle/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
-[submodule ".vim/pack/bundle/start/vim-airline"]
-	path = .vim/pack/bundle/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
 [submodule ".vim/pack/bundle/start/vim-css-color"]
 	path = .vim/pack/bundle/start/vim-css-color
 	url = https://github.com/ap/vim-css-color.git

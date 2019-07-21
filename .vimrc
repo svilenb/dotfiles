@@ -24,13 +24,19 @@ set completeopt-=preview
 set mouse=a
 set backupcopy=yes
 
+set statusline=
+set statusline+=%{FugitiveStatusline()}\ %f%m%r
+set statusline+=%=
+set statusline+=%y\ %{strlen(&fenc)?&fenc:'none'}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %P\ %l:%c
+set statusline+=\ \[%{LinterStatus()}\]
+
 if exists('&inccommand')
     set inccommand=split
 endif
 
 let mapleader = " "
-
-let g:airline#extensions#tabline#enabled = 1
 
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
@@ -49,6 +55,7 @@ let g:ale_fixers = {
             \   'scss': ['prettier']
             \}
 
+
 nnoremap <Leader>a :Ggrep!<Space>
 
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
@@ -61,3 +68,16 @@ nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
 nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>f :ALEFix<CR>
 nnoremap <Leader>d :ALEDetail<CR>
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
