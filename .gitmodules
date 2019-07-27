@@ -46,9 +46,6 @@
 [submodule ".vim/pack/bundle/start/targets.vim"]
 	path = .vim/pack/bundle/start/targets.vim
 	url = https://github.com/wellle/targets.vim.git
-[submodule ".vim/pack/bundle/start/vim-polyglot"]
-	path = .vim/pack/bundle/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
 [submodule ".vim/pack/bundle/start/vim-css-color"]
 	path = .vim/pack/bundle/start/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
