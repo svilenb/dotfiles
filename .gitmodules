@@ -52,9 +52,6 @@
 [submodule ".vim/pack/bundle/start/gruvbox"]
 	path = .vim/pack/bundle/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-[submodule ".vim/pack/bundle/start/YouCompleteMe"]
-	path = .vim/pack/bundle/start/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe.git
 [submodule ".vim/pack/bundle/start/vim-sleuth"]
 	path = .vim/pack/bundle/start/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
@@ -64,3 +61,7 @@
 [submodule ".vim/pack/bundle/start/vim-polyglot"]
 	path = .vim/pack/bundle/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+[submodule ".vim/pack/bundle/start/nvim-typescript"]
+	path = .vim/pack/bundle/start/nvim-typescript
+	url = https://github.com/mhartington/nvim-typescript.git
+	ignore = dirty

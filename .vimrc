@@ -37,10 +37,8 @@ endif
 
 let mapleader = " "
 
-let g:ycm_key_list_select_completion = []
-let g:ycm_key_list_previous_completion = []
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_key_detailed_diagnostics = ''
+let g:nvim_typescript#server_path = '/usr/local/lib/node_modules/typescript/bin/tsserver'
+let g:nvim_typescript#diagnostics_enable = 0
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -56,12 +54,12 @@ let g:ale_fixers = {
 
 nnoremap <Leader>a :Ggrep!<Space>
 
-nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-nnoremap <leader>gt :YcmCompleter GetType<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <Leader>b :YcmCompleter Format<CR>
-nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
+nnoremap <Leader>rr :TSRename<Space>
+nnoremap <leader>jd :TSDef<CR>
+nnoremap <leader>gt :TSType<CR>
+nnoremap <leader>gr :TSRefs<CR>
+" nnoremap <Leader>b :YcmCompleter Format<CR>
+nnoremap <Leader>oi :TSOrganizeImports<CR>
 
 nnoremap <F5> :ALELint<CR>
 nnoremap <Leader>f :ALEFix<CR>
