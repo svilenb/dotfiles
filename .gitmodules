@@ -67,3 +67,6 @@
 [submodule ".vim/pack/bundle/start/vim-scriptease"]
 	path = .vim/pack/bundle/start/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
+[submodule ".vim/pack/bundle/start/YouCompleteMe"]
+	path = .vim/pack/bundle/start/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
