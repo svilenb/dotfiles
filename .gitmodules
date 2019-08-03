@@ -28,9 +28,6 @@
 [submodule ".vim/pack/bundle/start/vim-fugitive"]
 	path = .vim/pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/pack/bundle/start/ale"]
-	path = .vim/pack/bundle/start/ale
-	url = https://github.com/w0rp/ale.git
 [submodule ".vim/pack/bundle/start/editorconfig-vim"]
 	path = .vim/pack/bundle/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git

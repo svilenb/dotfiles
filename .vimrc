@@ -41,16 +41,6 @@ let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 let g:ycm_always_populate_location_list = 1
 
-let g:ale_linters_explicit = 1
-let g:ale_fixers = {
-            \   'typescript': ['prettier'],
-            \   'javascript': ['prettier'],
-            \   'jsx': ['prettier'],
-            \   'json': ['prettier'],
-            \   'css': ['prettier'],
-            \   'scss': ['prettier']
-            \}
-
 nnoremap <Leader>a :Ggrep!<Space>
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
@@ -60,8 +50,6 @@ nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>b :YcmCompleter Format<CR>
 nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
-
-nnoremap <Leader>f :ALEFix<CR>
 
 function! DiagnosticStatus() abort
     let l:all_errors = youcompleteme#GetErrorCount()
