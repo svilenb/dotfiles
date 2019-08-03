@@ -55,9 +55,6 @@
 [submodule ".vim/pack/bundle/start/vim-projectionist"]
 	path = .vim/pack/bundle/start/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist.git
-[submodule ".vim/pack/bundle/start/vim-polyglot"]
-	path = .vim/pack/bundle/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
 [submodule ".vim/pack/bundle/start/vim-apathy"]
 	path = .vim/pack/bundle/start/vim-apathy
 	url = https://github.com/tpope/vim-apathy.git
