@@ -64,3 +64,12 @@
 [submodule ".vim/pack/bundle/start/YouCompleteMe"]
 	path = .vim/pack/bundle/start/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule ".vim/pack/bundle/start/typescript-vim"]
+	path = .vim/pack/bundle/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule ".vim/pack/bundle/start/vim-jsx-pretty"]
+	path = .vim/pack/bundle/start/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty.git
+[submodule ".vim/pack/bundle/start/vim-javascript"]
+	path = .vim/pack/bundle/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
