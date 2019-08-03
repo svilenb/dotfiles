@@ -37,6 +37,11 @@ endif
 
 let mapleader = " "
 
+augroup Linting
+    autocmd!
+    autocmd FileType javascript setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact
+augroup END
+
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 let g:ycm_always_populate_location_list = 1
