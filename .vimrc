@@ -39,7 +39,13 @@ let mapleader = " "
 
 augroup Linting
     autocmd!
-    autocmd FileType javascript setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact
+    autocmd FileType javascript,typescript setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact
+    autocmd FileType javascript,typescript setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
+augroup END
+
+augroup Formatting
+    autocmd!
+    autocmd FileType javascript,typescript,scss,css setlocal formatprg=./node_modules/.bin/prettier\ --stdin\ --stdin-filepath\ %
 augroup END
 
 let g:ycm_key_list_select_completion = []
