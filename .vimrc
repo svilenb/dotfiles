@@ -8,11 +8,6 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_guisp_fallback='bg'
-
-colorscheme gruvbox
-
 set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
@@ -35,7 +30,25 @@ if exists('&inccommand')
     set inccommand=split
 endif
 
+if executable('ag')
+    set grepprg=ag\ --vimgrep
+endif
+
 let mapleader = " "
+
+function! Grep(args)
+	let args = split(a:args, ' ')
+	return system(join([&grepprg, shellescape(args[0]), len(args) > 1 ? join(args[1:-1], ' ') : ''], ' '))
+endfunction
+
+command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<q-args>)
+command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<q-args>)
+
+augroup Quickfix
+	autocmd!
+	autocmd QuickFixCmdPost cgetexpr cwindow
+	autocmd QuickFixCmdPost lgetexpr lwindow
+augroup END
 
 augroup Linting
     autocmd!
@@ -48,11 +61,16 @@ augroup Formatting
     autocmd FileType javascript,typescript,scss,css setlocal formatprg=./node_modules/.bin/prettier\ --stdin\ --stdin-filepath\ %
 augroup END
 
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_guisp_fallback='bg'
+
+colorscheme gruvbox
+
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 let g:ycm_always_populate_location_list = 1
 
-nnoremap <Leader>a :Ggrep!<Space>
+nnoremap <Leader>a :Grep<Space>
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
