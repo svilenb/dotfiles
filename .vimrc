@@ -70,7 +70,7 @@ let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 let g:ycm_always_populate_location_list = 1
 
-nnoremap <Leader>a :Grep<Space>
+nnoremap <Leader>a :Ggrep!<Space>
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
@@ -85,9 +85,5 @@ function! DiagnosticStatus() abort
     let l:all_non_errors = youcompleteme#GetWarningCount()
     let l:total_errors = l:all_errors + l:all_non_errors
 
-    return l:total_errors == 0 ? 'OK' : printf(
-    \   '%dW %dE',
-    \   all_non_errors,
-    \   all_errors
-    \)
+    return l:total_errors == 0 ? 'OK' : printf('%dW %dE', all_non_errors, all_errors)
 endfunction
