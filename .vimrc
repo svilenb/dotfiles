@@ -19,7 +19,7 @@ set mouse=a
 set backupcopy=yes
 
 set statusline=
-set statusline+=%{FugitiveStatusline()}\ %f%m%r
+set statusline+=%f%m%r
 set statusline+=%=
 set statusline+=%y\ %{strlen(&fenc)?&fenc:'none'}
 set statusline+=\[%{&fileformat}\]
