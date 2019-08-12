@@ -52,7 +52,7 @@ augroup END
 
 augroup Linting
     autocmd!
-    autocmd FileType javascript,typescript setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact
+    autocmd FileType javascript,typescript setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact\ %
     autocmd FileType javascript,typescript setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
 augroup END
 
