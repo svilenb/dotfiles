@@ -73,3 +73,9 @@
 [submodule ".vim/pack/bundle/start/vim-javascript"]
 	path = .vim/pack/bundle/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule ".vim/pack/bundle/start/vim-rhubarb"]
+	path = .vim/pack/bundle/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
+[submodule ".vim/pack/bundle/start/vim-fubitive"]
+	path = .vim/pack/bundle/start/vim-fubitive
+	url = https://github.com/tommcdo/vim-fubitive.git
