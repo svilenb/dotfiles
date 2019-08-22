@@ -71,6 +71,7 @@ let g:ycm_key_list_previous_completion = []
 let g:ycm_always_populate_location_list = 1
 
 nnoremap <Leader>a :Ggrep!<Space>
+nnoremap <Leader>e :e **/*
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
