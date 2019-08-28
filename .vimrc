@@ -18,14 +18,6 @@ set completeopt-=preview
 set mouse=a
 set backupcopy=yes
 
-set statusline=
-set statusline+=%f%m%r
-set statusline+=%=
-set statusline+=%y\ %{strlen(&fenc)?&fenc:'none'}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %P\ %l:%c
-set statusline+=\ \[%{DiagnosticStatus()}\]
-
 if exists('&inccommand')
     set inccommand=split
 endif
@@ -73,6 +65,9 @@ let g:ycm_always_populate_location_list = 1
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>e :find **/*
 nnoremap <Leader>f :normal! gggqG<C-o><C-o><CR>
+nnoremap <Leader>s :ls<CR>
+nnoremap <Leader>c :copen<CR>
+nnoremap <Leader>l :lopen<CR>
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
@@ -81,11 +76,3 @@ nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>b :YcmCompleter Format<CR>
 nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
-
-function! DiagnosticStatus() abort
-    let l:all_errors = youcompleteme#GetErrorCount()
-    let l:all_non_errors = youcompleteme#GetWarningCount()
-    let l:total_errors = l:all_errors + l:all_non_errors
-
-    return l:total_errors == 0 ? 'OK' : printf('%dW %dE', all_non_errors, all_errors)
-endfunction
