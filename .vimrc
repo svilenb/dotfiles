@@ -53,6 +53,9 @@ augroup Formatting
     autocmd FileType javascript,typescript,scss,css setlocal formatprg=./node_modules/.bin/prettier\ --stdin\ --stdin-filepath\ %
 augroup END
 
+autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
+autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
+
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
@@ -76,3 +79,4 @@ nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>b :YcmCompleter Format<CR>
 nnoremap <Leader>oi :YcmCompleter OrganizeImports<CR>
+
