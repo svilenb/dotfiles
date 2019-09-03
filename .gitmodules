@@ -64,6 +64,7 @@
 [submodule ".vim/pack/bundle/start/YouCompleteMe"]
 	path = .vim/pack/bundle/start/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
+	ignore = dirty
 [submodule ".vim/pack/bundle/start/typescript-vim"]
 	path = .vim/pack/bundle/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
