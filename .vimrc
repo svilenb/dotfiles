@@ -68,9 +68,6 @@ let g:ycm_always_populate_location_list = 1
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>e :find **/*
 nnoremap <Leader>f :normal! gggqG<C-o><C-o><CR>
-nnoremap <Leader>s :ls<CR>
-nnoremap <Leader>c :copen<CR>
-nnoremap <Leader>l :lopen<CR>
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <Leader>rr :YcmCompleter RefactorRename<Space>
