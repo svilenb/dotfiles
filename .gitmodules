@@ -80,3 +80,6 @@
 [submodule ".vim/pack/bundle/start/vim-fubitive"]
 	path = .vim/pack/bundle/start/vim-fubitive
 	url = https://github.com/tommcdo/vim-fubitive.git
+[submodule ".vim/pack/bundle/start/vim-prettier"]
+	path = .vim/pack/bundle/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git
