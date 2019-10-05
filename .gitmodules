@@ -43,9 +43,6 @@
 [submodule ".vim/pack/bundle/start/targets.vim"]
 	path = .vim/pack/bundle/start/targets.vim
 	url = https://github.com/wellle/targets.vim.git
-[submodule ".vim/pack/bundle/start/vim-css-color"]
-	path = .vim/pack/bundle/start/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
 [submodule ".vim/pack/bundle/start/gruvbox"]
 	path = .vim/pack/bundle/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
