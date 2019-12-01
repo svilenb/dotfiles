@@ -44,17 +44,18 @@ augroup END
 
 augroup Linting
     autocmd!
-    autocmd FileType javascript,typescript setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact\ %
-    autocmd FileType javascript,typescript setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
+    autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact\ %
+    autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
 augroup END
 
 augroup Formatting
     autocmd!
-    autocmd FileType javascript,typescript,scss,css setlocal formatprg=./node_modules/.bin/prettier\ --stdin\ --stdin-filepath\ %
+    autocmd FileType javascript,javascriptreact,typescript,typescriptreact,scss,css setlocal formatprg=./node_modules/.bin/prettier\ --stdin\ --stdin-filepath\ %
 augroup END
 
-autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
-autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
+" Temporary fix until new filetypes are handled properly by syntax plugins
+autocmd bufnewfile,bufread *.tsx set filetype=typescript
+autocmd bufnewfile,bufread *.jsx set filetype=javascript
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
