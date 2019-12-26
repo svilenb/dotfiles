@@ -29,17 +29,17 @@ endif
 let mapleader = " "
 
 function! Grep(args)
-	let args = split(a:args, ' ')
-	return system(join([&grepprg, shellescape(args[0]), len(args) > 1 ? join(args[1:-1], ' ') : ''], ' '))
+    let args = split(a:args, ' ')
+    return system(join([&grepprg, shellescape(args[0]), len(args) > 1 ? join(args[1:-1], ' ') : ''], ' '))
 endfunction
 
 command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<q-args>)
 command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<q-args>)
 
 augroup Quickfix
-	autocmd!
-	autocmd QuickFixCmdPost cgetexpr cwindow
-	autocmd QuickFixCmdPost lgetexpr lwindow
+    autocmd!
+    autocmd QuickFixCmdPost cgetexpr cwindow
+    autocmd QuickFixCmdPost lgetexpr lwindow
 augroup END
 
 augroup Linting
@@ -53,9 +53,11 @@ augroup Formatting
     autocmd FileType javascript,javascriptreact,typescript,typescriptreact,scss,css setlocal formatprg=./node_modules/.bin/prettier\ --stdin\ --stdin-filepath\ %
 augroup END
 
-" Temporary fix until new filetypes are handled properly by syntax plugins
-autocmd bufnewfile,bufread *.tsx set filetype=typescript
-autocmd bufnewfile,bufread *.jsx set filetype=javascript
+augroup SyntaxSettings
+    autocmd!
+    autocmd bufnewfile,bufread *.tsx set filetype=typescript
+    autocmd bufnewfile,bufread *.jsx set filetype=javascript
+augroup END
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 

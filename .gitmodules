@@ -77,3 +77,13 @@
 [submodule ".vim/pack/bundle/start/vim-prettier"]
 	path = .vim/pack/bundle/start/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git
+[submodule ".vim/pack/bundle/start/splitjoin.vim"]
+	path = .vim/pack/bundle/start/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule ".vim/pack/bundle/start/vim-endwise"]
+	path = .vim/pack/bundle/start/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule ".vim/pack/bundle/start/YouCompleteMe"]
+	path = .vim/pack/bundle/start/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
+	ignore = dirty
