@@ -87,3 +87,9 @@
 	path = .vim/pack/bundle/start/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
 	ignore = dirty
+[submodule ".vim/pack/bundle/start/vim-exchange"]
+	path = .vim/pack/bundle/start/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange.git
+[submodule ".vim/pack/bundle/start/vim-speeddating"]
+	path = .vim/pack/bundle/start/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
