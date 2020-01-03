@@ -5,7 +5,6 @@ Configure by copy and paste the following into your terminal/shell:
 ```
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.gvimrc ~/.gvimrc
-ln -s ~/dotfiles/.vim/pack ~/.vim/pack
 ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -25,7 +24,7 @@ Install following one of the following examples.
 * https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 * http://www.vim.org/git.php
 
-Follow installation instructions for [YouCompleteMe](https://github.com/valloric/youcompleteme).
+Follow installation instructions for [vim-plug](https://github.com/junegunn/vim-plug).
 Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 ## Neovim

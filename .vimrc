@@ -1,6 +1,38 @@
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-scriptease'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-speeddating'
+Plug 'tommcdo/vim-exchange'
+Plug 'tommcdo/vim-fubitive'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'prettier/vim-prettier'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'airblade/vim-gitgutter'
+Plug 'wellle/targets.vim'
+Plug 'morhetz/gruvbox'
+Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'ycm-core/YouCompleteMe'
+
+call plug#end()
 
 set nocompatible
 
