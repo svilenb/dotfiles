@@ -17,11 +17,13 @@ Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-obsession'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
@@ -30,7 +32,7 @@ Plug 'morhetz/gruvbox'
 Plug 'leafgarland/typescript-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --ts-completer' }
 
 call plug#end()
 
