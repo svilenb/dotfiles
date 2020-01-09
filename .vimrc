@@ -16,13 +16,16 @@ Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-tbone'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
+Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -98,6 +101,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
+set background=dark
 colorscheme gruvbox
 
 let g:ycm_key_list_select_completion = []
