@@ -20,6 +20,7 @@ Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-tbone'
+Plug 'tpope/vim-flagship'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -54,6 +55,9 @@ set listchars+=eol:$
 set completeopt-=preview
 set mouse=a
 set backupcopy=yes
+set laststatus=2
+set showtabline=2
+set guioptions-=e
 
 if exists('&inccommand')
     set inccommand=split
