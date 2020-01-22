@@ -33,9 +33,9 @@ Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'wellle/targets.vim'
 Plug 'morhetz/gruvbox'
-Plug 'leafgarland/typescript-vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --ts-completer' }
 
 call plug#end()
@@ -92,12 +92,6 @@ augroup END
 augroup Formatting
     autocmd!
     autocmd FileType javascript,javascriptreact,typescript,typescriptreact,scss,css setlocal formatprg=./node_modules/.bin/prettier\ --stdin\ --stdin-filepath\ %
-augroup END
-
-augroup SyntaxSettings
-    autocmd!
-    autocmd bufnewfile,bufread *.tsx set filetype=typescript
-    autocmd bufnewfile,bufread *.jsx set filetype=javascript
 augroup END
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
