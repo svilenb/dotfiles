@@ -21,6 +21,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-flagship'
+Plug 'tpope/vim-dadbod'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -32,11 +33,11 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'wellle/targets.vim'
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --ts-completer' }
 Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --ts-completer' }
 
 call plug#end()
 
