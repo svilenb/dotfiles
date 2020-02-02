@@ -26,8 +26,9 @@ Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-dadbod'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
-Plug 'neovim/nvim-lsp'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'neovim/nvim-lsp'
+Plug 'justinmk/vim-sneak'
 Plug 'mhinz/vim-grepper'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
@@ -68,6 +69,7 @@ let mapleader = " "
 nnoremap <Leader>e :find **/*
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:sneak#label = 1
 
 " https://stackoverflow.com/a/27593908/4978402
 
@@ -94,6 +96,9 @@ set background=dark
 colorscheme gruvbox
 
 lua require 'plugins'
+
+nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
+nnoremap <Leader>n :match none<CR>
 
 " nnoremap <silent> gd <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
