@@ -28,14 +28,11 @@ Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neovim/nvim-lsp'
-Plug 'justinmk/vim-sneak'
 Plug 'mhinz/vim-grepper'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'wellle/targets.vim'
 Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript'
@@ -59,6 +56,7 @@ set completeopt+=longest,noinsert,menuone,noselect
 set mouse=a
 set laststatus=2
 set showtabline=2
+set cmdheight=2
 
 if exists('&inccommand')
 	set inccommand=split
@@ -69,7 +67,6 @@ let mapleader = " "
 nnoremap <Leader>e :find **/*
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:sneak#label = 1
 
 " https://stackoverflow.com/a/27593908/4978402
 
@@ -81,7 +78,7 @@ augroup END
 
 augroup Completing
 	autocmd!
-	autocmd Filetype javascript,javascriptreact,typescript,typescriptreact setlocal omnifunc=v:lua.vim.lsp.omnifunc
+	autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal omnifunc=v:lua.vim.lsp.omnifunc
 augroup END
 
 nmap gs <plug>(GrepperOperator)
@@ -89,6 +86,8 @@ xmap gs <plug>(GrepperOperator)
 
 nnoremap <Leader>a :Grepper
 
+let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_light='soft'
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
@@ -108,9 +107,9 @@ nnoremap <Leader>n :match none<CR>
 " nnoremap <silent> 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
 " nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 
-" nnoremap <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
-" nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-" nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
 
 " Reference for what I used before
 "
