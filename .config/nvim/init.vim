@@ -27,17 +27,16 @@ Plug 'tpope/vim-dadbod'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'wellle/targets.vim'
 Plug 'neovim/nvim-lsp'
-Plug 'mhinz/vim-grepper'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'wellle/targets.vim'
-Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -62,6 +61,10 @@ if exists('&inccommand')
 	set inccommand=split
 endif
 
+if executable('ag')
+	set grepprg=ag\ --vimgrep
+endif
+
 let mapleader = " "
 
 nnoremap <Leader>e :find **/*
@@ -69,6 +72,20 @@ nnoremap <Leader>e :find **/*
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " https://stackoverflow.com/a/27593908/4978402
+
+function! Grep(args)
+	let args = split(a:args, ' ')
+	return system(join([&grepprg, shellescape(args[0]), len(args) > 1 ? join(args[1:-1], ' ') : ''], ' '))
+endfunction
+
+command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<q-args>)
+command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<q-args>)
+
+augroup Quickfix
+	autocmd!
+	autocmd QuickFixCmdPost cgetexpr cwindow
+	autocmd QuickFixCmdPost lgetexpr lwindow
+augroup END
 
 augroup Linting
 	autocmd!
@@ -81,10 +98,7 @@ augroup Completing
 	autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal omnifunc=v:lua.vim.lsp.omnifunc
 augroup END
 
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
-
-nnoremap <Leader>a :Grepper
+nnoremap <Leader>a :Ggrep!<Space>
 
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='soft'
