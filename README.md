@@ -31,6 +31,7 @@ Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 ## Neovim
 
 Add support for --remote using [neovim-remote](https://github.com/mhinz/neovim-remote)
+Follow installation instructions for [nvim-lsp](https://github.com/neovim/nvim-lsp).
 
 ## Z-Shell
 

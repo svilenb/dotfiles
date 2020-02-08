@@ -28,6 +28,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'wellle/targets.vim'
+Plug 'machakann/vim-highlightedyank'
 Plug 'neovim/nvim-lsp'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
@@ -71,8 +72,6 @@ nnoremap <Leader>e :find **/*
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" https://stackoverflow.com/a/27593908/4978402
-
 function! Grep(args)
 	let args = split(a:args, ' ')
 	return system(join([&grepprg, shellescape(args[0]), len(args) > 1 ? join(args[1:-1], ' ') : ''], ' '))
@@ -87,18 +86,24 @@ augroup Quickfix
 	autocmd QuickFixCmdPost lgetexpr lwindow
 augroup END
 
-augroup Linting
-	autocmd!
-	autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact\ %
-	autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
-augroup END
+function SetupJS()
+	setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact\ %
+	setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
+	setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
-augroup Completing
-	autocmd!
-	autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal omnifunc=v:lua.vim.lsp.omnifunc
-augroup END
+	nnoremap <buffer> gd <cmd>lua vim.lsp.buf.declaration()<CR>
+	nnoremap <buffer> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+	nnoremap <buffer> K <cmd>lua vim.lsp.buf.hover()<CR>
+	nnoremap <buffer> gD <cmd>lua vim.lsp.buf.implementation()<CR>
+	nnoremap <buffer> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+	nnoremap <buffer> 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
+	nnoremap <buffer> gr <cmd>lua vim.lsp.buf.references()<CR>
+endfunction
 
-nnoremap <Leader>a :Ggrep!<Space>
+augroup Filetypes
+	autocmd!
+	autocmd FileType javascript,javascriptreact,typescript,typescriptreact call SetupJS()
+augroup END
 
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='soft'
@@ -110,23 +115,14 @@ colorscheme gruvbox
 
 lua require 'plugins'
 
+if !exists('##TextYankPost')
+  map y <Plug>(highlightedyank)
+endif
+
+nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
-
-" nnoremap <silent> gd <cmd>lua vim.lsp.buf.declaration()<CR>
-" nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-" nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-" nnoremap <silent> gD <cmd>lua vim.lsp.buf.implementation()<CR>
-" nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-" nnoremap <silent> 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
-" nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 
 nnoremap <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
-
-" Reference for what I used before
-"
-" autocmd FileType typescript nnoremap <buffer> K :YcmCompleter GetType<CR>
-" autocmd FileType typescript nnoremap <buffer> <C-^> :YcmCompleter GoToReferences<CR>
-" autocmd FileType typescript nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
