@@ -25,12 +25,12 @@ Install following one of the following examples.
 * https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 * http://www.vim.org/git.php
 
+Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher).
 Follow installation instructions for [vim-plug](https://github.com/junegunn/vim-plug).
-Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 ## Neovim
 
-Add support for --remote using [neovim-remote](https://github.com/mhinz/neovim-remote)
+Add support for --remote using [neovim-remote](https://github.com/mhinz/neovim-remote).
 Follow installation instructions for [nvim-lsp](https://github.com/neovim/nvim-lsp).
 
 ## Z-Shell
@@ -39,6 +39,7 @@ Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 
 ## Tmux
 
-Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) and follow the setup instructions for the [tmux-yank](https://github.com/tmux-plugins/tmux-yank) plugin.
+Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
+Follow installation instructions for [tmux-yank](https://github.com/tmux-plugins/tmux-yank).
 
 Solve the issue with colors when vim is opened inside tmux using the following [link](http://sunaku.github.io/tmux-24bit-color.html#usage)
