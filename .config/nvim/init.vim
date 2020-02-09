@@ -92,12 +92,13 @@ function SetupJS()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 	nnoremap <buffer> gd <cmd>lua vim.lsp.buf.declaration()<CR>
+	nnoremap <buffer> gD <cmd>lua vim.lsp.buf.implementation()<CR>
 	nnoremap <buffer> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 	nnoremap <buffer> K <cmd>lua vim.lsp.buf.hover()<CR>
-	nnoremap <buffer> gD <cmd>lua vim.lsp.buf.implementation()<CR>
 	nnoremap <buffer> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 	nnoremap <buffer> 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
 	nnoremap <buffer> gr <cmd>lua vim.lsp.buf.references()<CR>
+	nnoremap <buffer> gR <cmd>lua vim.lsp.buf.rename()<CR>
 endfunction
 
 augroup Filetypes
@@ -124,5 +125,4 @@ nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
 
 nnoremap <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
