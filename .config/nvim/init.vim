@@ -32,8 +32,10 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'neovim/nvim-lsp'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
-Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tmux-plugins/vim-tmux'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -117,8 +119,7 @@ if !exists('##TextYankPost')
 endif
 
 nnoremap <Leader>e :find **/*
-nnoremap <leader>r :lcd %:h<CR>
-nnoremap <leader>b :lcd! -<CR>
+nnoremap <leader>cd :lcd %:h<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>

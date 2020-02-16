@@ -1,0 +1,8 @@
+{
+	".config/nvim/lua/*.lua": {
+		"type": "lua"
+	},
+	".config/nvim/compiler/*.vim": {
+		"type": "compiler"
+	}
+}
