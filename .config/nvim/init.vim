@@ -68,8 +68,6 @@ endif
 
 let mapleader = " "
 
-nnoremap <Leader>e :find **/*
-
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 function! Grep(args)
@@ -86,9 +84,7 @@ augroup Quickfix
 	autocmd QuickFixCmdPost lgetexpr lwindow
 augroup END
 
-function SetupJS()
-	setlocal makeprg=./node_modules/.bin/eslint\ --format\ compact\ %
-	setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
+function! SetupJS()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 	nnoremap <buffer> gd <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -120,6 +116,9 @@ if !exists('##TextYankPost')
   map y <Plug>(highlightedyank)
 endif
 
+nnoremap <Leader>e :find **/*
+nnoremap <leader>r :lcd %:h<CR>
+nnoremap <leader>b :lcd! -<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
