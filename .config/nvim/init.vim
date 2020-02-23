@@ -1,5 +1,3 @@
-set nocompatible
-
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'tpope/vim-sensible'
@@ -86,7 +84,7 @@ augroup Quickfix
 	autocmd QuickFixCmdPost lgetexpr lwindow
 augroup END
 
-function! SetupJS()
+function! SetupLSP()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 	nnoremap <buffer> gd <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -97,11 +95,13 @@ function! SetupJS()
 	nnoremap <buffer> 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
 	nnoremap <buffer> gr <cmd>lua vim.lsp.buf.references()<CR>
 	nnoremap <buffer> gR <cmd>lua vim.lsp.buf.rename()<CR>
+	nnoremap <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
+	nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
 endfunction
 
 augroup Filetypes
 	autocmd!
-	autocmd FileType javascript,javascriptreact,typescript,typescriptreact call SetupJS()
+	autocmd FileType javascript,javascriptreact,typescript,typescriptreact call SetupLSP()
 augroup END
 
 let g:gruvbox_contrast_dark='soft'
@@ -123,6 +123,3 @@ nnoremap <leader>cd :lcd %:h<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
-
-nnoremap <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
