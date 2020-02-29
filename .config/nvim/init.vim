@@ -51,8 +51,6 @@ set number relativenumber
 set nowrap
 set list
 set listchars+=eol:$
-set completeopt-=preview
-set completeopt+=longest,noinsert,menuone,noselect
 set mouse=a
 set laststatus=2
 set showtabline=2
@@ -119,7 +117,7 @@ if !exists('##TextYankPost')
 endif
 
 nnoremap <Leader>e :find **/*
-nnoremap <leader>cd :lcd %:h<CR>
+nnoremap <leader>cd :lcd %:p:h<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
