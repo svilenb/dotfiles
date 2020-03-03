@@ -97,6 +97,20 @@ function! SetupLSP()
 	nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
 endfunction
 
+function! LspStatus() abort
+	if luaeval('vim.lsp.buf.server_ready()')
+		let sl ='E:'
+		let sl.=luaeval("vim.lsp.util.buf_diagnostics_count(\"Error\")")
+		let sl.=' W:'
+		let sl.=luaeval("vim.lsp.util.buf_diagnostics_count(\"Warning\")")
+		return 'LSP('.sl.')'
+	else
+		return ''
+	endif
+endfunction
+
+autocmd User Flags call Hoist('buffer', function('LspStatus'))
+
 augroup Filetypes
 	autocmd!
 	autocmd FileType javascript,javascriptreact,typescript,typescriptreact call SetupLSP()
@@ -113,7 +127,7 @@ colorscheme gruvbox
 lua require 'plugins'
 
 if !exists('##TextYankPost')
-  map y <Plug>(highlightedyank)
+	map y <Plug>(highlightedyank)
 endif
 
 nnoremap <Leader>e :find **/*
