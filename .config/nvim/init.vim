@@ -131,7 +131,8 @@ if !exists('##TextYankPost')
 endif
 
 nnoremap <Leader>e :find **/*
-nnoremap <leader>cd :lcd %:p:h<CR>
+nnoremap <Leader>cd :lcd %:p:h<CR>
+nnoremap <Leader>rd :Plcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
