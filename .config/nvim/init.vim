@@ -113,7 +113,10 @@ autocmd User Flags call Hoist('buffer', function('LspStatus'))
 
 augroup Filetypes
 	autocmd!
-	autocmd FileType javascript,javascriptreact,typescript,typescriptreact call SetupLSP()
+	autocmd FileType javascript,javascriptreact call SetupLSP()
+	autocmd FileType typescript,typescriptreact call SetupLSP()
+	autocmd FileType vim,tex call SetupLSP()
+	autocmd FileType css,scss call SetupLSP()
 augroup END
 
 let g:gruvbox_contrast_dark='soft'

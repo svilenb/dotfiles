@@ -32,7 +32,7 @@ Follow installation instructions for [vim-plug](https://github.com/junegunn/vim-
 ## Neovim
 
 Add support for --remote using [neovim-remote](https://github.com/mhinz/neovim-remote).
-Follow installation instructions for [nvim-lsp](https://github.com/neovim/nvim-lsp).
+Follow installation instructions from [nvim-lsp](https://github.com/neovim/nvim-lsp) for tsserver, vimls, cssls, texlab.
 
 ## Z-Shell
 
