@@ -37,11 +37,11 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
-if (has("termguicolors"))
+if (has('termguicolors'))
 	set termguicolors
 endif
 
@@ -119,13 +119,13 @@ augroup Filetypes
 	autocmd FileType css,scss call SetupLSP()
 augroup END
 
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_contrast_light='soft'
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_guisp_fallback='bg'
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold_vertical_split_line = 1
+let g:nord_uniform_diff_background = 1
+let g:nord_underline = 1
 
 set background=dark
-colorscheme gruvbox
+colorscheme nord
 
 lua require 'plugins'
 

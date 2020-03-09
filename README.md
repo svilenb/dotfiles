@@ -6,6 +6,7 @@ Configure by copy and paste the following into your terminal/shell:
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.gvimrc ~/.gvimrc
 ln -sf ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/.config/nvim/ginit.vim ~/.config/nvim/ginit.vim
 ln -s ~/dotfiles/.config/nvim/lua ~/.config/nvim/lua
 ln -s ~/dotfiles/.config/nvim/compiler ~/.config/nvim/compiler
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
