@@ -68,20 +68,6 @@ let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-function! Grep(args)
-	let args = split(a:args, ' ')
-	return system(join([&grepprg, shellescape(args[0]), len(args) > 1 ? join(args[1:-1], ' ') : ''], ' '))
-endfunction
-
-command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<q-args>)
-command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<q-args>)
-
-augroup Quickfix
-	autocmd!
-	autocmd QuickFixCmdPost cgetexpr cwindow
-	autocmd QuickFixCmdPost lgetexpr lwindow
-augroup END
-
 function! SetupLSP()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
@@ -93,8 +79,9 @@ function! SetupLSP()
 	nnoremap <buffer> 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
 	nnoremap <buffer> gr <cmd>lua vim.lsp.buf.references()<CR>
 	nnoremap <buffer> gR <cmd>lua vim.lsp.buf.rename()<CR>
-	nnoremap <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
-	nnoremap <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
+	nnoremap <buffer> g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
+	nnoremap <buffer> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
+	nnoremap <buffer> <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
 endfunction
 
 function! LspStatus() abort
@@ -115,7 +102,7 @@ augroup Filetypes
 	autocmd!
 	autocmd FileType javascript,javascriptreact call SetupLSP()
 	autocmd FileType typescript,typescriptreact call SetupLSP()
-	autocmd FileType vim,tex call SetupLSP()
+	autocmd FileType tex call SetupLSP()
 	autocmd FileType css,scss call SetupLSP()
 augroup END
 
