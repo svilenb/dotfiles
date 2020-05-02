@@ -37,7 +37,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'arcticicestudio/nord-vim'
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
@@ -106,13 +106,8 @@ augroup Filetypes
 	autocmd FileType css,scss call SetupLSP()
 augroup END
 
-let g:nord_cursor_line_number_background = 1
-let g:nord_bold_vertical_split_line = 1
-let g:nord_uniform_diff_background = 1
-let g:nord_underline = 1
 
-set background=dark
-colorscheme nord
+colorscheme seoul256
 
 lua require 'plugins'
 
