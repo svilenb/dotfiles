@@ -37,7 +37,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'junegunn/seoul256.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -106,8 +106,10 @@ augroup Filetypes
 	autocmd FileType css,scss call SetupLSP()
 augroup END
 
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_guisp_fallback='bg'
 
-colorscheme seoul256
+colorscheme gruvbox
 
 lua require 'plugins'
 

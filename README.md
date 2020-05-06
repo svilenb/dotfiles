@@ -17,7 +17,7 @@ git config --global core.excludesFile ~/.cvsignore
 
 ## Terminal
 
-* Setup [Nord](https://www.nordtheme.com/) color scheme and install the following [font](https://github.com/belluzj/fantasque-sans)
+* Setup gruvbox color scheme from [here](https://github.com/Mayccoll/Gogh) or [here](https://github.com/morhetz/gruvbox-contrib) and install the following [font](https://github.com/belluzj/fantasque-sans)
 
 ## Vim
 
