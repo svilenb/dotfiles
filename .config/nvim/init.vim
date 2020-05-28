@@ -26,7 +26,6 @@ Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'wellle/targets.vim'
-Plug 'machakann/vim-highlightedyank'
 Plug 'neovim/nvim-lsp'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier'
@@ -67,6 +66,7 @@ endif
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 
 function! SetupLSP()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc
@@ -82,21 +82,10 @@ function! SetupLSP()
 	nnoremap <buffer> g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
 	nnoremap <buffer> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 	nnoremap <buffer> <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
+	nnoremap <buffer> <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 endfunction
 
-function! LspStatus() abort
-	if luaeval('vim.lsp.buf.server_ready()')
-		let sl ='E:'
-		let sl.=luaeval("vim.lsp.util.buf_diagnostics_count(\"Error\")")
-		let sl.=' W:'
-		let sl.=luaeval("vim.lsp.util.buf_diagnostics_count(\"Warning\")")
-		return 'LSP('.sl.')'
-	else
-		return ''
-	endif
-endfunction
-
-autocmd User Flags call Hoist('buffer', function('LspStatus'))
+autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 
 augroup Filetypes
 	autocmd!
@@ -112,10 +101,6 @@ let g:gruvbox_guisp_fallback='bg'
 colorscheme gruvbox
 
 lua require 'plugins'
-
-if !exists('##TextYankPost')
-	map y <Plug>(highlightedyank)
-endif
 
 nnoremap <Leader>e :find **/*
 nnoremap <Leader>cd :lcd %:p:h<CR>
