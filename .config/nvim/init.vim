@@ -80,6 +80,8 @@ function! SetupLSP()
 	nnoremap <buffer> gr <cmd>lua vim.lsp.buf.references()<CR>
 	nnoremap <buffer> gR <cmd>lua vim.lsp.buf.rename()<CR>
 	nnoremap <buffer> g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
+	nnoremap <silent> gW <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+
 	nnoremap <buffer> <leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 	nnoremap <buffer> <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
 	nnoremap <buffer> <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
