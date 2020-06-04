@@ -100,6 +100,7 @@ augroup END
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
+set background=light
 colorscheme gruvbox
 
 lua require 'plugins'
