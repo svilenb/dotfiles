@@ -28,7 +28,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'wellle/targets.vim'
 Plug 'neovim/nvim-lsp'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'prettier/vim-prettier'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -100,7 +99,7 @@ augroup END
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_guisp_fallback='bg'
 
-set background=light
+set background=dark
 colorscheme gruvbox
 
 lua require 'plugins'
