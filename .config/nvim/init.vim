@@ -105,8 +105,17 @@ colorscheme gruvbox
 lua require 'plugins'
 
 nnoremap <Leader>e :find **/*
-nnoremap <Leader>cd :lcd %:p:h<CR>
-nnoremap <Leader>rd :Plcd<CR>
+nnoremap <Leader>cd :cd %:p:h<CR>
+nnoremap <Leader>rd :Pcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
 nnoremap <Leader>n :match none<CR>
+
+hi! link LspDiagnosticsErrorSign GruvboxRedSign
+hi! link LspDiagnosticsWarningSign GruvboxOrangeSign
+hi! link LspDiagnosticsInformationSign GruvboxYellowSign
+hi! link LspDiagnosticsHintSign GruvboxBlueSign
+hi! link LspDiagnosticsError GruvboxRed
+hi! link LspDiagnosticsWarning GruvboxOrange
+hi! link LspDiagnosticsInformation GruvboxYellow
+hi! link LspDiagnosticsHint GruvboxBlue
