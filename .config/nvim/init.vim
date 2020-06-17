@@ -108,8 +108,6 @@ nnoremap <Leader>e :find **/*
 nnoremap <Leader>cd :cd %:p:h<CR>
 nnoremap <Leader>rd :Pcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
-nnoremap <Leader>m :match StatusLine /\<<C-R><C-W>\>/<CR>
-nnoremap <Leader>n :match none<CR>
 
 hi! link LspDiagnosticsErrorSign GruvboxRedSign
 hi! link LspDiagnosticsWarningSign GruvboxOrangeSign
