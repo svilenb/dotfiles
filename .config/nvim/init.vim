@@ -35,7 +35,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'morhetz/gruvbox'
+Plug 'svilenb/gruvbox'
 
 call plug#end()
 
@@ -109,11 +109,3 @@ nnoremap <Leader>cd :cd %:p:h<CR>
 nnoremap <Leader>rd :Pcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 
-hi! link LspDiagnosticsErrorSign GruvboxRedSign
-hi! link LspDiagnosticsWarningSign GruvboxOrangeSign
-hi! link LspDiagnosticsInformationSign GruvboxYellowSign
-hi! link LspDiagnosticsHintSign GruvboxBlueSign
-hi! link LspDiagnosticsError GruvboxRed
-hi! link LspDiagnosticsWarning GruvboxOrange
-hi! link LspDiagnosticsInformation GruvboxYellow
-hi! link LspDiagnosticsHint GruvboxBlue
