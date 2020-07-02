@@ -58,10 +58,6 @@ if exists('&inccommand')
 	set inccommand=split
 endif
 
-if executable('ag')
-	set grepprg=ag\ --vimgrep
-endif
-
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -85,14 +81,17 @@ function! SetupLSP()
 	nnoremap <buffer> <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 endfunction
 
-autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-
 augroup Filetypes
 	autocmd!
 	autocmd FileType javascript,javascriptreact call SetupLSP()
 	autocmd FileType typescript,typescriptreact call SetupLSP()
 	autocmd FileType tex call SetupLSP()
 	autocmd FileType css,scss call SetupLSP()
+augroup END
+
+augroup Highlight
+	autocmd!
+	autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
 
 let g:gruvbox_improved_warnings=1
@@ -107,4 +106,3 @@ nnoremap <Leader>f :find **/*
 nnoremap <Leader>cd :cd %:p:h<CR>
 nnoremap <Leader>rd :Pcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
-
