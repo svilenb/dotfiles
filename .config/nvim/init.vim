@@ -20,7 +20,6 @@ Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-tbone'
-Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-dadbod'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
@@ -51,7 +50,6 @@ set list
 set listchars+=eol:$
 set mouse=a
 set laststatus=2
-set showtabline=2
 set cmdheight=2
 
 if exists('&inccommand')
@@ -61,7 +59,6 @@ endif
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 
 function! SetupLSP()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc

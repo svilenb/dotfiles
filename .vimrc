@@ -20,7 +20,6 @@ Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-tbone'
-Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-dadbod'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
@@ -36,13 +35,9 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'morhetz/gruvbox'
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
-
-if (has('termguicolors'))
-	set termguicolors
-endif
 
 set hidden
 set incsearch ignorecase smartcase nohlsearch
@@ -52,16 +47,15 @@ set list
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
 set mouse=a
 set laststatus=2
-set showtabline=2
 set cmdheight=2
 
 let mapleader = " "
 
+let g:seoul256_srgb = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 
+colorscheme seoul256
 set background=dark
-colorscheme gruvbox
 
 if !exists('##TextYankPost')
 	map y <Plug>(highlightedyank)
