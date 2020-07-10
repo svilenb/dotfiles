@@ -34,7 +34,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'svilenb/gruvbox'
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
@@ -59,6 +59,7 @@ endif
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:seoul256_srgb = 1
 
 function! SetupLSP()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc
@@ -70,10 +71,10 @@ function! SetupLSP()
 	nnoremap <buffer> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 	nnoremap <buffer> 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
 	nnoremap <buffer> gr <cmd>lua vim.lsp.buf.references()<CR>
-	nnoremap <buffer> gR <cmd>lua vim.lsp.buf.rename()<CR>
 	nnoremap <buffer> g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
 	nnoremap <silent> gW <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
+	nnoremap <buffer> gR <cmd>lua vim.lsp.buf.rename()<CR>
 	nnoremap <buffer> <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
 	nnoremap <buffer> <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 endfunction
@@ -88,14 +89,11 @@ augroup END
 
 augroup Highlight
 	autocmd!
-	autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+	autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup END
 
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_guisp_fallback='bg'
-
+colorscheme seoul256
 set background=dark
-colorscheme gruvbox
 
 lua require 'plugins'
 
