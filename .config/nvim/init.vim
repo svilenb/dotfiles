@@ -20,6 +20,7 @@ Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-tbone'
+Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-dadbod'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
@@ -50,6 +51,7 @@ set list
 set listchars+=eol:$
 set mouse=a
 set laststatus=2
+set showtabline=2
 set cmdheight=2
 
 if exists('&inccommand')
@@ -58,8 +60,9 @@ endif
 
 let mapleader = " "
 
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:seoul256_srgb = 1
+let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 function! SetupLSP()
 	setlocal omnifunc=v:lua.vim.lsp.omnifunc
@@ -74,9 +77,8 @@ function! SetupLSP()
 	nnoremap <buffer> g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
 	nnoremap <silent> gW <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
-	nnoremap <buffer> gR <cmd>lua vim.lsp.buf.rename()<CR>
+	nnoremap <buffer> <F2> <cmd>lua vim.lsp.buf.rename()<CR>
 	nnoremap <buffer> <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
-	nnoremap <buffer> <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 endfunction
 
 augroup Filetypes
