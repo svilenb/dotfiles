@@ -67,7 +67,7 @@ let g:LanguageClient_serverCommands = {
 			\ 'typescriptreact': ['typescript-language-server', '--stdio'],
 			\ }
 
-function LC_maps()
+function! LC_maps()
 	if has_key(g:LanguageClient_serverCommands, &filetype)
 		nmap <buffer> <silent> gd <Plug>(lcn-definition)
 		nmap <buffer> <silent> gD <Plug>(lcn-implementation)
