@@ -89,7 +89,7 @@ function! SetupLSP()
 		nnoremap <buffer> g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
 		nnoremap <silent> gW <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
-		nnoremap <buffer> <F2> <cmd>lua vim.lsp.buf.rename()<CR>
+		nnoremap <buffer> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 		nnoremap <buffer> <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
 	endif
 endfunction

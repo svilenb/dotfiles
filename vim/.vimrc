@@ -37,7 +37,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'junegunn/seoul256.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 
@@ -57,33 +57,41 @@ let mapleader = " "
 let g:seoul256_srgb = 1
 let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:LanguageClient_selectionUI = 'quickfix'
-let g:LanguageClient_diagnosticsList = 'Location'
+let g:lsp_diagnostics_float_cursor = 1
 
-let g:LanguageClient_serverCommands = {
-			\ 'javascript': ['typescript-language-server', '--stdio'],
-			\ 'javascriptreact': ['typescript-language-server', '--stdio'],
-			\ 'typescript': ['typescript-language-server', '--stdio'],
-			\ 'typescriptreact': ['typescript-language-server', '--stdio'],
-			\ }
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+        \ 'whitelist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
+        \ })
+endif
 
-function! LC_maps()
-	if has_key(g:LanguageClient_serverCommands, &filetype)
-		nmap <buffer> <silent> gd <Plug>(lcn-definition)
-		nmap <buffer> <silent> gD <Plug>(lcn-implementation)
-		nmap <buffer> <silent> <c-]> <Plug>(lcn-definition)
-		nmap <buffer> <silent> K <Plug>(lcn-hover)
-		nmap <buffer> <silent> 1gD <Plug>(lcn-type-definition)
-		nmap <buffer> <silent> gr <Plug>(lcn-references)
+function! s:on_lsp_buffer_enabled() abort
+	setlocal omnifunc=lsp#complete
+	setlocal signcolumn=yes
 
-		nmap <buffer> <silent> <F2> <Plug>(lcn-rename)
-		nmap <buffer> <silent> <leader>d <Plug>(lcn-explain-error)
+	if exists('+tagfunc')
+		setlocal tagfunc=lsp#tagfunc
 	endif
+
+	nmap <buffer> gd <plug>(lsp-definition)
+	nmap <buffer> gD <plug>(lsp-implementation)
+	nmap <buffer> K <plug>(lsp-hover)
+	nmap <buffer> <c-k> <plug>(lsp-signature-help)
+	nmap <buffer> 1gD <plug>(lsp-type-definition)
+	nmap <buffer> gr <plug>(lsp-references)
+	nmap <buffer> g0 <plug>(lsp-document-symbol)
+	nmap <buffer> gW <plug>(lsp-workspace-symbol)
+
+	nmap <buffer> <leader>rn <plug>(lsp-rename)
+	nmap <buffer> <F5> <plug>(lsp-document-diagnostics)
 endfunction
 
-augroup Filetypes
+augroup lsp_install
 	autocmd!
-	autocmd FileType * call LC_maps()
+	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
 colorscheme seoul256
