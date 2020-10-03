@@ -36,6 +36,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'junegunn/seoul256.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 
