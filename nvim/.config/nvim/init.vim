@@ -107,7 +107,6 @@ set background=dark
 
 lua require 'plugins'
 
-nnoremap <Leader>f :find **/*
 nnoremap <Leader>cd :cd %:p:h<CR>
 nnoremap <Leader>rd :Pcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
