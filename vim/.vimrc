@@ -19,17 +19,19 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-flagship'
 Plug 'tommcdo/vim-exchange'
+Plug 'tommcdo/vim-lion'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'markonm/traces.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'junegunn/seoul256.vim'
+
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'junegunn/seoul256.vim'
-Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 
@@ -72,17 +74,16 @@ function! s:on_lsp_buffer_enabled() abort
 		setlocal tagfunc=lsp#tagfunc
 	endif
 
-	nmap <buffer> gd <plug>(lsp-definition)
-	nmap <buffer> gD <plug>(lsp-implementation)
-	nmap <buffer> K <plug>(lsp-hover)
-	nmap <buffer> <c-k> <plug>(lsp-signature-help)
-	nmap <buffer> 1gD <plug>(lsp-type-definition)
-	nmap <buffer> gr <plug>(lsp-references)
-	nmap <buffer> g0 <plug>(lsp-document-symbol)
-	nmap <buffer> gW <plug>(lsp-workspace-symbol)
-
+	nmap <buffer> gd         <plug>(lsp-definition)
+	nmap <buffer> gD         <plug>(lsp-implementation)
+	nmap <buffer> K          <plug>(lsp-hover)
+	nmap <buffer> <c-k>      <plug>(lsp-signature-help)
+	nmap <buffer> 1gD        <plug>(lsp-type-definition)
+	nmap <buffer> gr         <plug>(lsp-references)
+	nmap <buffer> g0         <plug>(lsp-document-symbol)
+	nmap <buffer> gW         <plug>(lsp-workspace-symbol)
 	nmap <buffer> <leader>rn <plug>(lsp-rename)
-	nmap <buffer> <F5> <plug>(lsp-document-diagnostics)
+	nmap <buffer> <F5>       <plug>(lsp-document-diagnostics)
 endfunction
 
 augroup lsp_install
