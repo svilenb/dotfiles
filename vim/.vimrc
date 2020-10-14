@@ -14,14 +14,11 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-scriptease'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-flagship'
 Plug 'tommcdo/vim-exchange'
-Plug 'tommcdo/vim-fubitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'markonm/traces.vim'
 Plug 'machakann/vim-highlightedyank'
@@ -37,17 +34,16 @@ Plug 'prabirshrestha/vim-lsp'
 call plug#end()
 
 if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
 endif
 
 set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
 set nowrap
-set list
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
+set list listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
 set mouse=a
 set laststatus=2
 set showtabline=2
@@ -56,17 +52,16 @@ set cmdheight=2
 let mapleader = " "
 
 let g:seoul256_srgb = 1
-let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_float_cursor = 1
 
 if executable('typescript-language-server')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'typescript-language-server',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-        \ 'whitelist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
-        \ })
+	au User lsp_setup call lsp#register_server({
+				\ 'name': 'typescript-language-server',
+				\ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+				\ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+				\ 'whitelist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
+				\ })
 endif
 
 function! s:on_lsp_buffer_enabled() abort
