@@ -28,6 +28,7 @@ Install following one of the following examples.
 * http://www.vim.org/git.php
 
 Follow installation instructions for [vim-plug](https://github.com/junegunn/vim-plug).
+Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 ## Neovim
 

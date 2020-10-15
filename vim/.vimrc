@@ -41,6 +41,10 @@ if exists('+termguicolors')
 	set termguicolors
 endif
 
+if executable('ag')
+    set grepprg=ag\ --vimgrep
+endif
+
 set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
