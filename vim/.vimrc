@@ -27,6 +27,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'junegunn/seoul256.vim'
 
 Plug 'pangloss/vim-javascript'
@@ -60,6 +62,7 @@ let mapleader = " "
 let g:seoul256_srgb = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_float_cursor = 1
+let g:UltiSnipsListSnippets = "<C-R><Tab>"
 
 if executable('typescript-language-server')
 	au User lsp_setup call lsp#register_server({
