@@ -26,9 +26,10 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'junegunn/seoul256.vim'
 
 Plug 'pangloss/vim-javascript'
@@ -44,7 +45,7 @@ if exists('+termguicolors')
 endif
 
 if executable('ag')
-    set grepprg=ag\ --vimgrep
+	set grepprg=ag\ --vimgrep
 endif
 
 set hidden
@@ -59,19 +60,9 @@ set cmdheight=2
 
 let mapleader = " "
 
-let g:seoul256_srgb = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_float_cursor = 1
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
-
-if executable('typescript-language-server')
-	au User lsp_setup call lsp#register_server({
-				\ 'name': 'typescript-language-server',
-				\ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-				\ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-				\ 'whitelist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
-				\ })
-endif
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
