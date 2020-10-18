@@ -33,11 +33,11 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'lifepillar/vim-solarized8'
 
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
 
@@ -89,6 +89,24 @@ endfunction
 augroup lsp_install
 	autocmd!
 	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+function! MyHighlights() abort
+	execute "highlight LspErrorText guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspWarningText guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspInformationText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspHintText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+
+	execute "highlight LspErrorHighlight guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE guisp=" . g:terminal_ansi_colors[1] . " gui=undercurl cterm=undercurl"
+	execute "highlight LspWarningHighlight guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE guisp=" . g:terminal_ansi_colors[3] . " gui=undercurl cterm=undercurl"
+	execute "highlight LspInformationHighlight guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE guisp=" . g:terminal_ansi_colors[6] . " gui=undercurl cterm=undercurl"
+	execute "highlight LspHintHighlight guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=undercurl guisp=" . g:terminal_ansi_colors[6] . " cterm=undercurl"
+
+	highlight! link lspReference CursorLine
+endfunction
+
+augroup MyColors
+	autocmd! ColorScheme solarized8 call MyHighlights()
 augroup END
 
 colorscheme solarized8
