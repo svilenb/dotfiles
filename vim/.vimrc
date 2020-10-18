@@ -1,3 +1,6 @@
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
@@ -52,8 +55,6 @@ set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
 set nowrap
-set list listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
-set mouse=a
 set laststatus=2
 set showtabline=2
 set cmdheight=2
