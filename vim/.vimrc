@@ -30,7 +30,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'junegunn/seoul256.vim'
+Plug 'lifepillar/vim-solarized8'
 
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -90,7 +90,7 @@ augroup lsp_install
 	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-colorscheme seoul256
+colorscheme solarized8
 set background=dark
 
 if !exists('##TextYankPost')
