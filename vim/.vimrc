@@ -106,7 +106,8 @@ function! MyHighlights() abort
 endfunction
 
 augroup MyColors
-	autocmd! ColorScheme solarized8 call MyHighlights()
+	autocmd!
+	autocmd ColorScheme solarized8 call MyHighlights()
 augroup END
 
 colorscheme solarized8
