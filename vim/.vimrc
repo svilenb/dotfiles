@@ -65,6 +65,11 @@ let mapleader = " "
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_float_cursor = 1
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
+" let g:lsp_settings = {
+" 			\ 'typescript-language-server': {
+" 			\     'cmd': [lsp_settings#exec_path('typescript-language-server'), '--stdio', '--tsserver-path=tsserver']
+" 			\ },
+" 			\ }
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
