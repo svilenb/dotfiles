@@ -64,7 +64,10 @@ let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_float_cursor = 1
+let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 " let g:lsp_settings = {
 " 			\ 'typescript-language-server': {
 " 			\     'cmd': [lsp_settings#exec_path('typescript-language-server'), '--stdio', '--tsserver-path=tsserver']
