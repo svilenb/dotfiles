@@ -55,6 +55,7 @@ set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
 set nowrap
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
 set laststatus=2
 set showtabline=2
 set cmdheight=2
