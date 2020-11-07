@@ -94,11 +94,6 @@ function! s:on_lsp_buffer_enabled() abort
 	nmap <buffer> <F5>       <plug>(lsp-document-diagnostics)
 endfunction
 
-augroup lsp_install
-	autocmd!
-	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-
 function! MyHighlights() abort
 	execute "highlight LspErrorText guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE gui=bold cterm=bold"
 	execute "highlight LspWarningText guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE gui=bold cterm=bold"
@@ -113,8 +108,9 @@ function! MyHighlights() abort
 	highlight! link lspReference CursorLine
 endfunction
 
-augroup MyColors
+augroup my
 	autocmd!
+	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 	autocmd ColorScheme solarized8 call MyHighlights()
 augroup END
 
