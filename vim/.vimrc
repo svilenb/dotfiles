@@ -92,7 +92,8 @@ function! s:on_lsp_buffer_enabled() abort
 	nmap <buffer> g0         <plug>(lsp-document-symbol)
 	nmap <buffer> gW         <plug>(lsp-workspace-symbol)
 	nmap <buffer> <leader>rn <plug>(lsp-rename)
-	nmap <buffer> <F5>       <plug>(lsp-document-diagnostics)
+	nmap <buffer> <leader>d  <plug>(lsp-document-diagnostics)
+	nmap <buffer> <leader>ca <plug>(lsp-code-action)
 endfunction
 
 function! MyHighlights() abort
@@ -122,6 +123,8 @@ if !exists('##TextYankPost')
 	map y <Plug>(highlightedyank)
 endif
 
-nnoremap <Leader>cd :cd %:p:h<CR>
-nnoremap <Leader>rd :Pcd<CR>
+nnoremap <Leader>cd :lcd %:p:h<CR>
+nnoremap <Leader>rd :Plcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
+nnoremap <Leader>rg :Ggrep! <C-R>"<CR>
+
