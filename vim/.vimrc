@@ -28,7 +28,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'markonm/traces.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -128,4 +127,3 @@ nnoremap <Leader>cd :lcd %:p:h<CR>
 nnoremap <Leader>rd :Plcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>rg :Ggrep! <C-R>"<CR>
-
