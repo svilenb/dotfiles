@@ -1,1 +1,1 @@
-nnoremap <buffer> <Leader>qp :QuickpeekToggle<CR>
+nnoremap <buffer> <Leader>p :QuickpeekToggle<CR>
