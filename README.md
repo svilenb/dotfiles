@@ -27,7 +27,7 @@ Install following one of the following examples.
 * https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 * http://www.vim.org/git.php
 
-Follow installation instructions for [vim-plug](https://github.com/junegunn/vim-plug).
+Follow installation instructions for [minpac](https://github.com/k-takata/minpac).
 Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 ## Neovim

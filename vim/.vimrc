@@ -1,48 +1,49 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-call plug#begin('~/.vim/plugged')
+packadd minpac
 
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-apathy'
-Plug 'tpope/vim-scriptease'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-tbone'
-Plug 'tpope/vim-flagship'
-Plug 'tpope/vim-jdaddy'
-Plug 'tommcdo/vim-exchange'
-Plug 'tommcdo/vim-lion'
-Plug 'tommcdo/vim-fubitive'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'AndrewRadev/linediff.vim'
-Plug 'AndrewRadev/quickpeek.vim'
-Plug 'markonm/traces.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+call minpac#init()
 
-Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'lifepillar/vim-solarized8'
+call minpac#add('k-takata/minpac', { 'type': 'opt' })
+call minpac#add('tpope/vim-sensible')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-eunuch')
+call minpac#add('tpope/vim-abolish')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-vinegar')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-sleuth')
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-apathy')
+call minpac#add('tpope/vim-scriptease', { 'type': 'opt' })
+call minpac#add('tpope/vim-endwise')
+call minpac#add('tpope/vim-obsession')
+call minpac#add('tpope/vim-tbone')
+call minpac#add('tpope/vim-flagship')
+call minpac#add('tpope/vim-jdaddy')
+call minpac#add('tommcdo/vim-exchange')
+call minpac#add('tommcdo/vim-lion')
+call minpac#add('tommcdo/vim-fubitive')
+call minpac#add('AndrewRadev/splitjoin.vim')
+call minpac#add('AndrewRadev/linediff.vim')
+call minpac#add('AndrewRadev/quickpeek.vim')
+call minpac#add('markonm/traces.vim')
+call minpac#add('machakann/vim-highlightedyank')
+call minpac#add('editorconfig/editorconfig-vim')
+call minpac#add('SirVer/ultisnips')
+call minpac#add('honza/vim-snippets')
+call minpac#add('prabirshrestha/vim-lsp')
+call minpac#add('mattn/vim-lsp-settings')
 
-call plug#end()
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('HerringtonDarkholme/yats.vim')
+call minpac#add('MaxMEllon/vim-jsx-pretty')
+call minpac#add('tmux-plugins/vim-tmux')
+call minpac#add('lifepillar/vim-solarized8')
 
 if exists('+termguicolors')
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
