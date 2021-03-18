@@ -6,6 +6,7 @@ packadd minpac
 call minpac#init()
 
 call minpac#add('k-takata/minpac', { 'type': 'opt' })
+
 call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
@@ -19,18 +20,21 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-sleuth')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-apathy')
-call minpac#add('tpope/vim-scriptease', { 'type': 'opt' })
 call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-obsession')
-call minpac#add('tpope/vim-tbone')
 call minpac#add('tpope/vim-flagship')
 call minpac#add('tpope/vim-jdaddy')
+call minpac#add('tpope/vim-tbone', { 'type': 'opt' })
+call minpac#add('tpope/vim-scriptease', { 'type': 'opt' })
+
 call minpac#add('tommcdo/vim-exchange')
 call minpac#add('tommcdo/vim-lion')
 call minpac#add('tommcdo/vim-fubitive')
+
 call minpac#add('AndrewRadev/splitjoin.vim')
 call minpac#add('AndrewRadev/linediff.vim')
 call minpac#add('AndrewRadev/quickpeek.vim')
+
 call minpac#add('markonm/traces.vim')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('editorconfig/editorconfig-vim')
