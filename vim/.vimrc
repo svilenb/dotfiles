@@ -25,6 +25,7 @@ let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_float_cursor = 1
+let g:fugitive_legacy_commands = 0
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
