@@ -129,8 +129,8 @@ if !exists('##TextYankPost')
 	map y <Plug>(highlightedyank)
 endif
 
-nnoremap <Leader>cd :lcd %:p:h<CR>
-nnoremap <Leader>rd :Plcd<CR>
+nnoremap <Leader>cd :tcd %:p:h<CR>
+nnoremap <Leader>rd :Ptcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>rg :Ggrep! <C-R>"<CR>
 
