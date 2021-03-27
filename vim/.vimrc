@@ -30,11 +30,6 @@ let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
-" let g:lsp_settings = {
-" 			\ 'typescript-language-server': {
-" 			\     'cmd': [lsp_settings#exec_path('typescript-language-server'), '--stdio', '--tsserver-path=tsserver']
-" 			\ },
-" 			\ }
 
 function! PackInit() abort
 	packadd minpac
