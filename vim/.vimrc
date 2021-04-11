@@ -64,6 +64,7 @@ function! PackInit() abort
 
 	call minpac#add('AndrewRadev/splitjoin.vim')
 	call minpac#add('AndrewRadev/linediff.vim')
+	call minpac#add('AndrewRadev/sideways.vim')
 
 	call minpac#add('markonm/traces.vim')
 	call minpac#add('machakann/vim-highlightedyank')
@@ -132,6 +133,10 @@ nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>rg :Ggrep! <C-R>"<CR>
+nnoremap <Leader>h :SidewaysLeft<cr>
+nnoremap <Leader>l :SidewaysRight<cr>
+nnoremap <Leader>b :SidewaysJumpLeft<cr>
+nnoremap <Leader>w :SidewaysJumpRight<cr>
 
 command! PackUpdate call PackInit() | call minpac#update()
 command! PackClean  call PackInit() | call minpac#clean()
