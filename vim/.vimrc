@@ -78,6 +78,7 @@ function! PackInit() abort
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
 	call minpac#add('tmux-plugins/vim-tmux')
 	call minpac#add('lifepillar/vim-solarized8')
+	call minpac#add('chrisbra/Colorizer')
 endfunction
 
 function! s:on_lsp_buffer_enabled() abort
