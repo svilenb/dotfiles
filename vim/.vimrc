@@ -74,7 +74,6 @@ function! PackInit() abort
 	call minpac#add('prabirshrestha/vim-lsp')
 	call minpac#add('mattn/vim-lsp-settings')
 
-	call minpac#add('pangloss/vim-javascript')
 	call minpac#add('HerringtonDarkholme/yats.vim')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
 	call minpac#add('tmux-plugins/vim-tmux')
