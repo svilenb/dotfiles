@@ -138,6 +138,11 @@ nnoremap <Leader>l :SidewaysRight<cr>
 nnoremap <Leader>b :SidewaysJumpLeft<cr>
 nnoremap <Leader>w :SidewaysJumpRight<cr>
 
+nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
+nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
+nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
+nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
+
 command! PackUpdate call PackInit() | call minpac#update()
 command! PackClean  call PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
