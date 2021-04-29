@@ -30,6 +30,7 @@ let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+let g:traces_preview_window = "winwidth('%') > 160 ? 'bot vnew' : 'bot 10new'"
 
 function! PackInit() abort
 	packadd minpac
@@ -100,6 +101,7 @@ function! s:on_lsp_buffer_enabled() abort
 	nmap <buffer> <leader>rn <plug>(lsp-rename)
 	nmap <buffer> <leader>d  <plug>(lsp-document-diagnostics)
 	nmap <buffer> <leader>ca <plug>(lsp-code-action)
+	nmap <buffer> <leader>f  <plug>(lsp-document-format)
 endfunction
 
 function! MyHighlights() abort
