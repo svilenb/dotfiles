@@ -31,6 +31,7 @@ let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 let g:traces_preview_window = "winwidth('%') > 160 ? 'bot vnew' : 'bot 10new'"
+let g:traces_abolish_integration = 1
 
 function! PackInit() abort
 	packadd minpac
