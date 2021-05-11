@@ -126,7 +126,7 @@ augroup my
 augroup END
 
 colorscheme solarized8
-set background=dark
+set background=light
 
 if !exists('##TextYankPost')
 	map y <Plug>(highlightedyank)
