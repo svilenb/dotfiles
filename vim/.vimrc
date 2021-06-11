@@ -128,10 +128,6 @@ augroup END
 colorscheme solarized8
 set background=light
 
-if !exists('##TextYankPost')
-	map y <Plug>(highlightedyank)
-endif
-
 nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
