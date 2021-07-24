@@ -134,10 +134,11 @@ nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>rg :Ggrep! <C-R>"<CR>
-nnoremap <Leader>h :SidewaysLeft<cr>
-nnoremap <Leader>l :SidewaysRight<cr>
-nnoremap <Leader>b :SidewaysJumpLeft<cr>
-nnoremap <Leader>w :SidewaysJumpRight<cr>
+nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>h :SidewaysLeft<CR>
+nnoremap <Leader>l :SidewaysRight<CR>
+nnoremap <Leader>b :SidewaysJumpLeft<CR>
+nnoremap <Leader>w :SidewaysJumpRight<CR>
 
 nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
 nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
