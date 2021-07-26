@@ -1,10 +1,3 @@
-call plug#begin('~/.local/share/nvim/plugged')
-
-Plug 'neovim/nvim-lspconfig'
-Plug 'norcalli/nvim-colorizer.lua'
-
-call plug#end()
-
 if (has('termguicolors'))
 	set termguicolors
 endif
@@ -22,6 +15,15 @@ let g:lsp_filetypes = {
 			\ 'scss': 1,
 			\ 'tex': 1,
 			\ }
+
+function! PackInit() abort
+	packadd minpac
+
+	call minpac#init()
+
+	call minpac#add('k-takata/minpac', { 'type': 'opt' })
+	call minpac#add('neovim/nvim-lspconfig')
+endfunction
 
 function! SetupLSP()
 	if has_key(g:lsp_filetypes, &filetype)
@@ -50,5 +52,9 @@ augroup Highlight
 	autocmd!
 	autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup END
+
+command! PackUpdate call PackInit() | call minpac#update()
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
 
 lua require 'plugins'
