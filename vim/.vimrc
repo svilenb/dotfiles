@@ -32,7 +32,6 @@ let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 let g:traces_preview_window = "winwidth('%') > 160 ? 'bot vnew' : 'bot 10new'"
 let g:traces_abolish_integration = 1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 function! PackInit() abort
 	packadd minpac
@@ -66,7 +65,7 @@ function! PackInit() abort
 	call minpac#add('tommcdo/vim-fubitive')
 
 	call minpac#add('AndrewRadev/splitjoin.vim')
-	call minpac#add('AndrewRadev/linediff.vim')
+	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
 	call minpac#add('AndrewRadev/sideways.vim')
 
 	call minpac#add('markonm/traces.vim')
@@ -76,7 +75,6 @@ function! PackInit() abort
 	call minpac#add('honza/vim-snippets')
 	call minpac#add('prabirshrestha/vim-lsp')
 	call minpac#add('mattn/vim-lsp-settings')
-	call minpac#add('ctrlpvim/ctrlp.vim')
 
 	call minpac#add('HerringtonDarkholme/yats.vim')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
@@ -134,7 +132,6 @@ nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
 nnoremap <Leader>rg :Ggrep! <C-R>"<CR>
-nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
 nnoremap <Leader>b :SidewaysJumpLeft<CR>

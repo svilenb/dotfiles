@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     tmux
+    nvm
     npm
 )
 
