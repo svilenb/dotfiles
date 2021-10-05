@@ -40,6 +40,8 @@ function! PackInit() abort
 
 	call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
+	call minpac#add('editorconfig/editorconfig-vim')
+
 	call minpac#add('tpope/vim-sensible')
 	call minpac#add('tpope/vim-apathy')
 	call minpac#add('tpope/vim-sleuth')
@@ -69,10 +71,8 @@ function! PackInit() abort
 	call minpac#add('AndrewRadev/sideways.vim')
 
 	call minpac#add('markonm/traces.vim')
-	call minpac#add('machakann/vim-highlightedyank')
-	call minpac#add('editorconfig/editorconfig-vim')
-	call minpac#add('SirVer/ultisnips')
 	call minpac#add('honza/vim-snippets')
+	call minpac#add('SirVer/ultisnips')
 	call minpac#add('prabirshrestha/vim-lsp')
 	call minpac#add('mattn/vim-lsp-settings')
 

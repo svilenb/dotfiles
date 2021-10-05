@@ -27,6 +27,26 @@ Install following one of the following examples.
 * https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 * http://www.vim.org/git.php
 
+```
+make clean
+make distclean
+
+./configure \
+	--with-features=huge \
+	--disable-terminal \
+	--enable-multibyte \
+	--enable-luainterp=yes \
+	--enable-python3interp=yes \
+	--with-python3-config-dir=/usr/lib/python3.9/config-3.8-x86_64-linux-gnu \
+	--disable-gui \
+	--enable-cscope \
+	--prefix=/usr/local
+
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+
+sudo make install
+```
+
 Follow installation instructions for [minpac](https://github.com/k-takata/minpac).
 Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
@@ -43,4 +63,3 @@ Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 Follow installation instructions for [tmux-yank](https://github.com/tmux-plugins/tmux-yank).
-
