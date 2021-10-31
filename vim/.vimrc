@@ -20,6 +20,7 @@ set laststatus=2
 set showtabline=2
 set cmdheight=2
 set noerrorbells visualbell t_vb=
+set clipboard^=unnamed,unnamedplus
 
 let mapleader = " "
 
@@ -52,6 +53,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-commentary')
 	call minpac#add('tpope/vim-endwise')
 	call minpac#add('tpope/vim-jdaddy')
+	call minpac#add('tpope/vim-speeddating')
 	call minpac#add('tpope/vim-vinegar')
 	call minpac#add('tpope/vim-flagship')
 	call minpac#add('tpope/vim-dispatch')
@@ -71,6 +73,7 @@ function! PackInit() abort
 	call minpac#add('AndrewRadev/sideways.vim')
 
 	call minpac#add('markonm/traces.vim')
+	call minpac#add('machakann/vim-highlightedyank')
 	call minpac#add('honza/vim-snippets')
 	call minpac#add('SirVer/ultisnips')
 	call minpac#add('prabirshrestha/vim-lsp')

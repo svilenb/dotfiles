@@ -33,7 +33,6 @@ make distclean
 
 ./configure \
 	--with-features=huge \
-	--disable-terminal \
 	--enable-multibyte \
 	--enable-luainterp=yes \
 	--enable-python3interp=yes \
