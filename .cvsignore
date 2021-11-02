@@ -5,3 +5,4 @@
 *.swm
 tags
 Session.vim
+.DS_Store
