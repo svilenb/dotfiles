@@ -19,8 +19,9 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
 set laststatus=2
 set showtabline=2
 set cmdheight=2
-set noerrorbells visualbell t_vb=
 set clipboard^=unnamed,unnamedplus
+set wildoptions=pum,fuzzy
+set noerrorbells visualbell t_vb=
 
 let mapleader = " "
 
