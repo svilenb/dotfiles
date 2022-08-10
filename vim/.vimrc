@@ -20,14 +20,13 @@ set laststatus=2
 set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
-set wildoptions=pum,fuzzy
+set wildoptions=pum
 set noerrorbells visualbell t_vb=
 
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_float_cursor = 1
-let g:fugitive_legacy_commands = 0
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
@@ -61,6 +60,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-obsession')
 	call minpac#add('tpope/vim-eunuch')
 	call minpac#add('tpope/vim-fugitive')
+	call minpac#add('tpope/vim-rhubarb')
 	call minpac#add('tpope/vim-projectionist')
 	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
 	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
@@ -73,18 +73,23 @@ function! PackInit() abort
 	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
 	call minpac#add('AndrewRadev/sideways.vim')
 
+	call minpac#add('chrisbra/NrrwRgn')
+	call minpac#add('chrisbra/Colorizer')
+
 	call minpac#add('markonm/traces.vim')
 	call minpac#add('machakann/vim-highlightedyank')
+
 	call minpac#add('honza/vim-snippets')
 	call minpac#add('SirVer/ultisnips')
+
 	call minpac#add('prabirshrestha/vim-lsp')
 	call minpac#add('mattn/vim-lsp-settings')
 
 	call minpac#add('HerringtonDarkholme/yats.vim')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
 	call minpac#add('tmux-plugins/vim-tmux')
+
 	call minpac#add('lifepillar/vim-solarized8')
-	call minpac#add('chrisbra/Colorizer')
 endfunction
 
 function! s:on_lsp_buffer_enabled() abort
