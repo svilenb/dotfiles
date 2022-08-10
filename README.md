@@ -49,11 +49,6 @@ sudo make install
 Follow installation instructions for [minpac](https://github.com/k-takata/minpac).
 Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
-## Neovim
-
-Add support for --remote using [neovim-remote](https://github.com/mhinz/neovim-remote).
-Follow installation instructions from [nvim-lsp](https://github.com/neovim/nvim-lsp) for tsserver, vimls, cssls, texlab.
-
 ## Z-Shell
 
 Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) framework.

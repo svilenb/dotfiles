@@ -11,9 +11,6 @@ let g:lsp_filetypes = {
 			\ 'javascriptreact': 1,
 			\ 'typescript': 1,
 			\ 'typescriptreact': 1,
-			\ 'css': 1,
-			\ 'scss': 1,
-			\ 'tex': 1,
 			\ }
 
 function! PackInit() abort
@@ -46,10 +43,6 @@ endfunction
 augroup Filetypes
 	autocmd!
 	autocmd FileType * call SetupLSP()
-augroup END
-
-augroup Highlight
-	autocmd!
 	autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup END
 
