@@ -31,8 +31,7 @@ let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
-let g:traces_preview_window = "winwidth('%') > 160 ? 'bot vnew' : 'bot 10new'"
-let g:traces_abolish_integration = 1
+let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 
 function! PackInit() abort
 	packadd minpac
@@ -75,9 +74,6 @@ function! PackInit() abort
 
 	call minpac#add('chrisbra/NrrwRgn')
 	call minpac#add('chrisbra/Colorizer')
-
-	call minpac#add('markonm/traces.vim')
-	call minpac#add('machakann/vim-highlightedyank')
 
 	call minpac#add('honza/vim-snippets')
 	call minpac#add('SirVer/ultisnips')
