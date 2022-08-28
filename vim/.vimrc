@@ -15,12 +15,10 @@ set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
 set nowrap
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$
 set laststatus=2
 set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
-set wildoptions=pum
 set noerrorbells visualbell t_vb=
 
 let mapleader = " "
@@ -75,6 +73,13 @@ function! PackInit() abort
 	call minpac#add('chrisbra/NrrwRgn')
 	call minpac#add('chrisbra/Colorizer')
 
+	call minpac#add('vim/colorschemes')
+	call minpac#add('vim/killersheep', { 'type': 'opt', 'name': 'killersheep' })
+
+	call minpac#add('lifepillar/vim-solarized8')
+
+	call minpac#add('tmux-plugins/vim-tmux')
+
 	call minpac#add('honza/vim-snippets')
 	call minpac#add('SirVer/ultisnips')
 
@@ -83,9 +88,6 @@ function! PackInit() abort
 
 	call minpac#add('HerringtonDarkholme/yats.vim')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
-	call minpac#add('tmux-plugins/vim-tmux')
-
-	call minpac#add('lifepillar/vim-solarized8')
 endfunction
 
 function! s:on_lsp_buffer_enabled() abort
