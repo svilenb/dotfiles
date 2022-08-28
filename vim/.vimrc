@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
@@ -20,6 +22,7 @@ set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
 set noerrorbells visualbell t_vb=
+set sessionoptions-=options
 
 let mapleader = " "
 
@@ -30,65 +33,6 @@ let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
-
-function! PackInit() abort
-	packadd minpac
-
-	call minpac#init()
-
-	call minpac#add('k-takata/minpac', { 'type': 'opt' })
-
-	call minpac#add('editorconfig/editorconfig-vim')
-
-	call minpac#add('tpope/vim-sensible')
-	call minpac#add('tpope/vim-apathy')
-	call minpac#add('tpope/vim-sleuth')
-	call minpac#add('tpope/vim-surround')
-	call minpac#add('tpope/vim-repeat')
-	call minpac#add('tpope/vim-unimpaired')
-	call minpac#add('tpope/vim-abolish')
-	call minpac#add('tpope/vim-commentary')
-	call minpac#add('tpope/vim-endwise')
-	call minpac#add('tpope/vim-jdaddy')
-	call minpac#add('tpope/vim-speeddating')
-	call minpac#add('tpope/vim-vinegar')
-	call minpac#add('tpope/vim-flagship')
-	call minpac#add('tpope/vim-dispatch')
-	call minpac#add('tpope/vim-obsession')
-	call minpac#add('tpope/vim-eunuch')
-	call minpac#add('tpope/vim-fugitive')
-	call minpac#add('tpope/vim-rhubarb')
-	call minpac#add('tpope/vim-projectionist')
-	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
-	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
-
-	call minpac#add('tommcdo/vim-exchange')
-	call minpac#add('tommcdo/vim-lion')
-	call minpac#add('tommcdo/vim-fubitive')
-
-	call minpac#add('AndrewRadev/splitjoin.vim')
-	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
-	call minpac#add('AndrewRadev/sideways.vim')
-
-	call minpac#add('chrisbra/NrrwRgn')
-	call minpac#add('chrisbra/Colorizer')
-
-	call minpac#add('vim/colorschemes')
-	call minpac#add('vim/killersheep', { 'type': 'opt', 'name': 'killersheep' })
-
-	call minpac#add('lifepillar/vim-solarized8')
-
-	call minpac#add('tmux-plugins/vim-tmux')
-
-	call minpac#add('honza/vim-snippets')
-	call minpac#add('SirVer/ultisnips')
-
-	call minpac#add('prabirshrestha/vim-lsp')
-	call minpac#add('mattn/vim-lsp-settings')
-
-	call minpac#add('HerringtonDarkholme/yats.vim')
-	call minpac#add('MaxMEllon/vim-jsx-pretty')
-endfunction
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
@@ -148,6 +92,65 @@ nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
 nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
+
+function! PackInit() abort
+	packadd minpac
+
+	call minpac#init()
+
+	call minpac#add('k-takata/minpac', { 'type': 'opt' })
+
+	call minpac#add('editorconfig/editorconfig-vim')
+
+	call minpac#add('tpope/vim-sensible')
+	call minpac#add('tpope/vim-apathy')
+	call minpac#add('tpope/vim-sleuth')
+	call minpac#add('tpope/vim-surround')
+	call minpac#add('tpope/vim-repeat')
+	call minpac#add('tpope/vim-unimpaired')
+	call minpac#add('tpope/vim-abolish')
+	call minpac#add('tpope/vim-commentary')
+	call minpac#add('tpope/vim-endwise')
+	call minpac#add('tpope/vim-jdaddy')
+	call minpac#add('tpope/vim-speeddating')
+	call minpac#add('tpope/vim-vinegar')
+	call minpac#add('tpope/vim-flagship')
+	call minpac#add('tpope/vim-dispatch')
+	call minpac#add('tpope/vim-obsession')
+	call minpac#add('tpope/vim-eunuch')
+	call minpac#add('tpope/vim-fugitive')
+	call minpac#add('tpope/vim-rhubarb')
+	call minpac#add('tpope/vim-projectionist')
+	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
+	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
+
+	call minpac#add('tommcdo/vim-exchange')
+	call minpac#add('tommcdo/vim-lion')
+	call minpac#add('tommcdo/vim-fubitive')
+
+	call minpac#add('AndrewRadev/splitjoin.vim')
+	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
+	call minpac#add('AndrewRadev/sideways.vim')
+
+	call minpac#add('chrisbra/NrrwRgn')
+	call minpac#add('chrisbra/Colorizer')
+
+	call minpac#add('vim/colorschemes')
+	call minpac#add('vim/killersheep', { 'type': 'opt' })
+
+	call minpac#add('lifepillar/vim-solarized8')
+
+	call minpac#add('tmux-plugins/vim-tmux')
+
+	call minpac#add('honza/vim-snippets')
+	call minpac#add('SirVer/ultisnips')
+
+	call minpac#add('prabirshrestha/vim-lsp')
+	call minpac#add('mattn/vim-lsp-settings')
+
+	call minpac#add('HerringtonDarkholme/yats.vim')
+	call minpac#add('MaxMEllon/vim-jsx-pretty')
+endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
 command! PackClean  call PackInit() | call minpac#clean()

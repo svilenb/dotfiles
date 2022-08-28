@@ -46,8 +46,10 @@ make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 sudo make install
 ```
 
-Follow installation instructions for [minpac](https://github.com/k-takata/minpac).
-Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
+Install following vimscripts
+
+* [minpac](https://github.com/k-takata/minpac)
+* [pathogen.vim](https://github.com/tpope/vim-pathogen)
 
 ## Z-Shell
 
@@ -57,3 +59,7 @@ Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 Follow installation instructions for [tmux-yank](https://github.com/tmux-plugins/tmux-yank).
+
+## Searching Tools
+
+Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
