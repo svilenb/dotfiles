@@ -1,5 +1,11 @@
 # Svilen's dotfiles
 
+## Git
+
+```
+git clone https://github.com/svilenb/dotfiles.git ~/dotfiles
+```
+
 Add global .gitignore
 
 ```
@@ -7,12 +13,15 @@ ln -sf ~/dotfiles/.cvsignore ~/.cvsignore
 git config --global core.excludesFile ~/.cvsignore
 ```
 
-Create application symlinks using GNU Stow
+## GNU Stow
 
-This is an example for Vim:
+Install [GNU Stow](https://www.gnu.org/software/stow/) if it's not available already. Create application symlinks.
 
 ```
-stow -vSt ~ vim
+cd ~/dotfiles && \
+stow -vSt ~ vim && \
+stow -vSt ~ tmux && \
+stow -vSt ~ zsh
 ```
 
 ## Terminal
