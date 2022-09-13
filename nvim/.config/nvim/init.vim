@@ -2,10 +2,6 @@ if (has('termguicolors'))
 	set termguicolors
 endif
 
-if exists('&inccommand')
-	set inccommand=split
-endif
-
 let g:lsp_filetypes = {
 			\ 'javascript': 1,
 			\ 'javascriptreact': 1,
@@ -43,7 +39,6 @@ endfunction
 augroup Filetypes
 	autocmd!
 	autocmd FileType * call SetupLSP()
-	autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup END
 
 command! PackUpdate call PackInit() | call minpac#update()

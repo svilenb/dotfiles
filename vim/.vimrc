@@ -27,12 +27,11 @@ set sessionoptions-=options
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:lsp_diagnostics_float_cursor = 1
+let g:lsp_diagnostics_echo_cursor = 1
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
-let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
@@ -111,6 +110,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-abolish')
 	call minpac#add('tpope/vim-commentary')
 	call minpac#add('tpope/vim-endwise')
+	call minpac#add('tpope/vim-rsi')
 	call minpac#add('tpope/vim-jdaddy')
 	call minpac#add('tpope/vim-speeddating')
 	call minpac#add('tpope/vim-vinegar')
