@@ -49,10 +49,10 @@ function! s:on_lsp_buffer_enabled() abort
 	nmap <buffer> gr         <plug>(lsp-references)
 	nmap <buffer> g0         <plug>(lsp-document-symbol)
 	nmap <buffer> gW         <plug>(lsp-workspace-symbol)
-	nmap <buffer> <leader>rn <plug>(lsp-rename)
-	nmap <buffer> <leader>d  <plug>(lsp-document-diagnostics)
-	nmap <buffer> <leader>ca <plug>(lsp-code-action)
-	nmap <buffer> <leader>f  <plug>(lsp-document-format)
+	nmap <buffer> <Leader>rn <plug>(lsp-rename)
+	nmap <buffer> <Leader>ca <plug>(lsp-code-action)
+	nmap <buffer> <Leader>f  <plug>(lsp-document-format)
+	nmap <buffer> <F5>       <plug>(lsp-document-diagnostics)
 endfunction
 
 function! MyHighlights() abort
@@ -121,6 +121,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('tpope/vim-rhubarb')
 	call minpac#add('tpope/vim-projectionist')
+	call minpac#add('tpope/vim-capslock')
 	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
 	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
 
