@@ -61,6 +61,11 @@ function! MyHighlights() abort
 	execute "highlight LspInformationText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
 	execute "highlight LspHintText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
 
+	execute "highlight LspErrorVirtualText guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspWarningVirtualText guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspInformationVirtualText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspHintVirtualText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+
 	execute "highlight LspErrorHighlight guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE guisp=" . g:terminal_ansi_colors[1] . " gui=undercurl cterm=undercurl"
 	execute "highlight LspWarningHighlight guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE guisp=" . g:terminal_ansi_colors[3] . " gui=undercurl cterm=undercurl"
 	execute "highlight LspInformationHighlight guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE guisp=" . g:terminal_ansi_colors[6] . " gui=undercurl cterm=undercurl"
@@ -122,6 +127,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-rhubarb')
 	call minpac#add('tpope/vim-projectionist')
 	call minpac#add('tpope/vim-capslock')
+	call minpac#add('tpope/vim-characterize')
 	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
 	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
 
