@@ -83,6 +83,14 @@ augroup END
 colorscheme solarized8
 set background=light
 
+" delete without yanking
+nnoremap <Leader>d "_d
+vnoremap <Leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <Leader>p "_dP
+
 nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
 nnoremap <Leader>a :Ggrep!<Space>
