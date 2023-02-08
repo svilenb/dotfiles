@@ -21,6 +21,7 @@ set laststatus=2
 set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
+set wildoptions=pum
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 
@@ -28,6 +29,7 @@ let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
