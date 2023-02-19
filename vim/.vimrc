@@ -28,8 +28,10 @@ set sessionoptions-=options
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_virtual_text_enabled = 0
+
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
@@ -60,17 +62,17 @@ endfunction
 function! MyHighlights() abort
 	execute "highlight LspErrorText guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE gui=bold cterm=bold"
 	execute "highlight LspWarningText guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspInformationText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspInformationText guifg=" . g:terminal_ansi_colors[4] . " guibg=NONE gui=bold cterm=bold"
 	execute "highlight LspHintText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
 
 	execute "highlight LspErrorVirtualText guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE gui=bold cterm=bold"
 	execute "highlight LspWarningVirtualText guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspInformationVirtualText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+	execute "highlight LspInformationVirtualText guifg=" . g:terminal_ansi_colors[4] . " guibg=NONE gui=bold cterm=bold"
 	execute "highlight LspHintVirtualText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
 
 	execute "highlight LspErrorHighlight guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE guisp=" . g:terminal_ansi_colors[1] . " gui=undercurl cterm=undercurl"
 	execute "highlight LspWarningHighlight guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE guisp=" . g:terminal_ansi_colors[3] . " gui=undercurl cterm=undercurl"
-	execute "highlight LspInformationHighlight guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE guisp=" . g:terminal_ansi_colors[6] . " gui=undercurl cterm=undercurl"
+	execute "highlight LspInformationHighlight guifg=" . g:terminal_ansi_colors[4] . " guibg=NONE guisp=" . g:terminal_ansi_colors[4] . " gui=undercurl cterm=undercurl"
 	execute "highlight LspHintHighlight guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=undercurl guisp=" . g:terminal_ansi_colors[6] . " cterm=undercurl"
 
 	highlight! link lspReference CursorLine
@@ -79,10 +81,10 @@ endfunction
 augroup my
 	autocmd!
 	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-	autocmd ColorScheme solarized8 call MyHighlights()
+	autocmd ColorScheme * call MyHighlights()
 augroup END
 
-colorscheme solarized8
+colorscheme retrobox
 set background=light
 
 " delete without yanking
@@ -154,8 +156,6 @@ function! PackInit() abort
 
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
-
-	call minpac#add('lifepillar/vim-solarized8')
 
 	call minpac#add('tmux-plugins/vim-tmux')
 
