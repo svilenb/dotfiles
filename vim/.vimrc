@@ -37,7 +37,6 @@ let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 
-
 if executable('typescript-language-server')
 	au User lsp_setup call lsp#register_server({
 				\ 'name': 'typescript-language-server',
@@ -104,6 +103,12 @@ vnoremap <Leader>d "_d
 " replace currently selected text with default register
 " without yanking it
 vnoremap <Leader>p "_dP
+
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 
 nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
