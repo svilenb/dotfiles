@@ -37,6 +37,16 @@ let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 
+
+if executable('typescript-language-server')
+	au User lsp_setup call lsp#register_server({
+				\ 'name': 'typescript-language-server',
+				\ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+				\ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+				\ 'whitelist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
+				\ })
+endif
+
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
 	setlocal signcolumn=yes
@@ -163,7 +173,6 @@ function! PackInit() abort
 	call minpac#add('SirVer/ultisnips')
 
 	call minpac#add('prabirshrestha/vim-lsp')
-	call minpac#add('mattn/vim-lsp-settings')
 
 	call minpac#add('HerringtonDarkholme/yats.vim')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
