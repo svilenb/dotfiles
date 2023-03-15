@@ -104,20 +104,25 @@ vnoremap <Leader>d "_d
 " without yanking it
 vnoremap <Leader>p "_dP
 
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
+
+nnoremap <Leader>ew :e %%
+nnoremap <Leader>es :sp %%
+nnoremap <Leader>ev :vsp %%
+nnoremap <Leader>et :tabe %%
+
+nnoremap <Leader>b :buffer <C-R>=fnameescape(getcwd()).'/'<CR>
+nnoremap <Leader>sb :sbuffer <C-R>=fnameescape(getcwd()).'/'<CR>
 
 nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
+
 nnoremap <Leader>a :Ggrep!<Space>
-nnoremap <Leader>rg :Ggrep! <C-R>"<CR>
+
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
-nnoremap <Leader>b :SidewaysJumpLeft<CR>
-nnoremap <Leader>w :SidewaysJumpRight<CR>
+nnoremap <Leader>jh :SidewaysJumpLeft<CR>
+nnoremap <Leader>jl :SidewaysJumpRight<CR>
 
 nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
 nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
