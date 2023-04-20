@@ -28,69 +28,42 @@ set sessionoptions-=options
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_virtual_text_enabled = 0
-
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsListSnippets = "<C-R><Tab>"
 let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 
-if executable('typescript-language-server')
-	au User lsp_setup call lsp#register_server({
-				\ 'name': 'typescript-language-server',
-				\ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-				\ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-				\ 'whitelist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
-				\ })
-endif
-
-function! s:on_lsp_buffer_enabled() abort
-	setlocal omnifunc=lsp#complete
-	setlocal signcolumn=yes
-
-	if exists('+tagfunc')
-		setlocal tagfunc=lsp#tagfunc
-	endif
-
-	nmap <buffer> gd         <plug>(lsp-definition)
-	nmap <buffer> gD         <plug>(lsp-implementation)
-	nmap <buffer> K          <plug>(lsp-hover)
-	nmap <buffer> <c-k>      <plug>(lsp-signature-help)
-	nmap <buffer> 1gD        <plug>(lsp-type-definition)
-	nmap <buffer> gr         <plug>(lsp-references)
-	nmap <buffer> g0         <plug>(lsp-document-symbol)
-	nmap <buffer> gW         <plug>(lsp-workspace-symbol)
-	nmap <buffer> <Leader>rn <plug>(lsp-rename)
-	nmap <buffer> <Leader>ca <plug>(lsp-code-action)
-	nmap <buffer> <Leader>f  <plug>(lsp-document-format)
-	nmap <buffer> <F5>       <plug>(lsp-document-diagnostics)
+function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
+	echom printf("TypeScript Version = %s", a:reply.params.version)
 endfunction
 
-function! MyHighlights() abort
-	execute "highlight LspErrorText guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspWarningText guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspInformationText guifg=" . g:terminal_ansi_colors[4] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspHintText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+function! SetupLSP() abort
+	if exists('+tagfunc')
+		setlocal tagfunc=lsp#lsp#TagFunc
+	endif
 
-	execute "highlight LspErrorVirtualText guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspWarningVirtualText guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspInformationVirtualText guifg=" . g:terminal_ansi_colors[4] . " guibg=NONE gui=bold cterm=bold"
-	execute "highlight LspHintVirtualText guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=bold cterm=bold"
+	if exists('+formatexpr')
+		setlocal formatexpr=lsp#lsp#FormatExpr()
+	endif
 
-	execute "highlight LspErrorHighlight guifg=" . g:terminal_ansi_colors[1] . " guibg=NONE guisp=" . g:terminal_ansi_colors[1] . " gui=undercurl cterm=undercurl"
-	execute "highlight LspWarningHighlight guifg=" . g:terminal_ansi_colors[3] . " guibg=NONE guisp=" . g:terminal_ansi_colors[3] . " gui=undercurl cterm=undercurl"
-	execute "highlight LspInformationHighlight guifg=" . g:terminal_ansi_colors[4] . " guibg=NONE guisp=" . g:terminal_ansi_colors[4] . " gui=undercurl cterm=undercurl"
-	execute "highlight LspHintHighlight guifg=" . g:terminal_ansi_colors[6] . " guibg=NONE gui=undercurl guisp=" . g:terminal_ansi_colors[6] . " cterm=undercurl"
-
-	highlight! link lspReference CursorLine
+	nnoremap <buffer> gd         <Cmd>LspGotoDefinition<CR>
+	nnoremap <buffer> gD         <Cmd>LspGotoImpl<CR>
+	nnoremap <buffer> K          <Cmd>LspHover<CR>
+	nnoremap <buffer> <c-k>      <Cmd>LspShowSignature<CR>
+	nnoremap <buffer> 1gD        <Cmd>LspGotoTypeDef<CR>
+	nnoremap <buffer> gr         <Cmd>LspShowReferences<CR>
+	" nnoremap <buffer> g0         <plug>(lsp-document-symbol)
+	" nnoremap <buffer> gW         <plug>(lsp-workspace-symbol)
+	nnoremap <buffer> <Leader>rn <Cmd>LspRename<CR>
+	nnoremap <buffer> <Leader>ca <Cmd>LspCodeAction<CR>
+	nnoremap <buffer> <Leader>f  <Cmd>LspFormat<CR>
+	nnoremap <buffer> <Leader>ds <Cmd>LspDiagShow<CR>
+	nnoremap <buffer> <Leader>dc <Cmd>LspDiagCurrent<CR>
 endfunction
 
 augroup my
 	autocmd!
-	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-	autocmd ColorScheme * call MyHighlights()
+	autocmd User LspAttached call SetupLSP()
 augroup END
 
 colorscheme retrobox
@@ -177,15 +150,36 @@ function! PackInit() abort
 
 	call minpac#add('tmux-plugins/vim-tmux')
 
-	call minpac#add('honza/vim-snippets')
-	call minpac#add('SirVer/ultisnips')
-
-	call minpac#add('prabirshrestha/vim-lsp')
+	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
 	call minpac#add('HerringtonDarkholme/yats.vim')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
 endfunction
 
+function! LspInit() abort
+	highlight link LspDiagLine NONE
+
+	let lspServers = [
+				\     #{
+				\	 name: 'typescriptlang',
+				\	 filetype: ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
+				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.9.0/bin/typescript-language-server',
+				\	 args: ['--stdio'],
+				\	 customNotificationHandlers: {
+				\	   '$/typescriptVersion': function('TypeScriptCustomNotificationHandler')
+				\	 }
+				\      },
+				\   ]
+	let lspOpts = {
+				\ 'autoComplete': v:false,
+				\ 'useQuickfixForLocations': v:true,
+				\ }
+
+	call LspAddServer(lspServers)
+	call LspOptionsSet(lspOpts)
+endfunction
+
 command! PackUpdate call PackInit() | call minpac#update()
 command! PackClean  call PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
+command! StartLsp packadd lsp | call LspInit()
