@@ -52,8 +52,7 @@ function! SetupLSP() abort
 	nnoremap <buffer> <c-k>      <Cmd>LspShowSignature<CR>
 	nnoremap <buffer> 1gD        <Cmd>LspGotoTypeDef<CR>
 	nnoremap <buffer> gr         <Cmd>LspShowReferences<CR>
-	" nnoremap <buffer> g0         <plug>(lsp-document-symbol)
-	" nnoremap <buffer> gW         <plug>(lsp-workspace-symbol)
+	nnoremap <buffer> gW         <Cmd>LspSymbolSearch<CR>
 	nnoremap <buffer> <Leader>rn <Cmd>LspRename<CR>
 	nnoremap <buffer> <Leader>ca <Cmd>LspCodeAction<CR>
 	nnoremap <buffer> <Leader>f  <Cmd>LspFormat<CR>
@@ -67,7 +66,6 @@ augroup my
 augroup END
 
 colorscheme retrobox
-set background=light
 
 " delete without yanking
 nnoremap <Leader>d "_d
@@ -145,14 +143,14 @@ function! PackInit() abort
 	call minpac#add('chrisbra/NrrwRgn')
 	call minpac#add('chrisbra/Colorizer')
 
+	call minpac#add('yegappan/mru')
+	call minpac#add('yegappan/lsp', { 'type': 'opt' })
+
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
 
 	call minpac#add('tmux-plugins/vim-tmux')
 
-	call minpac#add('yegappan/lsp', { 'type': 'opt' })
-
-	call minpac#add('HerringtonDarkholme/yats.vim')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
 endfunction
 
