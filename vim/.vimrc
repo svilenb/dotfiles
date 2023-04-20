@@ -60,9 +60,14 @@ function! SetupLSP() abort
 	nnoremap <buffer> <Leader>dc <Cmd>LspDiagCurrent<CR>
 endfunction
 
+function! MyHighlights() abort
+	highlight link LspDiagLine NONE
+endfunction
+
 augroup my
 	autocmd!
 	autocmd User LspAttached call SetupLSP()
+	autocmd ColorScheme * call MyHighlights()
 augroup END
 
 colorscheme retrobox
@@ -155,8 +160,6 @@ function! PackInit() abort
 endfunction
 
 function! LspInit() abort
-	highlight link LspDiagLine NONE
-
 	let lspServers = [
 				\     #{
 				\	 name: 'typescriptlang',
