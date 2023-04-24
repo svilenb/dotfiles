@@ -160,24 +160,21 @@ function! PackInit() abort
 endfunction
 
 function! LspInit() abort
-	let lspServers = [
+	call LspAddServer([
 				\     #{
 				\	 name: 'typescriptlang',
 				\	 filetype: ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
-				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.9.0/bin/typescript-language-server',
+				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.13.0/bin/typescript-language-server',
 				\	 args: ['--stdio'],
 				\	 customNotificationHandlers: {
 				\	   '$/typescriptVersion': function('TypeScriptCustomNotificationHandler')
 				\	 }
 				\      },
-				\   ]
-	let lspOpts = {
+				\   ])
+	call LspOptionsSet({
 				\ 'autoComplete': v:false,
 				\ 'useQuickfixForLocations': v:true,
-				\ }
-
-	call LspAddServer(lspServers)
-	call LspOptionsSet(lspOpts)
+				\ })
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
