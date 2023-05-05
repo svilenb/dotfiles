@@ -38,6 +38,9 @@ function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
 endfunction
 
 function! SetupLSP() abort
+	" omnifunc is set automatically once autoComplete is disabled
+	" set omnifunc=g:LspOmniFunc
+
 	if exists('+tagfunc')
 		setlocal tagfunc=lsp#lsp#TagFunc
 	endif
@@ -46,18 +49,21 @@ function! SetupLSP() abort
 		setlocal formatexpr=lsp#lsp#FormatExpr()
 	endif
 
-	nnoremap <buffer> gd         <Cmd>LspGotoDefinition<CR>
-	nnoremap <buffer> gD         <Cmd>LspGotoImpl<CR>
-	nnoremap <buffer> K          <Cmd>LspHover<CR>
-	nnoremap <buffer> <c-k>      <Cmd>LspShowSignature<CR>
-	nnoremap <buffer> 1gD        <Cmd>LspGotoTypeDef<CR>
-	nnoremap <buffer> gr         <Cmd>LspShowReferences<CR>
-	nnoremap <buffer> gW         <Cmd>LspSymbolSearch<CR>
-	nnoremap <buffer> <Leader>rn <Cmd>LspRename<CR>
-	nnoremap <buffer> <Leader>ca <Cmd>LspCodeAction<CR>
-	nnoremap <buffer> <Leader>f  <Cmd>LspFormat<CR>
-	nnoremap <buffer> <Leader>ds <Cmd>LspDiagShow<CR>
-	nnoremap <buffer> <Leader>dc <Cmd>LspDiagCurrent<CR>
+	nnoremap <buffer> gd                 <Cmd>LspGotoDefinition<CR>
+	nnoremap <buffer> <C-W>gd            <Cmd>topleft LspGotoDefinition<CR>
+	nnoremap <buffer> gi                 <Cmd>LspGotoImpl<CR>
+	nnoremap <buffer> K                  <Cmd>LspHover<CR>
+	nnoremap <buffer> <c-k>              <Cmd>LspShowSignature<CR>
+	nnoremap <buffer> gt                 <Cmd>LspGotoTypeDef<CR>
+	nnoremap <buffer> gr                 <Cmd>LspShowReferences<CR>
+	nnoremap <buffer> gW                 <Cmd>LspSymbolSearch<CR>
+	nnoremap <buffer> <Leader>rn         <Cmd>LspRename<CR>
+	nnoremap <buffer> <Leader>ca         <Cmd>LspCodeAction<CR>
+	nnoremap <buffer> <Leader>f          <Cmd>LspFormat<CR>
+	nnoremap <buffer> <Leader>ds         <Cmd>LspDiagShow<CR>
+	nnoremap <buffer> <Leader>dc         <Cmd>LspDiagCurrent<CR>
+	xnoremap <silent><buffer> <Leader>e  <Cmd>LspSelectionExpand<CR>
+	xnoremap <silent><buffer> <Leader>s  <Cmd>LspSelectionShrink<CR>
 endfunction
 
 function! MyHighlights() abort
@@ -156,6 +162,9 @@ function! PackInit() abort
 
 	call minpac#add('tmux-plugins/vim-tmux')
 
+	call minpac#add('honza/vim-snippets')
+	call minpac#add('SirVer/ultisnips')
+
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
 endfunction
 
@@ -171,9 +180,11 @@ function! LspInit() abort
 				\	 }
 				\      },
 				\   ])
+
 	call LspOptionsSet({
 				\ 'autoComplete': v:false,
 				\ 'useQuickfixForLocations': v:true,
+				\ 'outlineWinSize': 60,
 				\ })
 endfunction
 
