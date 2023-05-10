@@ -9,10 +9,6 @@ if exists('+termguicolors')
 	set termguicolors
 endif
 
-if executable('ag')
-	set grepprg=ag\ --vimgrep
-endif
-
 set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
@@ -49,21 +45,21 @@ function! SetupLSP() abort
 		setlocal formatexpr=lsp#lsp#FormatExpr()
 	endif
 
-	nnoremap <buffer> gd                 <Cmd>LspGotoDefinition<CR>
-	nnoremap <buffer> <C-W>gd            <Cmd>topleft LspGotoDefinition<CR>
-	nnoremap <buffer> gi                 <Cmd>LspGotoImpl<CR>
-	nnoremap <buffer> K                  <Cmd>LspHover<CR>
-	nnoremap <buffer> <c-k>              <Cmd>LspShowSignature<CR>
-	nnoremap <buffer> gt                 <Cmd>LspGotoTypeDef<CR>
-	nnoremap <buffer> gr                 <Cmd>LspShowReferences<CR>
-	nnoremap <buffer> gW                 <Cmd>LspSymbolSearch<CR>
-	nnoremap <buffer> <Leader>rn         <Cmd>LspRename<CR>
-	nnoremap <buffer> <Leader>ca         <Cmd>LspCodeAction<CR>
-	nnoremap <buffer> <Leader>f          <Cmd>LspFormat<CR>
-	nnoremap <buffer> <Leader>ds         <Cmd>LspDiagShow<CR>
-	nnoremap <buffer> <Leader>dc         <Cmd>LspDiagCurrent<CR>
-	xnoremap <silent><buffer> <Leader>e  <Cmd>LspSelectionExpand<CR>
-	xnoremap <silent><buffer> <Leader>s  <Cmd>LspSelectionShrink<CR>
+	nnoremap <buffer> gd                  <Cmd>LspGotoDefinition<CR>
+	nnoremap <buffer> <C-W>gd             <Cmd>topleft LspGotoDefinition<CR>
+	nnoremap <buffer> gD                  <Cmd>LspGotoImpl<CR>
+	nnoremap <buffer> K                   <Cmd>LspHover<CR>
+	nnoremap <buffer> <c-k>               <Cmd>LspShowSignature<CR>
+	nnoremap <buffer> 1gD                 <Cmd>LspGotoTypeDef<CR>
+	nnoremap <buffer> gr                  <Cmd>LspShowReferences<CR>
+	nnoremap <buffer> gW                  <Cmd>LspSymbolSearch<CR>
+	nnoremap <buffer> <Leader>rn          <Cmd>LspRename<CR>
+	nnoremap <buffer> <Leader>ca          <Cmd>LspCodeAction<CR>
+	nnoremap <buffer> <Leader>f           <Cmd>LspFormat<CR>
+	nnoremap <buffer> <Leader>ds          <Cmd>LspDiagShow<CR>
+	nnoremap <buffer> <Leader>dc          <Cmd>LspDiagCurrent<CR>
+	xnoremap <silent><buffer> <Leader>e   <Cmd>LspSelectionExpand<CR>
+	xnoremap <silent><buffer> <Leader>s   <Cmd>LspSelectionShrink<CR>
 endfunction
 
 function! MyHighlights() abort

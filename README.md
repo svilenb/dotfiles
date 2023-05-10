@@ -68,7 +68,3 @@ Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 Follow installation instructions for [tmux-yank](https://github.com/tmux-plugins/tmux-yank).
-
-## Searching Tools
-
-Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
