@@ -64,6 +64,7 @@ endfunction
 
 function! MyHighlights() abort
 	highlight link LspDiagLine NONE
+	highlight link LspReadRef CursorLine
 endfunction
 
 augroup my
@@ -179,7 +180,10 @@ function! LspInit() abort
 
 	call LspOptionsSet({
 				\ 'autoComplete': v:false,
+				\ 'autoHighlight': v:true,
+				\ 'autoHighlightDiags': v:true,
 				\ 'useQuickfixForLocations': v:true,
+				\ 'hoverInPreview': v:false,
 				\ 'outlineWinSize': 60,
 				\ })
 endfunction
