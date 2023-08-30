@@ -20,6 +20,7 @@ set clipboard^=unnamed,unnamedplus
 set wildoptions=pum
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options
+set shortmess-=S
 
 let mapleader = " "
 
@@ -156,6 +157,11 @@ function! PackInit() abort
 
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
+
+	call minpac#add('google/vim-searchindex', { 'type': 'opt' })
+	" call minpac#add('google/vim-maktaba')
+	" call minpac#add('google/vim-codefmt')
+	" call minpac#add('google/vim-glaive')
 
 	call minpac#add('tmux-plugins/vim-tmux')
 
