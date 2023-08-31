@@ -17,7 +17,7 @@ set laststatus=2
 set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
-set wildoptions=pum
+" set wildoptions=pum
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 set shortmess-=S
@@ -57,8 +57,8 @@ function! SetupLSP() abort
 	nnoremap <buffer> <Leader>rn          <Cmd>LspRename<CR>
 	nnoremap <buffer> <Leader>ca          <Cmd>LspCodeAction<CR>
 	nnoremap <buffer> <Leader>f           <Cmd>LspFormat<CR>
-	nnoremap <buffer> <Leader>ds          <Cmd>LspDiagShow<CR>
-	nnoremap <buffer> <Leader>dc          <Cmd>LspDiagCurrent<CR>
+	nnoremap <buffer> <Leader>ds          <Cmd>LspDiag show<CR>
+	nnoremap <buffer> <Leader>dc          <Cmd>LspDiag current<CR>
 	xnoremap <silent><buffer> <Leader>e   <Cmd>LspSelectionExpand<CR>
 	xnoremap <silent><buffer> <Leader>s   <Cmd>LspSelectionShrink<CR>
 endfunction
@@ -66,6 +66,7 @@ endfunction
 function! MyHighlights() abort
 	highlight link LspDiagLine NONE
 	highlight link LspReadRef CursorLine
+	highlight link LspTextRef CursorLine
 endfunction
 
 augroup my
@@ -140,6 +141,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-characterize')
 	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
 	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
+	" call minpac#add('tpope/vim-dadbod')
 
 	call minpac#add('tommcdo/vim-exchange')
 	call minpac#add('tommcdo/vim-lion')
@@ -149,6 +151,7 @@ function! PackInit() abort
 	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
 	call minpac#add('AndrewRadev/sideways.vim')
 
+	" call minpac#add('chrisbra/vim-diff-enhanced')
 	call minpac#add('chrisbra/NrrwRgn')
 	call minpac#add('chrisbra/Colorizer')
 
