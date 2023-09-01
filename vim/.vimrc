@@ -35,7 +35,6 @@ function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
 endfunction
 
 function! SetupLSP() abort
-	" omnifunc is set automatically once autoComplete is disabled
 	" set omnifunc=g:LspOmniFunc
 
 	if exists('+tagfunc')
@@ -115,41 +114,41 @@ function! PackInit() abort
 
 	call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
-	call minpac#add('editorconfig/editorconfig-vim')
+	call minpac#add('editorconfig/editorconfig-vim', { 'name': 'editorconfig' })
 
-	call minpac#add('tpope/vim-sensible')
-	call minpac#add('tpope/vim-apathy')
-	call minpac#add('tpope/vim-sleuth')
-	call minpac#add('tpope/vim-surround')
-	call minpac#add('tpope/vim-repeat')
-	call minpac#add('tpope/vim-unimpaired')
-	call minpac#add('tpope/vim-abolish')
-	call minpac#add('tpope/vim-commentary')
-	call minpac#add('tpope/vim-endwise')
-	call minpac#add('tpope/vim-rsi')
-	call minpac#add('tpope/vim-jdaddy')
-	call minpac#add('tpope/vim-speeddating')
-	call minpac#add('tpope/vim-vinegar')
-	call minpac#add('tpope/vim-flagship')
-	call minpac#add('tpope/vim-dispatch')
-	call minpac#add('tpope/vim-obsession')
-	call minpac#add('tpope/vim-eunuch')
-	call minpac#add('tpope/vim-fugitive')
-	call minpac#add('tpope/vim-rhubarb')
-	call minpac#add('tpope/vim-projectionist')
-	call minpac#add('tpope/vim-capslock')
-	call minpac#add('tpope/vim-characterize')
+	call minpac#add('tpope/vim-sensible', { 'name': 'sensible' })
+	call minpac#add('tpope/vim-apathy', { 'name': 'apathy' })
+	call minpac#add('tpope/vim-sleuth', { 'name': 'sleuth' })
+	call minpac#add('tpope/vim-surround', { 'name': 'surround' })
+	call minpac#add('tpope/vim-repeat', { 'name': 'repeat' })
+	call minpac#add('tpope/vim-unimpaired', { 'name': 'unimpaired' })
+	call minpac#add('tpope/vim-abolish', { 'name': 'abolish' })
+	call minpac#add('tpope/vim-commentary', { 'name': 'commentary' })
+	call minpac#add('tpope/vim-endwise', { 'name': 'endwise' })
+	call minpac#add('tpope/vim-rsi', { 'name': 'rsi' })
+	call minpac#add('tpope/vim-jdaddy', { 'name': 'jdaddy' })
+	call minpac#add('tpope/vim-speeddating', { 'name': 'speeddating' })
+	call minpac#add('tpope/vim-vinegar', { 'name': 'vinegar' })
+	call minpac#add('tpope/vim-flagship', { 'name': 'flagship' })
+	call minpac#add('tpope/vim-dispatch', { 'name': 'dispatch' })
+	call minpac#add('tpope/vim-obsession', { 'name': 'obsession' })
+	call minpac#add('tpope/vim-eunuch', { 'name': 'eunuch' })
+	call minpac#add('tpope/vim-fugitive', { 'name': 'fugitive' })
+	call minpac#add('tpope/vim-rhubarb', { 'name': 'rhubarb' })
+	call minpac#add('tpope/vim-projectionist', { 'name': 'projectionist' })
+	call minpac#add('tpope/vim-capslock', { 'name': 'capslock' })
+	call minpac#add('tpope/vim-characterize', { 'name': 'characterize' })
 	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
 	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
 	call minpac#add('tpope/vim-dadbod', { 'type': 'opt', 'name': 'dadbod' })
 
-	call minpac#add('tommcdo/vim-exchange')
-	call minpac#add('tommcdo/vim-lion')
-	call minpac#add('tommcdo/vim-fubitive')
+	call minpac#add('tommcdo/vim-exchange', { 'name': 'exchange' })
+	call minpac#add('tommcdo/vim-lion', { 'name': 'lion' })
+	call minpac#add('tommcdo/vim-fubitive', { 'name': 'fubitive' })
 
-	call minpac#add('AndrewRadev/splitjoin.vim')
+	call minpac#add('AndrewRadev/splitjoin.vim', { 'name': 'splitjoin' })
 	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
-	call minpac#add('AndrewRadev/sideways.vim')
+	call minpac#add('AndrewRadev/sideways.vim', { 'name': 'sideways' })
 
 	call minpac#add('chrisbra/vim-diff-enhanced', { 'type': 'opt', 'name': 'diff-enhanced' }) " for older vim
 	call minpac#add('chrisbra/NrrwRgn')
@@ -166,12 +165,12 @@ function! PackInit() abort
 	" call minpac#add('google/vim-codefmt')
 	" call minpac#add('google/vim-glaive')
 
-	call minpac#add('tmux-plugins/vim-tmux')
+	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
 
-	call minpac#add('honza/vim-snippets')
+	call minpac#add('honza/vim-snippets', { 'name': 'snippets' })
 	call minpac#add('SirVer/ultisnips')
 
-	call minpac#add('MaxMEllon/vim-jsx-pretty')
+	call minpac#add('MaxMEllon/vim-jsx-pretty', { 'name': 'jsx-pretty' })
 endfunction
 
 function! LspInit() abort
