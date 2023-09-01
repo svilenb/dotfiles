@@ -141,7 +141,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-characterize')
 	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
 	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
-	" call minpac#add('tpope/vim-dadbod')
+	call minpac#add('tpope/vim-dadbod', { 'type': 'opt', 'name': 'dadbod' })
 
 	call minpac#add('tommcdo/vim-exchange')
 	call minpac#add('tommcdo/vim-lion')
@@ -151,7 +151,7 @@ function! PackInit() abort
 	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
 	call minpac#add('AndrewRadev/sideways.vim')
 
-	" call minpac#add('chrisbra/vim-diff-enhanced')
+	call minpac#add('chrisbra/vim-diff-enhanced', { 'type': 'opt', 'name': 'diff-enhanced' }) " for older vim
 	call minpac#add('chrisbra/NrrwRgn')
 	call minpac#add('chrisbra/Colorizer')
 
@@ -161,7 +161,7 @@ function! PackInit() abort
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
 
-	call minpac#add('google/vim-searchindex', { 'type': 'opt' })
+	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim
 	" call minpac#add('google/vim-maktaba')
 	" call minpac#add('google/vim-codefmt')
 	" call minpac#add('google/vim-glaive')
@@ -189,6 +189,7 @@ function! LspInit() abort
 
 	call LspOptionsSet({
 				\ 'autoComplete': v:false,
+				\ 'omniComplete': v:true,
 				\ 'autoHighlight': v:true,
 				\ 'autoHighlightDiags': v:true,
 				\ 'useQuickfixForLocations': v:true,
