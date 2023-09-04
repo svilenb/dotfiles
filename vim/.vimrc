@@ -21,21 +21,19 @@ set clipboard^=unnamed,unnamedplus
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 set shortmess-=S
+set list
 
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:UltiSnipsExpandTrigger = "<Tab>"
-let g:UltiSnipsListSnippets = "<C-R><Tab>"
-let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+let g:snipMate = { 'snippet_version' : 1 }
 
 function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
 	echom printf("TypeScript Version = %s", a:reply.params.version)
 endfunction
 
 function! SetupLSP() abort
-	" set omnifunc=g:LspOmniFunc
+	set omnifunc=g:LspOmniFunc
 
 	if exists('+tagfunc')
 		setlocal tagfunc=lsp#lsp#TagFunc
@@ -167,8 +165,10 @@ function! PackInit() abort
 
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
 
+	call minpac#add('tomtom/tlib_vim', { 'name': 'tlib' })
+	call minpac#add('MarcWeber/vim-addon-mw-utils', { 'name': 'addon-mw-utils' })
+	call minpac#add('garbas/vim-snipmate', { 'name': 'snipmate' })
 	call minpac#add('honza/vim-snippets', { 'name': 'snippets' })
-	call minpac#add('SirVer/ultisnips')
 
 	call minpac#add('MaxMEllon/vim-jsx-pretty', { 'name': 'jsx-pretty' })
 endfunction
