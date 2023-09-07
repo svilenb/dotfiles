@@ -17,11 +17,16 @@ set laststatus=2
 set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
+set wildmode=list:longest,full
 " set wildoptions=pum
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 set shortmess-=S
 set list
+
+" set nobackup
+" set nowritebackup
+" set noswapfile
 
 let mapleader = " "
 
@@ -33,7 +38,7 @@ function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
 endfunction
 
 function! SetupLSP() abort
-	set omnifunc=g:LspOmniFunc
+	setlocal omnifunc=g:LspOmniFunc
 
 	if exists('+tagfunc')
 		setlocal tagfunc=lsp#lsp#TagFunc
@@ -73,6 +78,8 @@ augroup my
 augroup END
 
 colorscheme retrobox
+
+map Y y$
 
 " delete without yanking
 nnoremap <Leader>d "_d
