@@ -112,6 +112,24 @@ nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 
+" if has("patch-8.1.0360")
+"     set diffopt+=internal,algorithm:patience
+" endif
+
+if has('packages')
+	if !has("patch-8.1.0360")
+		packadd diffenhanced
+	endif
+
+	if !has("patch-8.1.1270")
+		packadd searchindex
+	endif
+
+	if !has("patch-8.2.2345")
+		packadd tmuxfocusevents
+	endif
+endif
+
 function! PackInit() abort
 	packadd minpac
 
@@ -155,7 +173,7 @@ function! PackInit() abort
 	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
 	call minpac#add('AndrewRadev/sideways.vim', { 'name': 'sideways' })
 
-	call minpac#add('chrisbra/vim-diff-enhanced', { 'type': 'opt', 'name': 'diff-enhanced' }) " for older vim
+	call minpac#add('chrisbra/vim-diff-enhanced', { 'type': 'opt', 'name': 'diffenhanced' }) " for older vim
 	call minpac#add('chrisbra/NrrwRgn')
 	call minpac#add('chrisbra/Colorizer')
 
@@ -170,6 +188,7 @@ function! PackInit() abort
 	" call minpac#add('google/vim-codefmt')
 	" call minpac#add('google/vim-glaive')
 
+	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
 
 	call minpac#add('tomtom/tlib_vim', { 'name': 'tlib' })
