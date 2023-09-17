@@ -1,7 +1,53 @@
-call pathogen#infect()
+if has('packages')
+	if !has("patch-8.1.0360")
+		packadd diffenhanced
+	endif
+
+	if !has("patch-8.1.1270")
+		packadd searchindex
+	endif
+
+	if !has("patch-8.2.2345")
+		packadd tmuxfocusevents
+	endif
+else
+	call pathogen#infect()
+endif
 
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
+
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file (restore to previous version)
+  if has('persistent_undo')
+    set undofile	" keep an undo file (undo changes after closing)
+  endif
+endif
+
+if &t_Co > 2 || has("gui_running")
+  " Switch on highlighting the last used search pattern.
+  set hlsearch
+endif
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+augroup END
+
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
 
 if exists('+termguicolors')
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -23,10 +69,6 @@ set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 set shortmess-=S
 set list
-
-" set nobackup
-" set nowritebackup
-" set noswapfile
 
 let mapleader = " "
 
@@ -115,20 +157,6 @@ nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 " if has("patch-8.1.0360")
 "     set diffopt+=internal,algorithm:patience
 " endif
-
-if has('packages')
-	if !has("patch-8.1.0360")
-		packadd diffenhanced
-	endif
-
-	if !has("patch-8.1.1270")
-		packadd searchindex
-	endif
-
-	if !has("patch-8.2.2345")
-		packadd tmuxfocusevents
-	endif
-endif
 
 function! PackInit() abort
 	packadd minpac
