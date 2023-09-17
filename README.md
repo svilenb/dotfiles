@@ -43,9 +43,6 @@ make distclean
 ./configure \
 	--with-features=huge \
 	--enable-multibyte \
-	--enable-luainterp=yes \
-	--enable-python3interp=yes \
-	--with-python3-config-dir=/usr/lib/python3.9/config-3.8-x86_64-linux-gnu \
 	--disable-gui \
 	--enable-cscope \
 	--prefix=/usr/local
