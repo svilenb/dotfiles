@@ -1,16 +1,4 @@
-if has('packages')
-	if !has("patch-8.1.0360")
-		packadd diffenhanced
-	endif
-
-	if !has("patch-8.1.1270")
-		packadd searchindex
-	endif
-
-	if !has("patch-8.2.2345")
-		packadd tmuxfocusevents
-	endif
-else
+if !has('packages')
 	call pathogen#infect()
 endif
 
@@ -40,13 +28,26 @@ augroup vimrcEx
 augroup END
 
 " Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
-if has('syntax') && has('eval')
-  packadd! matchit
+if has('packages')
+	if !has("patch-8.1.0360")
+		packadd diffenhanced
+	endif
+
+	if !has("patch-8.1.1270")
+		packadd searchindex
+	endif
+
+	if !has("patch-8.2.2345")
+		packadd tmuxfocusevents
+	endif
+
+	" The matchit plugin makes the % command work better, but it is not backwards
+	" compatible.
+	" The ! means the package won't be loaded right away but when plugins are
+	" loaded during initialization.
+	if has('syntax') && has('eval')
+		packadd! matchit
+	endif
 endif
 
 if exists('+termguicolors')
@@ -69,6 +70,10 @@ set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 set shortmess-=S
 set list
+
+" if has("patch-8.1.0360")
+"     set diffopt+=internal,algorithm:patience
+" endif
 
 let mapleader = " "
 
@@ -153,10 +158,6 @@ nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
 nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
-
-" if has("patch-8.1.0360")
-"     set diffopt+=internal,algorithm:patience
-" endif
 
 function! PackInit() abort
 	packadd minpac
