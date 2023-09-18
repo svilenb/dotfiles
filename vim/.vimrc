@@ -4,26 +4,21 @@ unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
 if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
+	" do not keep a backup file, use versions instead
+	set nobackup
 else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
+	" keep a backup file (restore to previous version)
+	set backup
+	if has('persistent_undo')
+		" keep an undo file (undo changes after closing)
+		set undofile
+	endif
 endif
 
 if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
+	" Switch on highlighting the last used search pattern.
+	set hlsearch
 endif
-
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-augroup END
 
 " Add optional packages.
 if has('packages')
@@ -63,7 +58,6 @@ set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
 set wildmode=list:longest,full
-" set wildoptions=pum
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 set shortmess-=S
@@ -118,8 +112,12 @@ endfunction
 
 augroup my
 	autocmd!
+
 	autocmd User LspAttached call SetupLSP()
 	autocmd ColorScheme * call MyHighlights()
+	autocmd FileType qf nmap <buffer> p <plug>(qf-preview-open)
+	" For all text files set 'textwidth' to 78 characters.
+	autocmd FileType text setlocal textwidth=78
 augroup END
 
 colorscheme retrobox
@@ -207,6 +205,9 @@ function! PackInit() abort
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
+	call minpac#add('bfrg/vim-qf-preview')
+	" call minpac#add('bfrg/vim-qf-diagnostics')
+
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
 
@@ -231,7 +232,7 @@ function! LspInit() abort
 				\     #{
 				\	 name: 'typescriptlang',
 				\	 filetype: ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
-				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.13.0/bin/typescript-language-server',
+				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.9.0/bin/typescript-language-server',
 				\	 args: ['--stdio'],
 				\	 customNotificationHandlers: {
 				\	   '$/typescriptVersion': function('TypeScriptCustomNotificationHandler')
