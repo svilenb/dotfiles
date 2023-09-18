@@ -114,6 +114,7 @@ augroup my
 	autocmd!
 
 	autocmd User LspAttached call SetupLSP()
+	autocmd User LspDiagsUpdated LDiagnosticsPlace
 	autocmd ColorScheme * call MyHighlights()
 	autocmd FileType qf nmap <buffer> p <plug>(qf-preview-open)
 	" For all text files set 'textwidth' to 78 characters.
@@ -154,6 +155,9 @@ nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
 nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
+
+nmap gh <Plug>(qf-diagnostics-popup-quickfix)
+nmap gH <Plug>(qf-diagnostics-popup-loclist)
 
 function! PackInit() abort
 	packadd minpac
@@ -206,7 +210,7 @@ function! PackInit() abort
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
 	call minpac#add('bfrg/vim-qf-preview')
-	" call minpac#add('bfrg/vim-qf-diagnostics')
+	call minpac#add('bfrg/vim-qf-diagnostics')
 
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
@@ -232,7 +236,7 @@ function! LspInit() abort
 				\     #{
 				\	 name: 'typescriptlang',
 				\	 filetype: ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
-				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.9.0/bin/typescript-language-server',
+				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.13.0/bin/typescript-language-server',
 				\	 args: ['--stdio'],
 				\	 customNotificationHandlers: {
 				\	   '$/typescriptVersion': function('TypeScriptCustomNotificationHandler')
@@ -244,7 +248,12 @@ function! LspInit() abort
 				\ 'autoComplete': v:false,
 				\ 'omniComplete': v:true,
 				\ 'autoHighlight': v:true,
-				\ 'autoHighlightDiags': v:true,
+				\ 'autoHighlightDiags': v:false,
+				\ 'autoPopulateDiags': v:true,
+				\ 'highlightDiagInline': v:false,
+				\ 'showDiagOnStatusLine': v:false,
+				\ 'showDiagWithSign': v:false,
+				\ 'showDiagWithVirtualText': v:false,
 				\ 'useQuickfixForLocations': v:true,
 				\ 'hoverInPreview': v:false,
 				\ 'outlineWinSize': 60,
