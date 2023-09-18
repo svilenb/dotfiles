@@ -1,6 +1,4 @@
-if !has('packages')
-	call pathogen#infect()
-endif
+call pathogen#infect()
 
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim

@@ -55,7 +55,6 @@ sudo make install
 Install following vimscripts
 
 * [minpac](https://github.com/k-takata/minpac)
-* [pathogen.vim](https://github.com/tpope/vim-pathogen)
 
 ## Z-Shell
 
