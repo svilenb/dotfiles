@@ -63,10 +63,6 @@ set sessionoptions-=options
 set shortmess-=S
 set list
 
-" if has("patch-8.1.0360")
-"     set diffopt+=internal,algorithm:patience
-" endif
-
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -113,7 +109,13 @@ augroup my
 
 	autocmd User LspAttached call SetupLSP()
 	autocmd User LspDiagsUpdated LDiagnosticsPlace
+
+	" Place diagnostics automatically after running :make or :lmake
+	autocmd QuickfixCmdPost make DiagnosticsPlace
+	autocmd QuickfixCmdPost lmake LDiagnosticsPlace
+
 	autocmd ColorScheme * call MyHighlights()
+
 	autocmd FileType qf nmap <buffer> p <plug>(qf-preview-open)
 	" For all text files set 'textwidth' to 78 characters.
 	autocmd FileType text setlocal textwidth=78
@@ -234,7 +236,7 @@ function! LspInit() abort
 				\     #{
 				\	 name: 'typescriptlang',
 				\	 filetype: ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
-				\	 path: '/Users/svilen.bonev/.nvm/versions/node/v18.13.0/bin/typescript-language-server',
+				\	 path: '/usr/local/bin/typescript-language-server',
 				\	 args: ['--stdio'],
 				\	 customNotificationHandlers: {
 				\	   '$/typescriptVersion': function('TypeScriptCustomNotificationHandler')
