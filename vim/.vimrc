@@ -98,8 +98,6 @@ function! SetupLSP() abort
 	nnoremap <buffer> <Leader>rn          <Cmd>LspRename<CR>
 	nnoremap <buffer> <Leader>ca          <Cmd>LspCodeAction<CR>
 	nnoremap <buffer> <Leader>f           <Cmd>LspFormat<CR>
-	nnoremap <buffer> <Leader>ds          <Cmd>LspDiag show<CR>
-	nnoremap <buffer> <Leader>dc          <Cmd>LspDiag current<CR>
 	xnoremap <silent><buffer> <Leader>e   <Cmd>LspSelectionExpand<CR>
 	xnoremap <silent><buffer> <Leader>s   <Cmd>LspSelectionShrink<CR>
 endfunction
@@ -156,8 +154,8 @@ nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 
-nmap gh <Plug>(qf-diagnostics-popup-quickfix)
-nmap gH <Plug>(qf-diagnostics-popup-loclist)
+nmap <Leader>gh <Plug>(qf-diagnostics-popup-quickfix)
+nmap <Leader>gH <Plug>(qf-diagnostics-popup-loclist)
 
 function! PackInit() abort
 	packadd minpac
