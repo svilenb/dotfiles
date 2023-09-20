@@ -94,6 +94,8 @@ function! SetupLSP() abort
 	nnoremap <buffer> <Leader>rn          <Cmd>LspRename<CR>
 	nnoremap <buffer> <Leader>ca          <Cmd>LspCodeAction<CR>
 	nnoremap <buffer> <Leader>f           <Cmd>LspFormat<CR>
+	nnoremap <buffer> <Leader>m           <Cmd>LspDiag show<CR>
+	nnoremap <buffer> <Leader>gH          <Cmd>LspDiag current<CR>
 	xnoremap <silent><buffer> <Leader>e   <Cmd>LspSelectionExpand<CR>
 	xnoremap <silent><buffer> <Leader>s   <Cmd>LspSelectionShrink<CR>
 endfunction
@@ -108,7 +110,6 @@ augroup my
 	autocmd!
 
 	autocmd User LspAttached call SetupLSP()
-	autocmd User LspDiagsUpdated LDiagnosticsPlace
 
 	" Place diagnostics automatically after running :make or :lmake
 	autocmd QuickfixCmdPost make DiagnosticsPlace
@@ -116,7 +117,7 @@ augroup my
 
 	autocmd ColorScheme * call MyHighlights()
 
-	autocmd FileType qf nmap <buffer> p <plug>(qf-preview-open)
+	autocmd FileType qf nmap <buffer> p <Plug>(qf-preview-open)
 	" For all text files set 'textwidth' to 78 characters.
 	autocmd FileType text setlocal textwidth=78
 augroup END
@@ -209,8 +210,8 @@ function! PackInit() abort
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
-	call minpac#add('bfrg/vim-qf-preview')
-	call minpac#add('bfrg/vim-qf-diagnostics')
+	call minpac#add('bfrg/vim-qf-preview', { 'name': 'qf-preview' })
+	call minpac#add('bfrg/vim-qf-diagnostics', { 'name': 'qf-diagnostics' })
 
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
@@ -248,11 +249,11 @@ function! LspInit() abort
 				\ 'autoComplete': v:false,
 				\ 'omniComplete': v:true,
 				\ 'autoHighlight': v:true,
-				\ 'autoHighlightDiags': v:false,
-				\ 'autoPopulateDiags': v:true,
-				\ 'highlightDiagInline': v:false,
-				\ 'showDiagOnStatusLine': v:false,
-				\ 'showDiagWithSign': v:false,
+				\ 'autoHighlightDiags': v:true,
+				\ 'autoPopulateDiags': v:false,
+				\ 'highlightDiagInline': v:true,
+				\ 'showDiagOnStatusLine': v:true,
+				\ 'showDiagWithSign': v:true,
 				\ 'showDiagWithVirtualText': v:false,
 				\ 'useQuickfixForLocations': v:true,
 				\ 'hoverInPreview': v:false,
