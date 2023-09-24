@@ -43,12 +43,6 @@ if has('packages')
 	endif
 endif
 
-if exists('+termguicolors')
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-	set termguicolors
-endif
-
 set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
@@ -57,7 +51,7 @@ set laststatus=2
 set showtabline=2
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
-set wildmode=list:longest,full
+set wildmode=list,full
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options
 set shortmess-=S
@@ -67,6 +61,8 @@ let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:snipMate = { 'snippet_version' : 1 }
+
+colorscheme slate
 
 function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
 	echom printf("TypeScript Version = %s", a:reply.params.version)
@@ -122,8 +118,6 @@ augroup my
 	autocmd FileType text setlocal textwidth=78
 augroup END
 
-colorscheme retrobox
-
 map Y y$
 
 " delete without yanking
@@ -146,6 +140,8 @@ nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
 
 nnoremap <Leader>a :Ggrep!<Space>
+
+nnoremap <Leader>ct :ColorToggle<CR>
 
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
@@ -190,9 +186,9 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-rhubarb', { 'name': 'rhubarb' })
 	call minpac#add('tpope/vim-projectionist', { 'name': 'projectionist' })
 	call minpac#add('tpope/vim-capslock', { 'name': 'capslock' })
+	call minpac#add('tpope/vim-scriptease', { 'name': 'scriptease' })
 	call minpac#add('tpope/vim-characterize', { 'name': 'characterize' })
 	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
-	call minpac#add('tpope/vim-scriptease', { 'type': 'opt', 'name': 'scriptease' })
 	call minpac#add('tpope/vim-dadbod', { 'type': 'opt', 'name': 'dadbod' })
 
 	call minpac#add('tommcdo/vim-exchange', { 'name': 'exchange' })
