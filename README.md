@@ -40,14 +40,7 @@ Install following one of the following examples.
 make clean
 make distclean
 
-./configure \
-	--with-features=huge \
-	--enable-multibyte \
-	--disable-gui \
-	--enable-cscope \
-	--prefix=/usr/local
-
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+make
 
 sudo make install
 ```

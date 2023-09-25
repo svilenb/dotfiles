@@ -47,20 +47,19 @@ set hidden
 set incsearch ignorecase smartcase nohlsearch
 set number relativenumber
 set nowrap
-set laststatus=2
-set showtabline=2
+set laststatus=2 " flagship plugin
+set showtabline=2 " flagship plugin
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
 set wildmode=list,full
 set noerrorbells visualbell t_vb=
-set sessionoptions-=options
-set shortmess-=S
+set sessionoptions-=options " pathogen
+set shortmess-=S " searchindex plugin
 set list
 
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:snipMate = { 'snippet_version' : 1 }
 
 colorscheme slate
 
@@ -188,8 +187,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-capslock', { 'name': 'capslock' })
 	call minpac#add('tpope/vim-scriptease', { 'name': 'scriptease' })
 	call minpac#add('tpope/vim-characterize', { 'name': 'characterize' })
-	call minpac#add('tpope/vim-tbone', { 'type': 'opt', 'name': 'tbone' })
-	call minpac#add('tpope/vim-dadbod', { 'type': 'opt', 'name': 'dadbod' })
+	call minpac#add('tpope/vim-tbone', { 'name': 'tbone' })
 
 	call minpac#add('tommcdo/vim-exchange', { 'name': 'exchange' })
 	call minpac#add('tommcdo/vim-lion', { 'name': 'lion' })
@@ -213,17 +211,9 @@ function! PackInit() abort
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
 
 	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim
-	" call minpac#add('google/vim-maktaba')
-	" call minpac#add('google/vim-codefmt')
-	" call minpac#add('google/vim-glaive')
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
-
-	call minpac#add('tomtom/tlib_vim', { 'name': 'tlib' })
-	call minpac#add('MarcWeber/vim-addon-mw-utils', { 'name': 'addon-mw-utils' })
-	call minpac#add('garbas/vim-snipmate', { 'name': 'snipmate' })
-	call minpac#add('honza/vim-snippets', { 'name': 'snippets' })
 
 	call minpac#add('MaxMEllon/vim-jsx-pretty', { 'name': 'jsx-pretty' })
 endfunction
