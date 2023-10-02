@@ -44,7 +44,7 @@ if has('packages')
 endif
 
 set hidden
-set incsearch ignorecase smartcase nohlsearch
+set incsearch ignorecase smartcase hlsearch
 set number relativenumber
 set nowrap
 set laststatus=2 " flagship plugin
@@ -155,6 +155,9 @@ nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 nmap <Leader>gh <Plug>(qf-diagnostics-popup-quickfix)
 nmap <Leader>gH <Plug>(qf-diagnostics-popup-loclist)
 
+nmap <Leader>gt <Plug>(qf_qf_toggle)
+nmap <Leader>gT <Plug>(qf_loc_toggle)
+
 function! PackInit() abort
 	packadd minpac
 
@@ -201,6 +204,9 @@ function! PackInit() abort
 	call minpac#add('chrisbra/NrrwRgn')
 	call minpac#add('chrisbra/Colorizer')
 
+	call minpac#add('romainl/vim-cool', { 'name': 'cool' })
+	call minpac#add('romainl/vim-qf', { 'name': 'qf' })
+
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
@@ -214,8 +220,6 @@ function! PackInit() abort
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
-
-	call minpac#add('MaxMEllon/vim-jsx-pretty', { 'name': 'jsx-pretty' })
 endfunction
 
 function! LspInit() abort
