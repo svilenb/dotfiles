@@ -60,6 +60,7 @@ set list
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:qf_mapping_ack_style = 1
 
 colorscheme slate
 
@@ -105,14 +106,7 @@ augroup my
 	autocmd!
 
 	autocmd User LspAttached call SetupLSP()
-
-	" Place diagnostics automatically after running :make or :lmake
-	autocmd QuickfixCmdPost make DiagnosticsPlace
-	autocmd QuickfixCmdPost lmake LDiagnosticsPlace
-
 	autocmd ColorScheme * call MyHighlights()
-
-	autocmd FileType qf nmap <buffer> p <Plug>(qf-preview-open)
 	" For all text files set 'textwidth' to 78 characters.
 	autocmd FileType text setlocal textwidth=78
 augroup END
@@ -151,9 +145,6 @@ nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
 nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
-
-nmap <Leader>gh <Plug>(qf-diagnostics-popup-quickfix)
-nmap <Leader>gH <Plug>(qf-diagnostics-popup-loclist)
 
 nmap <Leader>gt <Plug>(qf_qf_toggle)
 nmap <Leader>gT <Plug>(qf_loc_toggle)
@@ -209,9 +200,6 @@ function! PackInit() abort
 
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
-
-	call minpac#add('bfrg/vim-qf-preview', { 'name': 'qf-preview' })
-	call minpac#add('bfrg/vim-qf-diagnostics', { 'name': 'qf-diagnostics' })
 
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })
