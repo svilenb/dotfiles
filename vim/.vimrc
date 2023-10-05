@@ -1,7 +1,9 @@
 call pathogen#infect()
 
-unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
+if filereadable($VIMRUNTIME . '/defaults.vim')
+	unlet! skip_defaults_vim
+	source $VIMRUNTIME/defaults.vim
+endif
 
 if has("vms")
 	" do not keep a backup file, use versions instead
@@ -44,7 +46,7 @@ if has('packages')
 endif
 
 set hidden
-set incsearch ignorecase smartcase hlsearch
+set incsearch ignorecase smartcase
 set number relativenumber
 set nowrap
 set laststatus=2 " flagship plugin
@@ -121,10 +123,10 @@ vnoremap <Leader>d "_d
 " without yanking it
 vnoremap <Leader>p "_dP
 
-nnoremap <Leader>ew :e <C-R>=fnameescape(expand('%:h')).'/'<CR>
-nnoremap <Leader>es :sp <C-R>=fnameescape(expand('%:h')).'/'<CR>
-nnoremap <Leader>ev :vsp <C-R>=fnameescape(expand('%:h')).'/'<CR>
-nnoremap <Leader>et :tabe <C-R>=fnameescape(expand('%:h')).'/'<CR>
+nnoremap <Leader>ew :edit <C-R>=fnameescape(expand('%:h')).'/'<CR>
+nnoremap <Leader>es :spit <C-R>=fnameescape(expand('%:h')).'/'<CR>
+nnoremap <Leader>ev :vsplit <C-R>=fnameescape(expand('%:h')).'/'<CR>
+nnoremap <Leader>et :tabedit <C-R>=fnameescape(expand('%:h')).'/'<CR>
 
 nnoremap <Leader>b :buffer <C-R>=fnameescape(getcwd()).'/**'<CR>
 nnoremap <Leader>sb :sbuffer <C-R>=fnameescape(getcwd()).'/**'<CR>
@@ -201,9 +203,6 @@ function! PackInit() abort
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
-	call minpac#add('vim/colorschemes')
-	call minpac#add('vim/killersheep', { 'type': 'opt' })
-
 	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
@@ -211,6 +210,8 @@ function! PackInit() abort
 endfunction
 
 function! LspInit() abort
+	packadd lsp
+
 	call LspAddServer([
 				\     #{
 				\	 name: 'typescriptlang',
@@ -242,4 +243,4 @@ endfunction
 command! PackUpdate call PackInit() | call minpac#update()
 command! PackClean  call PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
-command! StartLsp packadd lsp | call LspInit()
+command! StartLsp call LspInit()
