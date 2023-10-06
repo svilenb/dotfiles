@@ -28,10 +28,6 @@ if has('packages')
 		packadd diffenhanced
 	endif
 
-	if !has("patch-8.1.1270")
-		packadd searchindex
-	endif
-
 	if !has("patch-8.2.2345")
 		packadd tmuxfocusevents
 	endif
@@ -56,15 +52,13 @@ set clipboard^=unnamed,unnamedplus
 set wildmode=list,full
 set noerrorbells visualbell t_vb=
 set sessionoptions-=options " pathogen
-set shortmess-=S " searchindex plugin
+set shortmess-=S
 set list
 
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:qf_mapping_ack_style = 1
-
-colorscheme slate
 
 function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
 	echom printf("TypeScript Version = %s", a:reply.params.version)
@@ -192,6 +186,7 @@ function! PackInit() abort
 	call minpac#add('AndrewRadev/splitjoin.vim', { 'name': 'splitjoin' })
 	call minpac#add('AndrewRadev/linediff.vim', { 'type': 'opt', 'name': 'linediff' })
 	call minpac#add('AndrewRadev/sideways.vim', { 'name': 'sideways' })
+	call minpac#add('AndrewRadev/bufferize.vim', { 'name': 'bufferize' })
 
 	call minpac#add('chrisbra/vim-diff-enhanced', { 'type': 'opt', 'name': 'diffenhanced' }) " for older vim
 	call minpac#add('chrisbra/NrrwRgn')
@@ -202,8 +197,6 @@ function! PackInit() abort
 
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
-
-	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
