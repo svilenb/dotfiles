@@ -24,24 +24,15 @@ stow -vSt ~ tmux && \
 stow -vSt ~ zsh
 ```
 
-## Terminal
-
-* Install the following [font](https://github.com/belluzj/fantasque-sans)
-
 ## Vim
 
-Install following one of the following examples.
-
-* https://vi.stackexchange.com/questions/10817/how-can-i-get-a-newer-version-of-vim-on-ubuntu
-* https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
-* http://www.vim.org/git.php
+Install with package manager or compile from source
 
 ```
-make clean
-make distclean
-
-make
-
+cd ~/vim && \
+make clean && \
+make distclean && \
+make && \
 sudo make install
 ```
 
@@ -57,3 +48,7 @@ Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 Follow installation instructions for [tmux-yank](https://github.com/tmux-plugins/tmux-yank).
+
+## TODO
+
+* Enhance grep mapping
