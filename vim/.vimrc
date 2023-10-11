@@ -41,6 +41,10 @@ if has('packages')
 	endif
 endif
 
+if exists('+termguicolors')
+	set termguicolors " Colorizer plugin
+endif
+
 set hidden
 set incsearch ignorecase smartcase
 set number relativenumber
@@ -59,6 +63,7 @@ let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:qf_mapping_ack_style = 1
+let g:colorizer_auto_map = 1
 
 function! TypeScriptCustomNotificationHandler(lspserver, reply) abort
 	echom printf("TypeScript Version = %s", a:reply.params.version)
@@ -129,8 +134,6 @@ nnoremap <Leader>cd :tcd %:p:h<CR>
 nnoremap <Leader>rd :Ptcd<CR>
 
 nnoremap <Leader>a :Ggrep!<Space>
-
-nnoremap <Leader>ct :ColorToggle<CR>
 
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
