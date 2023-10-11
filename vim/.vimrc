@@ -54,9 +54,10 @@ set showtabline=2 " flagship plugin
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
 set wildmode=list,full
-set noerrorbells visualbell t_vb=
 set sessionoptions-=options " pathogen
-set shortmess-=S
+set shortmess-=S " searchindex plugin
+set shortmess+=c " mucomplete plugin
+set completeopt+=menuone " mucomplete plugin
 set list
 
 let mapleader = " "
@@ -200,6 +201,9 @@ function! PackInit() abort
 
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
+
+	call minpac#add('lifepillar/vim-mucomplete', { 'name': 'mucomplete' })
+	call minpac#add('lifepillar/vim-solarized8', { 'name': 'solarized8' })
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
