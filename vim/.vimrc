@@ -53,12 +53,21 @@ set laststatus=2 " flagship plugin
 set showtabline=2 " flagship plugin
 set cmdheight=2
 set clipboard^=unnamed,unnamedplus
-set wildmode=list,full
+set wildmode=list:longest,full
 set sessionoptions-=options " pathogen
 set shortmess-=S " searchindex plugin
 set shortmess+=c " mucomplete plugin
 set completeopt+=menuone " mucomplete plugin
 set list
+
+set backupdir^=.backup/
+set backupdir^=~/.backup/
+
+set directory^=.swp/
+set directory^=~/.swp/
+
+set undodir^=.undo/
+set undodir^=~/.undo/
 
 let mapleader = " "
 
