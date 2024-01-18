@@ -26,6 +26,13 @@ stow -vSt ~ zsh
 
 ## Vim
 
+Create a directory for Vim's temporary files
+
+```
+cd ~/dotfiles && \
+mkdir vimfiles
+```
+
 Install with package manager or compile from source
 
 ```
