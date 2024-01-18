@@ -60,12 +60,11 @@ set shortmess+=c " mucomplete plugin
 set completeopt+=menuone " mucomplete plugin
 set list
 
+" vimfiles
 set backupdir^=.backup/
 set backupdir^=~/.backup/
-
 set directory^=.swp/
 set directory^=~/.swp/
-
 set undodir^=.undo/
 set undodir^=~/.undo/
 
