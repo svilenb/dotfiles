@@ -24,7 +24,9 @@ endif
 
 " Add optional packages.
 if has('packages')
-	packadd! editorconfig
+	if has("patch-9.1.0000")
+		packadd! editorconfig
+	endif
 
 	if !has("patch-8.1.0360")
 		packadd diffenhanced
