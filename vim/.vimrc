@@ -201,6 +201,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-scriptease', { 'name': 'scriptease' })
 	call minpac#add('tpope/vim-characterize', { 'name': 'characterize' })
 	call minpac#add('tpope/vim-tbone', { 'name': 'tbone' })
+	call minpac#add('tpope/vim-dadbod', { 'type': 'opt', 'name': 'dadbod' })
 
 	call minpac#add('tommcdo/vim-exchange', { 'name': 'exchange' })
 	call minpac#add('tommcdo/vim-lion', { 'name': 'lion' })
