@@ -3,7 +3,7 @@ let &packpath = &runtimepath
 source ~/.vimrc
 
 if exists("g:neovide")
-	colorscheme solarized8
+	colorscheme habamax
 	set background=dark
 	set guifont=Fira\ Code:h15
 endif
