@@ -76,14 +76,6 @@ set undodir^=~/.undo/
 let mapleader = " "
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:UltiSnipsExpandTrigger = "<c-k>"
-let g:UltiSnipsListSnippets = "<c-r><Tab>"
-let g:UltiSnipsJumpForwardTrigger = "<c-f>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
-let g:mucomplete#chains = {
-			\ 'default' : ['path', 'omni', 'keyn', 'ulti', 'dict', 'uspl'],
-			\ 'vim'     : ['path', 'cmd', 'keyn', 'ulti']
-			\ }
 let g:qf_mapping_ack_style = 1
 let g:colorizer_auto_map = 1
 
@@ -227,9 +219,6 @@ function! PackInit() abort
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
-
-	call minpac#add('honza/vim-snippets', { 'name': 'snippets' })
-	call minpac#add('SirVer/ultisnips')
 endfunction
 
 function! LspInit() abort
