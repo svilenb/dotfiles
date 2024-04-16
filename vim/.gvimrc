@@ -6,5 +6,5 @@ set guioptions-=e " flagship plugin
 set macligatures
 set guifont=Fira\ Code:h15
 
-colorscheme retrobox
+colorscheme solarized8
 set background=dark
