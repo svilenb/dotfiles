@@ -137,7 +137,7 @@ vnoremap <Leader>d "_d
 vnoremap <Leader>p "_dP
 
 nnoremap <Leader>ew :edit <C-R>=fnameescape(expand('%:h')).'/'<CR>
-nnoremap <Leader>es :spit <C-R>=fnameescape(expand('%:h')).'/'<CR>
+nnoremap <Leader>es :split <C-R>=fnameescape(expand('%:h')).'/'<CR>
 nnoremap <Leader>ev :vsplit <C-R>=fnameescape(expand('%:h')).'/'<CR>
 nnoremap <Leader>et :tabedit <C-R>=fnameescape(expand('%:h')).'/'<CR>
 
