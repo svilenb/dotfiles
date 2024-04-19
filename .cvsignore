@@ -4,5 +4,7 @@
 *.swn
 *.swm
 tags
+tags.lock
+tags.temp
 Session.vim
 .DS_Store
