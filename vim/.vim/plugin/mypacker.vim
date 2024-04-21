@@ -1,4 +1,4 @@
-if exists('g:loaded_mypacker') || &cp
+if exists('g:loaded_mypacker') || &compatible
 	finish
 endif
 let g:loaded_mypacker = 1

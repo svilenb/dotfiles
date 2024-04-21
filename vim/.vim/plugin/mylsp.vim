@@ -1,4 +1,4 @@
-if exists('g:loaded_mylsp') || &cp
+if exists('g:loaded_mylsp') || &compatible
 	finish
 endif
 let g:loaded_mylsp = 1

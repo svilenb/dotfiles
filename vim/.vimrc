@@ -112,8 +112,9 @@ nnoremap <Leader>et :tabedit <C-R>=fnameescape(expand('%:h')).'/'<CR>
 nnoremap <Leader>b :buffer <C-R>=fnameescape(getcwd()).'/**'<CR>
 nnoremap <Leader>sb :sbuffer <C-R>=fnameescape(getcwd()).'/**'<CR>
 
-nnoremap <Leader>cd :tcd %:p:h<CR>
-nnoremap <Leader>rd :Ptcd<CR>
+nnoremap <Leader>cd :cd %:p:h<CR>
+nnoremap <Leader>lcd :lcd %:p:h<CR>
+nnoremap <Leader>tcd :tcd %:p:h<CR>
 
 nnoremap <Leader>a :Ggrep!<Space>
 
