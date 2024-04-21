@@ -20,6 +20,7 @@ Install [GNU Stow](https://www.gnu.org/software/stow/) if it's not available alr
 ```
 cd ~/dotfiles && \
 stow -vSt ~ vim && \
+stow -vSt ~ vimfiles && \
 stow -vSt ~ tmux && \
 stow -vSt ~ zsh
 ```
@@ -30,7 +31,7 @@ Create a directory for Vim's temporary files
 
 ```
 cd ~/dotfiles && \
-mkdir vimfiles
+mkdir -p vimfiles/.backup vimfiles/.swp vimfiles/.undo
 ```
 
 Install with package manager or compile from source

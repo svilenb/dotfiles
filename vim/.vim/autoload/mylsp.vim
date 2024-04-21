@@ -57,6 +57,12 @@ function! mylsp#SetupLSP() abort
 	xnoremap <silent><buffer> <Leader>s   <Cmd>LspSelectionShrink<CR>
 endfunction
 
+function! mylsp#SetHighlights() abort
+	highlight link LspDiagLine NONE
+	highlight link LspReadRef CursorLine
+	highlight link LspTextRef CursorLine
+endfunction
+
 function! s:TypeScriptCustomNotificationHandler(lspserver, reply) abort
 	echom printf("TypeScript Version = %s", a:reply.params.version)
 endfunction

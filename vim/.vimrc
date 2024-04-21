@@ -79,17 +79,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:qf_mapping_ack_style = 1
 let g:colorizer_auto_map = 1
 
-function! MyHighlights() abort
-	highlight link LspDiagLine NONE
-	highlight link LspReadRef CursorLine
-	highlight link LspTextRef CursorLine
-endfunction
-
 augroup my
 	autocmd!
 
-	autocmd User LspAttached call mylsp#SetupLSP()
-	autocmd ColorScheme * call MyHighlights()
 	" For all text files set 'textwidth' to 78 characters.
 	autocmd FileType text setlocal textwidth=78
 augroup END
