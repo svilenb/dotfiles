@@ -86,6 +86,7 @@ augroup my
 	autocmd FileType text setlocal textwidth=78
 augroup END
 
+" Core mappings {{{
 map Y y$
 
 " delete without yanking
@@ -107,7 +108,9 @@ nnoremap <Leader>sb :sbuffer <C-R>=fnameescape(getcwd()).'/**'<CR>
 nnoremap <Leader>cd :cd %:p:h<CR>
 nnoremap <Leader>lcd :lcd %:p:h<CR>
 nnoremap <Leader>tcd :tcd %:p:h<CR>
+" }}}
 
+" Plugin mappings {{{
 nnoremap <Leader>a :Ggrep!<Space>
 
 nnoremap <Leader>h :SidewaysLeft<CR>
@@ -122,3 +125,4 @@ nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 
 nmap <Leader>gt <Plug>(qf_qf_toggle)
 nmap <Leader>gT <Plug>(qf_loc_toggle)
+" }}}
