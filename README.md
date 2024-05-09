@@ -1,16 +1,9 @@
 # Svilen's dotfiles
 
-## Git
+## Installation
 
 ```
 git clone https://github.com/svilenb/dotfiles.git ~/dotfiles
-```
-
-Add global .gitignore
-
-```
-ln -sf ~/dotfiles/.cvsignore ~/.cvsignore
-git config --global core.excludesFile ~/.cvsignore
 ```
 
 ## GNU Stow
@@ -22,7 +15,16 @@ cd ~/dotfiles && \
 stow -vSt ~ vim && \
 stow -vSt ~ vimfiles && \
 stow -vSt ~ tmux && \
+stow -vSt ~ scm && \
 stow -vSt ~ zsh
+```
+
+## Git
+
+Add global .gitignore
+
+```
+git config --global core.excludesFile ~/.cvsignore
 ```
 
 ## Vim

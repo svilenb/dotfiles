@@ -6,7 +6,7 @@ let g:loaded_mylsp = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! StartLsp call mylsp#LspInit()
+command! LaunchLsp call mylsp#LspInit()
 
 augroup mylsp
 	autocmd!
