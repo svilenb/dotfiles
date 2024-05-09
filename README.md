@@ -12,10 +12,10 @@ Install [GNU Stow](https://www.gnu.org/software/stow/) if it's not available alr
 
 ```
 cd ~/dotfiles && \
+stow -vSt ~ scm && \
 stow -vSt ~ vim && \
 stow -vSt ~ vimfiles && \
 stow -vSt ~ tmux && \
-stow -vSt ~ scm && \
 stow -vSt ~ zsh
 ```
 

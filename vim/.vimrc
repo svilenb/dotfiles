@@ -126,3 +126,9 @@ nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 nmap <Leader>gt <Plug>(qf_qf_toggle)
 nmap <Leader>gT <Plug>(qf_loc_toggle)
 " }}}
+
+function! RebuildTags() abort
+	execute '!ctags -R --exclude="node_modules/*" --exclude="dist/*" .'
+endfunction
+
+command! RebuildTags call RebuildTags()
