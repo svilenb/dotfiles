@@ -62,8 +62,13 @@ set wildcharm=<C-z>
 set sessionoptions-=options " pathogen
 set shortmess-=S " searchindex plugin
 set shortmess+=c " mucomplete plugin
-set completeopt+=menuone " mucomplete plugin
 set list
+
+set completeopt+=menuone " mucomplete plugin
+if has("patch-8.1.1880")
+	set completeopt-=preview
+	set completeopt+=popup
+endif
 
 " vimfiles
 set backupdir^=.backup/
