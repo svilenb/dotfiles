@@ -5,7 +5,7 @@ if filereadable($VIMRUNTIME . '/defaults.vim')
 	source $VIMRUNTIME/defaults.vim
 endif
 
-if has("vms")
+if has('vms')
 	" do not keep a backup file, use versions instead
 	set nobackup
 else
@@ -17,22 +17,22 @@ else
 	endif
 endif
 
-if &t_Co > 2 || has("gui_running")
+if &t_Co > 2 || has('gui_running')
 	" Switch on highlighting the last used search pattern.
 	set hlsearch
 endif
 
 " Add optional packages.
 if has('packages')
-	if has("patch-9.1.0000")
+	if has('patch-9.1.0000')
 		packadd! editorconfig
 	endif
 
-	if !has("patch-8.1.0360")
+	if !has('patch-8.1.0360')
 		packadd diffenhanced
 	endif
 
-	if !has("patch-8.2.2345")
+	if !has('patch-8.2.2345')
 		packadd tmuxfocusevents
 	endif
 
@@ -65,7 +65,7 @@ set shortmess+=c " mucomplete plugin
 set list
 
 set completeopt+=menuone " mucomplete plugin
-if has("patch-8.1.1880")
+if has('patch-8.1.1880')
 	set completeopt-=preview
 	set completeopt+=popup
 endif
@@ -78,11 +78,9 @@ set directory^=~/.swp/
 set undodir^=.undo/
 set undodir^=~/.undo/
 
-let mapleader = " "
+colorscheme darkblue
 
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-let g:qf_mapping_ack_style = 1
-let g:colorizer_auto_map = 1
+let mapleader = " "
 
 augroup my
 	autocmd!
@@ -113,21 +111,4 @@ nnoremap <Leader>sb :sbuffer <C-R>=fnameescape(getcwd()).'/**'<CR>
 nnoremap <Leader>cd :cd %:p:h<CR>
 nnoremap <Leader>lcd :lcd %:p:h<CR>
 nnoremap <Leader>tcd :tcd %:p:h<CR>
-" }}}
-
-" Plugin mappings {{{
-nnoremap <Leader>a :Ggrep!<Space>
-
-nnoremap <Leader>h :SidewaysLeft<CR>
-nnoremap <Leader>l :SidewaysRight<CR>
-nnoremap <Leader>jh :SidewaysJumpLeft<CR>
-nnoremap <Leader>jl :SidewaysJumpRight<CR>
-
-nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
-nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
-nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
-nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
-
-nmap <Leader>gt <Plug>(qf_qf_toggle)
-nmap <Leader>gT <Plug>(qf_loc_toggle)
 " }}}
