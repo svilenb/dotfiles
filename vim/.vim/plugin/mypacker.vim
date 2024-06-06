@@ -25,6 +25,12 @@ nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 
 nmap <Leader>gt <Plug>(qf_qf_toggle)
 nmap <Leader>gT <Plug>(qf_loc_toggle)
+
+if !exists('##TextYankPost')
+  nmap y <Plug>(highlightedyank)
+  xmap y <Plug>(highlightedyank)
+  omap y <Plug>(highlightedyank)
+endif
 " }}}
 
 command! PackUpdate call mypacker#PackInit() | call minpac#update()
