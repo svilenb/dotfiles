@@ -57,4 +57,7 @@ function! mypacker#PackInit() abort
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
+
+	call minpac#add('vim/colorschemes')
+	call minpac#add('vim/killersheep', { 'type': 'opt' })
 endfunction
