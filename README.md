@@ -16,7 +16,8 @@ stow -vSt ~ scm && \
 stow -vSt ~ vim && \
 stow -vSt ~ vimfiles && \
 stow -vSt ~ tmux && \
-stow -vSt ~ zsh
+stow -vSt ~ zsh && \
+stow -vSt ~ karabiner
 ```
 
 ## Git
