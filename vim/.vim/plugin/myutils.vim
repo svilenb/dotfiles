@@ -1,3 +1,7 @@
+if !has('vim9script') ||  v:version < 900
+	finish
+endif
+
 if exists('g:loaded_myutils') || &compatible
 	finish
 endif
