@@ -2,23 +2,19 @@ if !has('vim9script') ||  v:version < 900
 	finish
 endif
 
+vim9script noclear
+
 if exists('g:loaded_myutils') || &compatible
 	finish
 endif
-let g:loaded_myutils = 1
-
-let s:save_cpo = &cpo
-set cpo&vim
+g:loaded_myutils = 1
 
 import '../autoload/myutils.vim'
 
-command! RebuildTags call myutils.RebuildTags()
+command! RebuildTags myutils.RebuildTags()
 
 augroup myutils
 	autocmd!
 
-	autocmd TextYankPost * call myutils.HighlightedYank()
+	autocmd TextYankPost * myutils.HighlightedYank()
 augroup END
-
-let &cpo = s:save_cpo
-unlet s:save_cpo
