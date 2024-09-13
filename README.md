@@ -14,6 +14,7 @@ Install [GNU Stow](https://www.gnu.org/software/stow/) if it's not available alr
 cd ~/dotfiles && \
 stow -vSt ~ scm && \
 stow -vSt ~ vim && \
+mkdir -p vimfiles/.backup vimfiles/.swp vimfiles/.undo && \
 stow -vSt ~ vimfiles && \
 stow -vSt ~ tmux && \
 stow -vSt ~ zsh && \
@@ -46,16 +47,9 @@ Follow installation instructions for [tmux-yank](https://github.com/tmux-plugins
 
 ## Ctags
 
-Follow instructions for [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript).
+Follow instructions for [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript) and [typescript-ctags](https://github.com/jb55/typescript-ctags).
 
 ## Vim
-
-Create a directory for Vim's temporary files
-
-```
-cd ~/dotfiles && \
-mkdir -p vimfiles/.backup vimfiles/.swp vimfiles/.undo
-```
 
 Install with package manager or compile from source
 
