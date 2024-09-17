@@ -50,6 +50,9 @@ function! mypacker#PackInit() abort
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
+	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim
+	call minpac#add('google/vim-colorscheme-primary')
+
 	call minpac#add('lifepillar/vim-mucomplete', { 'name': 'mucomplete' })
 	call minpac#add('lifepillar/vim-solarized8', { 'name': 'solarized8' })
 

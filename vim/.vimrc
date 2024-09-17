@@ -32,6 +32,10 @@ if has('packages')
 		packadd diffenhanced
 	endif
 
+	if !has("patch-8.1.1270")
+		packadd searchindex
+	endif
+
 	if !has('patch-8.2.2345')
 		packadd tmuxfocusevents
 	endif
