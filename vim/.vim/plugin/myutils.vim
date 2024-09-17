@@ -11,8 +11,6 @@ g:loaded_myutils = 1
 
 import '../autoload/myutils.vim'
 
-command! RebuildTags myutils.RebuildTags()
-
 augroup myutils
 	autocmd!
 

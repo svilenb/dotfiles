@@ -1,9 +1,5 @@
 vim9script
 
-export def RebuildTags()
-	execute '!ctags -R --exclude="node_modules/*" --exclude="dist/*" .'
-enddef
-
 export def HighlightedYank(hlgroup = 'IncSearch', duration = 300, in_visual = true)
 	if v:event.operator ==? 'y'
 		if !in_visual && visualmode() != null_string
