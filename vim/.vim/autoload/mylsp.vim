@@ -50,7 +50,6 @@ function! mylsp#SetupLSP() abort
 	nnoremap <buffer> gW                  <Cmd>LspSymbolSearch<CR>
 	nnoremap <buffer> <Leader>rn          <Cmd>LspRename<CR>
 	nnoremap <buffer> <Leader>ca          <Cmd>LspCodeAction<CR>
-	nnoremap <buffer> <Leader>f           <Cmd>LspFormat<CR>
 	nnoremap <buffer> <Leader>m           <Cmd>LspDiag show<CR>
 	nnoremap <buffer> <Leader>gH          <Cmd>LspDiag current<CR>
 	xnoremap <silent><buffer> <Leader>e   <Cmd>LspSelectionExpand<CR>

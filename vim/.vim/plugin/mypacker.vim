@@ -10,6 +10,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:qf_mapping_ack_style = 1
 let g:colorizer_auto_map = 1
 
+call glaive#Install()
+
+Glaive codefmt plugin[mappings]
+
 " Plugin mappings {{{
 nnoremap <Leader>a :Ggrep!<Space>
 
