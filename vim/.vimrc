@@ -92,7 +92,7 @@ augroup my
 	" For all text files set 'textwidth' to 78 characters.
 	autocmd FileType text setlocal textwidth=78
 	autocmd FileType hurl setlocal commentstring=#\ %s
-	autocmd FileType typescript let b:codefmt_formatter = 'prettier'
+	autocmd FileType typescript,typescriptreact let b:codefmt_formatter = 'prettier'
 augroup END
 
 " Core mappings {{{
