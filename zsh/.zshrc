@@ -97,3 +97,6 @@ export EDITOR='mvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
