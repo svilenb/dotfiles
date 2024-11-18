@@ -14,5 +14,7 @@ import '../autoload/myutils.vim'
 augroup myutils
 	autocmd!
 
-	# autocmd TextYankPost * myutils.HighlightedYank()
+	autocmd TextYankPost * myutils.HighlightedYank()
 augroup END
+
+nmap <Leader>yod :call myutils#IwhiteToggle()<CR>

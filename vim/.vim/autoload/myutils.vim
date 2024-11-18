@@ -1,5 +1,13 @@
 vim9script
 
+export def IwhiteToggle()
+	if &diffopt =~ 'iwhite'
+		set diffopt-=iwhite
+	else
+		set diffopt+=iwhite
+	endif
+enddef
+
 export def HighlightedYank(hlgroup = 'IncSearch', duration = 300, in_visual = true)
 	if v:event.operator ==? 'y'
 		if !in_visual && visualmode() != null_string
