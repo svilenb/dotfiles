@@ -93,6 +93,7 @@ augroup my
 	autocmd FileType text setlocal textwidth=78
 	autocmd FileType hurl setlocal commentstring=#\ %s
 	autocmd FileType typescript,typescriptreact let b:codefmt_formatter = 'prettier'
+	autocmd FileType javascript,javascriptreact let b:codefmt_formatter = 'prettier'
 augroup END
 
 " Core mappings {{{
