@@ -94,6 +94,7 @@ augroup my
 	autocmd FileType hurl setlocal commentstring=#\ %s
 	autocmd FileType typescript,typescriptreact let b:codefmt_formatter = 'prettier'
 	autocmd FileType javascript,javascriptreact let b:codefmt_formatter = 'prettier'
+	autocmd FileType qf nmap <buffer> <Leader>p <plug>(qf-preview-open)
 augroup END
 
 " Core mappings {{{

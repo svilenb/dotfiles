@@ -60,6 +60,8 @@ function! mypacker#PackInit() abort
 	call minpac#add('lifepillar/vim-solarized8', { 'name': 'solarized8' })
 	call minpac#add('lifepillar/vim-gruvbox8', { 'name': 'gruvbox8' })
 
+	call minpac#add('bfrg/vim-qf-preview', { 'name': 'qf-preview' })
+
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
 	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
 
