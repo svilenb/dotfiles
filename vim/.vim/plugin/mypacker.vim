@@ -9,6 +9,7 @@ set cpo&vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:qf_mapping_ack_style = 1
 let g:colorizer_auto_map = 1
+let g:copilot_no_tab_map = v:true
 
 call glaive#Install()
 
@@ -26,6 +27,8 @@ nmap <Leader>si <Plug>SidewaysArgumentInsertBefore
 nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
+
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 
 nmap <Leader>gt <Plug>(qf_qf_toggle)
 nmap <Leader>gT <Plug>(qf_loc_toggle)

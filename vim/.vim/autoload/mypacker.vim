@@ -56,6 +56,8 @@ function! mypacker#PackInit() abort
 	call minpac#add('google/vim-codefmt', { 'name': 'codefmt' })
 	call minpac#add('google/vim-glaive', { 'name': 'glaive' })
 
+	call minpac#add('github/copilot.vim', { 'name': 'copilot' })
+
 	call minpac#add('lifepillar/vim-mucomplete', { 'name': 'mucomplete' })
 	call minpac#add('lifepillar/vim-solarized8', { 'name': 'solarized8' })
 	call minpac#add('lifepillar/vim-gruvbox8', { 'name': 'gruvbox8' })
