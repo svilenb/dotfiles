@@ -28,6 +28,9 @@ nmap <Leader>sa <Plug>SidewaysArgumentAppendAfter
 nmap <Leader>sI <Plug>SidewaysArgumentInsertFirst
 nmap <Leader>sA <Plug>SidewaysArgumentAppendLast
 
+nmap <Leader>gh <Plug>(qf-diagnostics-popup-quickfix)
+nmap <Leader>gH <Plug>(qf-diagnostics-popup-loclist)
+
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 
 nmap <Leader>gt <Plug>(qf_qf_toggle)

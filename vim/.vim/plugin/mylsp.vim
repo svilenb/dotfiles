@@ -13,6 +13,9 @@ augroup mylsp
 
 	autocmd User LspAttached call mylsp#SetupLSP()
 	autocmd ColorScheme * call mylsp#SetHighlights()
+
+	autocmd QuickfixCmdPost make DiagnosticsPlace
+	autocmd QuickfixCmdPost lmake LDiagnosticsPlace
 augroup END
 
 let &cpo = s:save_cpo
