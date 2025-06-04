@@ -32,6 +32,7 @@ nmap <Leader>gh <Plug>(qf-diagnostics-popup-quickfix)
 nmap <Leader>gH <Plug>(qf-diagnostics-popup-loclist)
 
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+imap <C-L> <Plug>(copilot-accept-word)
 
 nmap <Leader>gt <Plug>(qf_qf_toggle)
 nmap <Leader>gT <Plug>(qf_loc_toggle)
