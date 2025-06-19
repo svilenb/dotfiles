@@ -74,13 +74,18 @@ if has('patch-8.1.1880')
 	set completeopt+=popup
 endif
 
-" vimfiles
+" Vim files {{{
 set backupdir^=.backup/
 set backupdir^=~/.backup/
 set directory^=.swp/
 set directory^=~/.swp/
-set undodir^=.undo/
-set undodir^=~/.undo/
+
+" Neovim has different undo files format.
+if !has('nvim')
+	set undodir^=.undo/
+	set undodir^=~/.undo/
+endif
+" }}}
 
 colorscheme darkblue
 
