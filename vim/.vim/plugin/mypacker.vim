@@ -6,6 +6,11 @@ let g:loaded_mypacker = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+if has('vim9script') && v:version >= 900
+	packadd qf-diagnostics
+	packadd qf-preview
+endif
+
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:qf_mapping_ack_style = 1
 let g:colorizer_auto_map = 1
