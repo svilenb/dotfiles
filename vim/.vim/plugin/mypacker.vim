@@ -7,8 +7,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if has('vim9script') && v:version >= 900
-	packadd qf-diagnostics
-	packadd qf-preview
+	packadd qfdiagnostics
+	packadd qfpreview
 endif
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
