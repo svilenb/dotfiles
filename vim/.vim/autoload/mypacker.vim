@@ -48,6 +48,7 @@ function! mypacker#PackInit() abort
 	call minpac#add('romainl/vim-qf', { 'name': 'qf' })
 
 	call minpac#add('yegappan/mru')
+	call minpac#add('yegappan/grep')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
 
 	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim

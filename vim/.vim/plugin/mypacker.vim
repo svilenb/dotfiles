@@ -21,7 +21,7 @@ call glaive#Install()
 Glaive codefmt plugin[mappings]
 
 " Plugin mappings {{{
-nnoremap <Leader>a :Ggrep!<Space>
+nnoremap <Leader>a :Rg<CR>
 
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
