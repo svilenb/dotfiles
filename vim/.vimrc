@@ -74,6 +74,10 @@ if has('patch-8.1.1880')
 	set completeopt+=popup
 endif
 
+if has('patch-9.1.1243')
+	set diffopt+=inline:word
+endif
+
 " Vim files {{{
 set backupdir^=.backup/
 set backupdir^=~/.backup/
