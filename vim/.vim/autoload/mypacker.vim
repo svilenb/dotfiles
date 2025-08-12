@@ -50,9 +50,9 @@ function! mypacker#PackInit() abort
 	call minpac#add('yegappan/mru')
 	call minpac#add('yegappan/grep')
 	call minpac#add('yegappan/lsp', { 'type': 'opt' })
+	call minpac#add('yegappan/taglist')
 
 	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim
-	call minpac#add('google/vim-colorscheme-primary', { 'name': 'colorscheme-primary' })
 	call minpac#add('google/vim-maktaba', { 'name': 'maktaba' })
 	call minpac#add('google/vim-codefmt', { 'name': 'codefmt' })
 	call minpac#add('google/vim-glaive', { 'name': 'glaive' })

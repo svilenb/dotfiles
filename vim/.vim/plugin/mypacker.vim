@@ -41,6 +41,8 @@ imap <C-L> <Plug>(copilot-accept-word)
 
 nmap <Leader>gt <Plug>(qf_qf_toggle)
 nmap <Leader>gT <Plug>(qf_loc_toggle)
+
+nnoremap <silent> <F8> :TlistToggle<CR>
 " }}}
 
 command! PackUpdate call mypacker#PackInit() | call minpac#update()

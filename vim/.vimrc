@@ -69,6 +69,7 @@ set shortmess+=c " mucomplete plugin
 set list
 
 set completeopt+=menuone " mucomplete plugin
+
 if has('patch-8.1.1880')
 	set completeopt-=preview
 	set completeopt+=popup
