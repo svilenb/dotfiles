@@ -23,6 +23,8 @@ Glaive codefmt plugin[mappings]
 " Plugin mappings {{{
 nnoremap <Leader>a :Rg<CR>
 
+nnoremap <Leader>fb :call zeef#BufferSwitcher({ 'buflisted': v:true, 'fullpath': v:true })<CR>
+
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
 nnoremap <Leader>jh :SidewaysJumpLeft<CR>

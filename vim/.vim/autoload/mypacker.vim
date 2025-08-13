@@ -48,8 +48,8 @@ function! mypacker#PackInit() abort
 	call minpac#add('romainl/vim-qf', { 'name': 'qf' })
 
 	call minpac#add('yegappan/mru')
-	call minpac#add('yegappan/grep')
-	call minpac#add('yegappan/lsp', { 'type': 'opt' })
+	call minpac#add('yegappan/grep', { 'name': 'packgrep' })
+	call minpac#add('yegappan/lsp', { 'type': 'opt', 'name': 'packlsp' })
 	call minpac#add('yegappan/taglist')
 
 	call minpac#add('google/vim-searchindex', { 'type': 'opt', 'name': 'searchindex' }) " for older vim
@@ -60,14 +60,13 @@ function! mypacker#PackInit() abort
 	call minpac#add('github/copilot.vim', { 'name': 'copilot' })
 
 	call minpac#add('lifepillar/vim-mucomplete', { 'name': 'mucomplete' })
-	call minpac#add('lifepillar/vim-solarized8', { 'name': 'solarized8' })
-	call minpac#add('lifepillar/vim-gruvbox8', { 'name': 'gruvbox8' })
+	call minpac#add('lifepillar/vim-zeef', { 'name': 'zeef' })
 
 	call minpac#add('bfrg/vim-qf-preview', { 'type': 'opt', 'name': 'qfpreview' })
 	call minpac#add('bfrg/vim-qf-diagnostics', { 'type': 'opt', 'name': 'qfdiagnostics' })
 
 	call minpac#add('tmux-plugins/vim-tmux-focus-events', { 'type': 'opt', 'name': 'tmuxfocusevents' }) " for older vim
-	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'tmux' })
+	call minpac#add('tmux-plugins/vim-tmux', { 'name': 'packtmux' })
 
 	call minpac#add('vim/colorschemes')
 	call minpac#add('vim/killersheep', { 'type': 'opt' })

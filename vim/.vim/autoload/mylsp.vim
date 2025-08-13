@@ -1,5 +1,5 @@
 function! mylsp#LspInit() abort
-	packadd lsp
+	packadd packlsp
 
 	call LspAddServer([
 				\     #{
