@@ -21,9 +21,10 @@ call glaive#Install()
 Glaive codefmt plugin[mappings]
 
 " Plugin mappings {{{
-nnoremap <Leader>a :Gitgrep<CR>
+nnoremap <Leader>a :Gitgrep
 
 nnoremap <Leader>fb :call zeef#BufferSwitcher({ 'buflisted': v:true, 'fullpath': v:true })<CR>
+nnoremap <Leader>ft :call zeef#BufferTags({'all': 1})<CR>
 
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>
