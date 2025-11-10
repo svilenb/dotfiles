@@ -40,6 +40,10 @@ if has('packages')
 		packadd tmuxfocusevents
 	endif
 
+	if has('patch-9.1.1228')
+		packadd hlyank
+	endif
+
 	" The matchit plugin makes the % command work better, but it is not backwards
 	" compatible.
 	" The ! means the package won't be loaded right away but when plugins are
@@ -73,6 +77,10 @@ set completeopt+=menuone " mucomplete plugin
 if has('patch-8.1.1880')
 	set completeopt-=preview
 	set completeopt+=popup
+endif
+
+if has('patch-9.1.1308')
+	set completeopt+=nearest
 endif
 
 if has('patch-9.1.1243')

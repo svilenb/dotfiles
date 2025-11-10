@@ -25,6 +25,9 @@ function! mylsp#LspInit() abort
 				\ 'showDiagWithVirtualText': v:false,
 				\ 'useQuickfixForLocations': v:true,
 				\ 'hoverInPreview': v:false,
+				\ 'hoverFallback': v:true,
+				\ 'definitionFallback': v:true,
+				\ 'popupBorder': v:true,
 				\ 'outlineWinSize': 60,
 				\ })
 endfunction
