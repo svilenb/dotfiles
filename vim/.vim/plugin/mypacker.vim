@@ -25,6 +25,7 @@ nnoremap <Leader>a :Gitgrep
 
 nnoremap <Leader>fb :call zeef#BufferSwitcher({ 'buflisted': v:true, 'fullpath': v:true })<CR>
 nnoremap <Leader>ft :call zeef#BufferTags({'all': 1})<CR>
+nnoremap <Leader>fz :call zeef#Files()<CR>
 
 nnoremap <Leader>h :SidewaysLeft<CR>
 nnoremap <Leader>l :SidewaysRight<CR>

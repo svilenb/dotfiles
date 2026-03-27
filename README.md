@@ -49,6 +49,10 @@ Follow installation instructions for [tmux-yank](https://github.com/tmux-plugins
 
 Follow instructions for [ctags-patterns-for-javascript](https://github.com/romainl/ctags-patterns-for-javascript) and [typescript-ctags](https://github.com/jb55/typescript-ctags).
 
+## Grep
+
+Follow instructions for [ripgrep](https://github.com/burntsushi/ripgrep).
+
 ## Vim
 
 Install with package manager or compile from source
@@ -64,7 +68,3 @@ sudo make install
 Install following vimscripts
 
 * [minpac](https://github.com/k-takata/minpac)
-
-## TODO
-
-* Enhance grep mapping
