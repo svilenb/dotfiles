@@ -8,3 +8,5 @@ tags.lock
 tags.temp
 Session.vim
 .DS_Store
+.claude/settings.local.json
+.claude/worktrees/
