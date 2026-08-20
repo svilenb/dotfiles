@@ -59,8 +59,8 @@ function! mypacker#PackInit() abort
 
 	call minpac#add('github/copilot.vim', { 'name': 'copilot' })
 
-	call minpac#add('lifepillar/vim-mucomplete', { 'name': 'mucomplete' })
-	call minpac#add('lifepillar/vim-zeef', { 'name': 'zeef' })
+	call minpac#add('https://codeberg.org/lifepillar/vim-mucomplete.git', { 'name': 'mucomplete' })
+	call minpac#add('https://codeberg.org/lifepillar/vim-zeef.git', { 'name': 'zeef' })
 
 	call minpac#add('bfrg/vim-qf-preview', { 'type': 'opt', 'name': 'qfpreview' })
 	call minpac#add('bfrg/vim-qf-diagnostics', { 'type': 'opt', 'name': 'qfdiagnostics' })
